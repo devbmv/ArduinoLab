@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% block free_delivery %}
+
+{% endblock %}
+
+<div class="container settings-container mt-5">
+    <h1>Store Settings</h1>
+    <form method="POST">
+        {% csrf_token %}
+        
+        <h2>General Store Settings</h2>
+        <div class="form-group">
+            {{ store_form.as_p }}
+        </div>
+
+        <h2>Payment Settings</h2>
+        <div class="form-group">
+            {{ payment_form.as_p }}
+        </div>
+
+        <h2>Shipping Settings</h2>
+        <div class="form-group">
+            {{ shipping_form.as_p }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Settings</button>
+    </form>
+</div>
+
+<style>
+    /* Specific styling for settings container */
+    .settings-container {
+        background-color: rgba(255, 255, 255, 0.8); /* White background with slight transparency */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+        max-width: 800px;
+        margin: 0 auto; /* Center the container */
+    }
+</style>
+{% endblock %}

@@ -9,10 +9,6 @@ from profiles.models import UserProfile
 
 import json
 import time
-import logging
-
-# Create your views here.
-logger = logging.getLogger(__name__)
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -102,22 +98,7 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
-            logger.error(f"In order exists")
             self._send_confirmation_email(order)
-            try:
-                send_mail(
-                    "Test email",
-                    "I send test email from Django",
-                    settings.DEFAULT_FROM_EMAIL,  # Using the email from settings
-                    ["maik775@yahoo.com"],  # To email address
-                    fail_silently=False,  # Raise an error if something goes wrong
-                )
-            except Exception as e:
-                logger.error(f"Failed to send email: {str(e)}")
-                return HttpResponse("Error sending email", status=500)
-            
-
-
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -162,23 +143,7 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
-            
-            logger.error(f"Line 166 web_hook")
-            self._send_confirmation_email(order)
-            try:
-                send_mail(
-                    "Test email",
-                    "Line 171 webhook_handler",
-                    settings.DEFAULT_FROM_EMAIL,  # Using the email from settings
-                    ["maik775@yahoo.com"],  # To email address
-                    fail_silently=False,  # Raise an error if something goes wrong
-                )
-            except Exception as e:
-                logger.error(f"Failed to send email: {str(e)}")
-                return HttpResponse("Error sending email", status=500)
-            
         self._send_confirmation_email(order)
-
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)

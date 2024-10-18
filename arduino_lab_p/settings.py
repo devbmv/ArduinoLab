@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
+    'store_settings',
 
     # Other
     'crispy_forms',
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'allauth.account.middleware.AccountMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'store_settings.middleware.StoreSettingsMiddleware',  # Adaugă middleware-ul tău aici
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -82,11 +84,13 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required by allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
+                'store_settings.context_processors.global_store_settings',
+
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
@@ -204,16 +208,27 @@ if 'USE_AWS' in os.environ:
 
 
 # Stripe
-FREE_DELIVERY_THRESHOLD = 50
-STANDARD_DELIVERY_PERCENTAGE = 10
+# FREE_DELIVERY_THRESHOLD = 50
+# STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Default to console
+
+
 if os.environ.get('DEBUG', 'False') == 'True':
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'maik_775@yahoo.com'
+        if os.environ.get('USE_REAL_EMAILS', 'False') == 'True':
+            EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+            EMAIL_USE_TLS = True
+            EMAIL_PORT = 587
+            EMAIL_HOST = 'smtp.mail.yahoo.com'
+            EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+            EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+            DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+        else:
+            DEFAULT_FROM_EMAIL = 'maik_775@yahoo.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
@@ -222,6 +237,7 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
     
  
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
