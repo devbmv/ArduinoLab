@@ -4,7 +4,7 @@
         "model": "products.product",
         "fields": {
             "sku": "pp5001340155",
-            "name": "Arizona Original Bootcut Jeans",
+            "name": "Arduino Nano",
             "description": "Bootcut jeans in our just-right original fit are comfortable and look great too.  5-pocket style sits below waist straight fit through seat and thigh bootcut leg 18\" leg opening cotton washable imported extended sizes and washes available online only",
             "price": 53.99,
             "category": 6,
@@ -18,7 +18,7 @@
         "model": "products.product",
         "fields": {
             "sku": "pp5001600425",
-            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants",
+            "name": "Arduino + Raspberry Pi",
             "description": "Straight-leg styling and on-the-job comfort make our Audra pants a flattering business decision. flat front zip fly with hook-and-bar closure 2 front and 2 back welt pockets 34 1/2\" inseam polyester/rayon/spandex washable imported",
             "price": 58.99,
             "category": 4,

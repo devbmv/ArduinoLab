@@ -3,11 +3,17 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-
+from django.core.mail import send_mail
 from .models import Product, Category
 from .forms import ProductForm
+from django.conf import settings
+from django.http import HttpResponse
+
+import logging
 
 # Create your views here.
+logger = logging.getLogger(__name__)
+
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
@@ -32,7 +38,7 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -41,10 +47,12 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -61,6 +69,17 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
+    try:
+        send_mail(
+            "Test email",
+            "I send test email from Django",
+            settings.DEFAULT_FROM_EMAIL,  # Using the email from settings
+            ["maik775@yahoo.com"],  # To email address
+            fail_silently=False,  # Raise an error if something goes wrong
+        )
+    except Exception as e:
+        logger.error(f"Failed to send email: {str(e)}")
+        return HttpResponse("Error sending email", status=500)
 
     product = get_object_or_404(Product, pk=product_id)
 
@@ -85,10 +104,11 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -112,7 +132,8 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to update product. Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')

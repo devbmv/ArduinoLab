@@ -35,7 +35,7 @@ def cache_checkout_data(request):
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-
+    
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
@@ -178,12 +178,6 @@ def checkout_success(request, order_number):
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
-    }
-    send_mail(
-        "Test email",
-        "I send test email from Django",
-        settings.DEFAULT_FROM_EMAIL,
-        [order.email],
-    )      
+    }    
 
     return render(request, template, context)
