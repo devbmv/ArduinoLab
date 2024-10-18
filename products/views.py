@@ -69,17 +69,7 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-    try:
-        send_mail(
-            "Test email",
-            "I send test email from Django",
-            settings.DEFAULT_FROM_EMAIL,  # Using the email from settings
-            ["maik775@yahoo.com"],  # To email address
-            fail_silently=False,  # Raise an error if something goes wrong
-        )
-    except Exception as e:
-        logger.error(f"Failed to send email: {str(e)}")
-        return HttpResponse("Error sending email", status=500)
+
 
     product = get_object_or_404(Product, pk=product_id)
 
