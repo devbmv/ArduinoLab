@@ -1,5 +1,5 @@
 from django import forms
-from .models import StoreSettings, PaymentSettings, ShippingSettings
+from .models import StoreSettings, PaymentSettings, ShippingSettings, UserSettings
 
 class StoreSettingsForm(forms.ModelForm):
     """Form for updating store settings"""
@@ -18,3 +18,9 @@ class ShippingSettingsForm(forms.ModelForm):
     class Meta:
         model = ShippingSettings
         fields = ['standard_shipping_cost', 'free_shipping_threshold']
+
+class UserSettingsForm(forms.ModelForm):
+    """Form for updating user-specific settings"""
+    class Meta:
+        model = UserSettings
+        fields = ['preferred_language', 'receive_newsletter']
