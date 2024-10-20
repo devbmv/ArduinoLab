@@ -3,13 +3,13 @@
         "pk": 1,
         "model": "products.product",
         "fields": {
-            "sku": "pp5001340155",
+            "sku": "arduino_nano_001",
             "name": "Arduino Nano",
-            "description": "Bootcut jeans in our just-right original fit are comfortable and look great too.  5-pocket style sits below waist straight fit through seat and thigh bootcut leg 18\" leg opening cotton washable imported extended sizes and washes available online only",
+            "description": "Arduino Nano is a small, complete, and breadboard-friendly board based on the ATmega328 (Arduino Nano 3.x). It has more or less the same functionality of the Arduino Duemilanove, but in a different package.",
             "price": 17.77,
-            "category": 6,
+            "category": 1,
             "rating": 4.6,
-            "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0709201205510679M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+            "image_url": "https://example.com/images/arduino_nano.jpg",
             "image": "arduino_nano.jpg"
         }
     },
@@ -17,13 +17,13 @@
         "pk": 2,
         "model": "products.product",
         "fields": {
-            "sku": "pp5001600425",
-            "name": "Arduino + Raspberry Pi",
-            "description": "Straight-leg styling and on-the-job comfort make our Audra pants a flattering business decision. flat front zip fly with hook-and-bar closure 2 front and 2 back welt pockets 34 1/2\" inseam polyester/rayon/spandex washable imported",
+            "sku": "arduino_rpi_001",
+            "name": "Arduino + Raspberry Pi Kit",
+            "description": "This kit includes an Arduino board and Raspberry Pi for those looking to experiment with both platforms. Ideal for educational purposes and advanced hobbyists.",
             "price": 58.99,
             "category": 4,
-            "rating": 4.6,
-            "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0113201617034987M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+            "rating": 4.8,
+            "image_url": "https://example.com/images/arduino_raspberry.jpg",
             "image": "arduino_and_raspberry.jpg"
         }
     }
