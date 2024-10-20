@@ -29,23 +29,32 @@ def bag_contents(request):
                     'product': product,
                     'size': size,
                 })
+    shipping_settings = getattr(request, 'shipping_settings', None)
 
-    if total < request.shipping_settings.free_shipping_threshold:
-        delivery = total * Decimal(request.shipping_settings.standard_shipping_cost / 100)
-        free_delivery_delta = request.shipping_settings.free_shipping_threshold - total
+    if shipping_settings:
+        free_shipping_threshold = shipping_settings.free_shipping_threshold
+        standard_shipping_cost = shipping_settings.standard_shipping_cost
+    else:
+        # Fallback pentru transport în cazul în care shipping_settings este None
+        free_shipping_threshold = Decimal('50.00')  # Valoare implicită
+        standard_shipping_cost = Decimal('5.00')  # Valoare implicită
+
+    if total < free_shipping_threshold:
+        delivery = standard_shipping_cost
+        free_delivery_delta = free_shipping_threshold - total
     else:
         delivery = 0
         free_delivery_delta = 0
     
     grand_total = delivery + total
-    
+
     context = {
         'bag_items': bag_items,
         'total': total,
         'product_count': product_count,
         'delivery': delivery,
         'free_delivery_delta': free_delivery_delta,
-        'free_delivery_threshold': request.shipping_settings.free_shipping_threshold,
+        'free_delivery_threshold': free_shipping_threshold,
         'grand_total': grand_total,
     }
 
