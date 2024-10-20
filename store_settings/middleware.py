@@ -5,7 +5,6 @@ class StoreSettingsMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        # Adaugă datele din modelele tale la request
         request.store_settings = StoreSettings.objects.first()
         request.payment_settings = PaymentSettings.objects.first()
         request.shipping_settings = ShippingSettings.objects.first()

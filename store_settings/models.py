@@ -9,7 +9,7 @@ class StoreSettings(models.Model):
     store_description = models.TextField()
     contact_email = models.EmailField()
     currency = models.CharField(max_length=10, default="EUR")
-
+    
     def __str__(self):
         return self.store_name
 

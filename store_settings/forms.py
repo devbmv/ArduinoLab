@@ -6,6 +6,9 @@ class StoreSettingsForm(forms.ModelForm):
     class Meta:
         model = StoreSettings
         fields = ['store_name', 'store_description', 'contact_email', 'currency']
+        widgets = {
+            'store_description': forms.Textarea(attrs={'rows': 1, 'cols': 40}),  # Controlează dimensiunea
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

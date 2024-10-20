@@ -39,7 +39,7 @@ def bag_contents(request):
         free_shipping_threshold = Decimal('50.00')  # Valoare implicită
         standard_shipping_cost = Decimal('5.00')  # Valoare implicită
 
-    if total < free_shipping_threshold:
+    if total < free_shipping_threshold :
         delivery = standard_shipping_cost
         free_delivery_delta = free_shipping_threshold - total
     else:
