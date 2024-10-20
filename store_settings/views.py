@@ -5,8 +5,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import user_passes_test
 from .models import StoreSettings, PaymentSettings, ShippingSettings, UserSettings
 from .forms import StoreSettingsForm, PaymentSettingsForm, ShippingSettingsForm, UserSettingsForm
+from django.contrib.auth.decorators import login_required
 
-@user_passes_test(lambda u: u.is_superuser)
+
+@login_required
 def settings_view(request):
     """ A view to return and update the settings page for superusers """
 

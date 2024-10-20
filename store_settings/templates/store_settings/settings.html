@@ -1,49 +1,100 @@
 {% extends "base.html" %}
+{% load widget_tweaks %}
 
 {% block content %}
 {% block free_delivery %}
 {% endblock %}
-<div class="container mt-5">
+<div class="container mt-5 pt-5">  <!-- Added pt-5 to create space under the fixed header -->
     <div class="row justify-content-center">
         <div class="col-lg-8 col-md-10 col-sm-12">
-            <div class="card bg-light shadow-lg" style="opacity: 0.9;">  <!-- Card semi-transparent -->
+            <div class="card bg-light shadow-lg" style="opacity: 0.9;">
                 <div class="card-body">
                     <h1 class="text-center">Store Settings</h1>
-                    <form method="POST" class="mt-4 form-horizontal">  <!-- Added form-horizontal class -->
+                    <form method="POST" class="mt-4 form-horizontal">
                         {% csrf_token %}
-                        
+                        {% if request.user.is_superuser %}
                         <h2 class="h4">General Store Settings</h2>
-                        <div class="form-group row mb-3 "> <!-- Adjusted form-group for row layout -->
-                            <label for="id_general_store_settings" class="col-sm-3 col-form-label text-end"></label>
+                        <div class="form-group row mb-3">
+                            <label for="id_store_name" class="col-sm-3 col-form-label text-end">Store Name</label>
                             <div class="col-sm-9">
-                                {{ store_form.as_p }} <!-- Output the form fields here -->
+                                {{ store_form.store_name|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="id_store_description" class="col-sm-3 col-form-label text-end">Store Description</label>
+                            <div class="col-sm-9">
+                                {{ store_form.store_description|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="id_contact_email" class="col-sm-3 col-form-label text-end">Contact Email</label>
+                            <div class="col-sm-9">
+                                {{ store_form.contact_email|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="id_currency" class="col-sm-3 col-form-label text-end">Currency</label>
+                            <div class="col-sm-9">
+                                {{ store_form.currency|add_class:"form-control" }}
                             </div>
                         </div>
 
                         <h2 class="h4 mt-4">Payment Settings</h2>
-                        <div class="form-group row mb-3"> <!-- Adjusted form-group for row layout -->
-                            <label for="id_payment_settings" class="col-sm-3 col-form-label text-end"></label>
+                        <div class="form-group row mb-3">
+                            <label for="id_stripe_public_key" class="col-sm-3 col-form-label text-end">Stripe Public Key</label>
                             <div class="col-sm-9">
-                                {{ payment_form.as_p }} <!-- Output the form fields here -->
+                                {{ payment_form.stripe_public_key|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="id_stripe_secret_key" class="col-sm-3 col-form-label text-end">Stripe Secret Key</label>
+                            <div class="col-sm-9">
+                                {{ payment_form.stripe_secret_key|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="id_paypal_client_id" class="col-sm-3 col-form-label text-end">Paypal Client ID</label>
+                            <div class="col-sm-9">
+                                {{ payment_form.paypal_client_id|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="id_paypal_client_secret" class="col-sm-3 col-form-label text-end">Paypal Client Secret</label>
+                            <div class="col-sm-9">
+                                {{ payment_form.paypal_client_secret|add_class:"form-control" }}
                             </div>
                         </div>
 
                         <h2 class="h4 mt-4">Shipping Settings</h2>
-                        <div class="form-group row mb-3"> <!-- Adjusted form-group for row layout -->
-                            <label for="id_shipping_settings" class="col-sm-3 col-form-label text-end"></label>
+                        <div class="form-group row mb-3">
+                            <label for="id_standard_shipping_cost" class="col-sm-3 col-form-label text-end">Standard Shipping Cost</label>
                             <div class="col-sm-9">
-                                {{ shipping_form.as_p }} <!-- Output the form fields here -->
+                                {{ shipping_form.standard_shipping_cost|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="id_free_shipping_threshold" class="col-sm-3 col-form-label text-end">Free Shipping Threshold</label>
+                            <div class="col-sm-9">
+                                {{ shipping_form.free_shipping_threshold|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <h2 class="h4 mt-4 ">User Settings</h2>
+                        <div class="form-group row mb-3">
+                            <label for="id_preferred_language" class="col-sm-3 col-form-label text-end">Preferred Language</label>
+                            <div class="col-sm-9">
+                                {{ user_settings_form.preferred_language|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3 ">
+                            <label for="id_receive_newsletter" class="col-sm-3 col-form-label text-end">Receive Newsletter</label>
+                            <div class="col-sm-9 " >
+                                {{ user_settings_form.receive_newsletter|add_class:"form-control" }}
                             </div>
                         </div>
 
-                        <h2 class="h4 mt-4">User Settings</h2>
-                        <div class="form-group row mb-3"> <!-- Adjusted form-group for row layout -->
-                            <label for="id_user_settings" class="col-sm-3 col-form-label text-end"></label>
-                            <div class="col-sm-9">
-                                {{ user_settings_form.as_p }} <!-- Output the form fields here -->
-                            </div>
-                        </div>
-
+                        
                         <div class="form-group row mb-3">
                             <div class="col-sm-9 offset-sm-3">
                                 <a href="{% url 'change_password' %}" class="btn btn-warning mb-3">Change Password</a>
