@@ -1,6 +1,7 @@
 from django import forms
 from .models import UserProfile
-
+from allauth.account.forms import SignupForm
+from django import forms
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
