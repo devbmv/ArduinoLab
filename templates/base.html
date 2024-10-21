@@ -39,8 +39,8 @@
     <title>{{ store_settings.store_name }} {% block extra_title %}{% endblock %}</title>
   </head>
   
-  <body>
-    <header class="container-fluid fixed-top">
+  <body >
+    <header class="container-fluid fixed-top ">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -48,7 +48,7 @@
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="{% url 'products' %}">
+                <form method="GET" action="{% url 'all_microcontrollers' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
@@ -75,7 +75,7 @@
 
                                  {% if request.user.is_superuser %}
 
-                                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                <a href="{% url 'add_microcontroller' %}" class="dropdown-item">Product Management</a>
                                 {% endif %}
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>

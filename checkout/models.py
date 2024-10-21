@@ -1,12 +1,10 @@
 import uuid
-
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 from store_settings.context_processors import get_shipping_settings
 from django_countries.fields import CountryField
-
-from products.models import Product
+from products.models import Microcontroller
 from profiles.models import UserProfile
 
 
@@ -42,10 +40,19 @@ class Order(models.Model):
         accounting for delivery costs.
         """
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        if self.order_total < get_shipping_settings().standard_shipping_cost:
-            self.delivery_cost = self.order_total * get_shipping_settings().standard_shipping_cost / 100
+        
+        # Get shipping settings or default to a value (for example, 50)
+        shipping_settings = get_shipping_settings()
+        default_shipping_cost = 50  # Default value if shipping settings are not available
+
+        # Fallback to default if settings are missing or improperly configured
+        shipping_cost = getattr(shipping_settings, 'standard_shipping_cost', default_shipping_cost)
+        
+        if self.order_total < shipping_cost:
+            self.delivery_cost = self.order_total * shipping_cost / 100
         else:
             self.delivery_cost = 0
+        
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
@@ -64,8 +71,8 @@ class Order(models.Model):
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
-    product_size = models.CharField(max_length=2, null=True, blank=True) # XS, S, M, L, XL
+    product = models.ForeignKey(Microcontroller, null=False, blank=False, on_delete=models.CASCADE)
+    product_size = models.CharField(max_length=2, null=True, blank=True)  # XS, S, M, L, XL
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
@@ -76,6 +83,7 @@ class OrderLineItem(models.Model):
         """
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
+        self.order.update_total()  # Update the order total after saving the line item
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'

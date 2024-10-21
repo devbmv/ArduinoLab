@@ -3,60 +3,68 @@
         "pk": 1,
         "model": "products.category",
         "fields": {
-            "name": "arduino_boards",
-            "friendly_name": "Arduino Boards"
+            "name": "esp32",
+            "friendly_name": "ESP32"
         }
     },
     {
         "pk": 2,
         "model": "products.category",
         "fields": {
-            "name": "microcontrollers",
-            "friendly_name": "Microcontrollers"
+            "name": "esp8266",
+            "friendly_name": "ESP8266"
         }
     },
     {
         "pk": 3,
         "model": "products.category",
         "fields": {
-            "name": "sensors",
-            "friendly_name": "Sensors"
+            "name": "espall",
+            "friendly_name": "Esp All"
         }
     },
     {
         "pk": 4,
         "model": "products.category",
         "fields": {
-            "name": "raspberry_pi",
-            "friendly_name": "Raspberry Pi"
+            "name": "avrall",
+            "friendly_name": "Avr All"
         }
     },
     {
         "pk": 5,
         "model": "products.category",
         "fields": {
-            "name": "accessories",
-            "friendly_name": "Accessories"
+            "name": "rpiall",
+            "friendly_name": "RPi All"
         }
     },
     {
         "pk": 6,
         "model": "products.category",
         "fields": {
-            "name": "kits",
-            "friendly_name": "Starter Kits"
+            "name": "avr",
+            "friendly_name": "Avr"
         }
     },
     {
         "pk": 7,
         "model": "products.category",
         "fields": {
-            "name": "robotics",
-            "friendly_name": "Robotics"
+            "name": "stm32all",
+            "friendly_name": "Stm32 All"
         }
     },
     {
         "pk": 8,
+        "model": "products.category",
+        "fields": {
+            "name": "stm32",
+            "friendly_name": "STM32"
+        }
+    },
+    {
+        "pk": 9,
         "model": "products.category",
         "fields": {
             "name": "new_arrivals",
@@ -64,11 +72,11 @@
         }
     },
     {
-        "pk": 9,
+        "pk": 10,
         "model": "products.category",
         "fields": {
-            "name": "displays",
-            "friendly_name": "Displays"
+            "name": "rpi",
+            "friendly_name": "Raspberry Pi"
         }
     }
 ]

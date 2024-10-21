@@ -6,16 +6,16 @@
             </a>
         </li>
 
-        <!-- All Products Dropdown -->
+        <!-- All all_microcontrollers Dropdown -->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Products
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-all_microcontrollers-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All Microcontrollers
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-all_microcontrollers-link">
+                <a href="{% url 'all_microcontrollers' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'all_microcontrollers' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
+                <a href="{% url 'all_microcontrollers' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
+                <a href="{% url 'all_microcontrollers' %}" class="dropdown-item">All all_microcontrollers</a>
             </div>
         </li>
 
@@ -25,10 +25,10 @@
                 AVR
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="avr-link">
-                <a href="{% url 'products' %}?category=arduino_boards" class="dropdown-item">Arduino Nano</a>
-                <a href="{% url 'products' %}?category=arduino_boards" class="dropdown-item">Arduino Uno</a>
-                <a href="{% url 'products' %}?category=arduino_boards" class="dropdown-item">Arduino Mega</a>
-                <a href="{% url 'products' %}?category=arduino_boards" class="dropdown-item">All Arduino Boards</a>
+                <a href="{% url 'all_microcontrollers' %}?category=AVR ATmega" class="dropdown-item">Arduino Nano</a>
+                <a href="{% url 'all_microcontrollers' %}?category=AVR ATmega" class="dropdown-item">Arduino Uno</a>
+                <a href="{% url 'all_microcontrollers' %}?category=AVR ATmega" class="dropdown-item">Arduino Mega</a>
+                <a href="{% url 'all_microcontrollers' %}?category=AVR ATmega" class="dropdown-item">All Arduino Boards</a>
             </div>
         </li>
 
@@ -38,48 +38,99 @@
                 ESP
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="esp-link">
-                <a href="{% url 'products' %}?category=esp32" class="dropdown-item">ESP32</a>
-                <a href="{% url 'products' %}?category=esp8266" class="dropdown-item">ESP8266</a>
-                <a href="{% url 'products' %}?category=esp32,esp8266" class="dropdown-item">All ESP Products</a>
+                <a href="{% url 'all_microcontrollers' %}?category=ESP32" class="dropdown-item">ESP32</a>
+                <a href="{% url 'all_microcontrollers' %}?category=esp8266" class="dropdown-item">ESP8266</a>
+                <a href="{% url 'all_microcontrollers' %}?category=espall" class="dropdown-item">All ESP all_microcontrollers</a>
             </div>
         </li>
-                <!-- STM32 Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="esp-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        STM32
-                    </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="esp-link">
-                        <a href="{% url 'products' %}?category=STM32" class="dropdown-item">STM32H743ZI</a>
-                        <a href="{% url 'products' %}?category=STM32" class="dropdown-item">STM32F429ZI</a>
-                        <a href="{% url 'products' %}?category=STM32" class="dropdown-item">STM32L476RG</a>
-                        <a href="{% url 'products' %}?category=STM32" class="dropdown-item">All ESP Products</a>
-                    </div>
-                </li>
 
-                <!-- Raspberry pi Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="esp-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        RPi
-                    </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="esp-link">
-                        <a href="{% url 'products' %}?category=RPi" class="dropdown-item">Raspberry Pi 4 Model B</a>
-                        <a href="{% url 'products' %}?category=RPi" class="dropdown-item">Raspberry Pi 4 Model B</a>
-                        <a href="{% url 'products' %}?category=RPi" class="dropdown-item">Raspberry Pi Zero W</a>
-                        <a href="{% url 'products' %}?category=RPi" class="dropdown-item">All RPi Products</a>
+        <!-- STM32 Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="stm32-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                STM32
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="stm32-link">
+                <a href="{% url 'all_microcontrollers' %}?category=STM32 F4" class="dropdown-item">STM32H743ZI</a>
+                <a href="{% url 'all_microcontrollers' %}?category=STM32 F4" class="dropdown-item">STM32F429ZI</a>
+                <a href="{% url 'all_microcontrollers' %}?category=STM32 F4" class="dropdown-item">STM32L476RG</a>
+                <a href="{% url 'all_microcontrollers' %}?category=STM32 F4" class="dropdown-item">All STM32 all_microcontrollers</a>
+            </div>
+        </li>
 
-                    </div>
-                </li>
+        <!-- Raspberry Pi Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="rpi-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                RPi
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="rpi-link">
+                <a href="{% url 'all_microcontrollers' %}?category=Raspberry Pi 3" class="dropdown-item">Raspberry Pi 4 Model B</a>
+                <a href="{% url 'all_microcontrollers' %}?category=Raspberry Pi 3" class="dropdown-item">Raspberry Pi 3 Model B+</a>
+                <a href="{% url 'all_microcontrollers' %}?category=Raspberry Pi 3" class="dropdown-item">Raspberry Pi Zero W</a>
+                <a href="{% url 'all_microcontrollers' %}?category=Raspberry Pi 3" class="dropdown-item">All RPi all_microcontrollers</a>
+            </div>
+        </li>
+
         <!-- Special Offers Dropdown -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
-                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
-                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
-                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
+                <a href="{% url 'all_microcontrollers' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'all_microcontrollers' %}?category=deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'all_microcontrollers' %}?category=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'all_microcontrollers' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>
-</div>
+</div> 
+
+{% comment %} 
+<div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav w-auto mx-auto">
+        <li class="nav-item d-block d-md-none">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+                Home
+            </a>
+        </li>
+
+        <!-- All all_microcontrollers Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-all_microcontrollers-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All all_microcontrollers
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-all_microcontrollers-link">
+                <a href="{% url 'all_microcontrollers' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'all_microcontrollers' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
+                <a href="{% url 'all_microcontrollers' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
+                <a href="{% url 'all_microcontrollers' %}" class="dropdown-item">All all_microcontrollers</a>
+            </div>
+        </li>
+
+        <!-- AVR Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="avr-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                AVR
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="avr-link">
+                <a href="{% url 'all_microcontrollers' %}?category=avr" class="dropdown-item">Arduino Nano</a>
+                <a href="{% url 'all_microcontrollers' %}?category=avr" class="dropdown-item">Arduino Uno</a>
+                <a href="{% url 'all_microcontrollers' %}?category=avr" class="dropdown-item">Arduino Mega</a>
+                <a href="{% url 'all_microcontrollers' %}?category=avrall" class="dropdown-item">All Arduino Boards</a>
+            </div>
+        </li>
+
+        <!-- Special Offers Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Special Offers
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+                <a href="{% url 'all_microcontrollers' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'all_microcontrollers' %}?category=deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'all_microcontrollers' %}?category=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'all_microcontrollers' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
+            </div>
+        </li>
+    </ul>
+</div> {% endcomment %}

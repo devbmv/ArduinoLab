@@ -1,0 +1,298 @@
+[
+    {
+        "model": "products.microcontroller",
+        "pk": 1,
+        "fields": {
+            "name": "Raspberry Pi 3 Model B+",
+            "category": 1,
+            "bit_width": 32,
+            "cpu_architecture": "ARM Cortex-A53",
+            "max_frequency_mhz": 1400,
+            "ram_kb": 1024,
+            "flash_memory_kb": 0,
+            "power_consumption_mw": 500,
+            "package_type": "BGA",
+            "description": "A popular Raspberry Pi model.",
+            "price": "35",     
+            "rating": 4.8,
+            "image": "arduino_nano.jpg",
+            "sku": "RPI1"
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 3,
+        "fields": {
+            "name": "STM32F407VG",
+            "category": 3,
+            "bit_width": 32,
+            "cpu_architecture": "ARM Cortex-M4",
+            "max_frequency_mhz": 168,
+            "ram_kb": 192,
+            "flash_memory_kb": 1024,
+            "power_consumption_mw": 100,
+            "package_type": "QFP",
+            "description": "High-performance STM32 MCU.",
+            "price": "15",
+            "rating": 4.7,
+            "image": "arduino_nano.jpg",
+            "sku": "STM1"
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 4,
+        "fields": {
+            "name": "ESP32-WROOM-32",
+            "category": 4,
+            "bit_width": 32,
+            "cpu_architecture": "Xtensa LX6",
+            "max_frequency_mhz": 240,
+            "ram_kb": 520,
+            "flash_memory_kb": 4096,
+            "power_consumption_mw": 200,
+            "package_type": "QFP",
+            "description": "Wi-Fi and Bluetooth SoC.",
+            "price": "8",
+            "rating": 4.9,
+            "image": "arduino_nano.jpg",
+            "sku": "ESP1"
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 5,
+        "fields": {
+            "name": "Raspberry Pi 3 Model B+",
+            "category": 1,
+            "bit_width": 32,
+            "cpu_architecture": "ARM Cortex-A53",
+            "max_frequency_mhz": 1400,
+            "ram_kb": 1024,
+            "flash_memory_kb": 0,
+            "power_consumption_mw": 500,
+            "package_type": "BGA",
+            "description": "A popular Raspberry Pi model.",
+            "price": "35",
+            "rating": 4.8,
+            "image": "arduino_nano.jpg",
+            "sku": "RPI2"
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 7,
+        "fields": {
+            "name": "STM32F407VG",
+            "category": 3,
+            "bit_width": 32,
+            "cpu_architecture": "ARM Cortex-M4",
+            "max_frequency_mhz": 168,
+            "ram_kb": 192,
+            "flash_memory_kb": 1024,
+            "power_consumption_mw": 100,
+            "package_type": "QFP",
+            "description": "High-performance STM32 MCU.",
+            "price": "15",
+            "rating": 4.7,
+            "image": "arduino_nano.jpg",
+            "sku": "STM2"
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 8,
+        "fields": {
+            "name": "ESP32-WROOM-32",
+            "category": 4,
+            "bit_width": 32,
+            "cpu_architecture": "Xtensa LX6",
+            "max_frequency_mhz": 240,
+            "ram_kb": 520,
+            "flash_memory_kb": 4096,
+            "power_consumption_mw": 200,
+            "package_type": "QFP",
+            "description": "Wi-Fi and Bluetooth SoC.",
+            "price": "8",
+            "rating": 4.9,
+            "image": "arduino_nano.jpg",
+            "sku": "ESP2"
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 9,
+        "fields": {
+            "name": "Raspberry Pi 3 Model B+",
+            "category": 1,
+            "bit_width": 32,
+            "cpu_architecture": "ARM Cortex-A53",
+            "max_frequency_mhz": 1400,
+            "ram_kb": 1024,
+            "flash_memory_kb": 0,
+            "power_consumption_mw": 500,
+            "package_type": "BGA",
+            "description": "A popular Raspberry Pi model.",
+            "price": "35",
+            "rating": 4.8,
+            "image": "arduino_nano.jpg",
+            "sku": "RPI3"
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 10,
+        "fields": {
+            "name": "ATmega328P",
+            "category": 2,
+            "bit_width": 8,
+            "cpu_architecture": "AVR",
+            "max_frequency_mhz": 16,
+            "ram_kb": 2,
+            "flash_memory_kb": 32,
+            "power_consumption_mw": 50,
+            "package_type": "DIP",
+            "description": "Used in Arduino Uno.",
+            "price": "3",
+            "rating": 4.5,
+            "image": "arduino_nano.jpg",
+            "sku": "AVR3"
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 11,
+        "fields": {
+            "name": "STM32F407VG",
+            "category": 3,
+            "bit_width": 32,
+            "cpu_architecture": "ARM Cortex-M4",
+            "max_frequency_mhz": 168,
+            "ram_kb": 192,
+            "flash_memory_kb": 1024,
+            "power_consumption_mw": 100,
+            "package_type": "QFP",
+            "description": "High-performance STM32 MCU.",
+            "price": "15",
+            "rating": 4.7,
+            "image": "arduino_nano.jpg",
+            "sku": "STM3"
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 12,
+        "fields": {
+            "name": "ESP32-WROOM-32",
+            "category": 4,
+            "bit_width": 32,
+            "cpu_architecture": "Xtensa LX6",
+            "max_frequency_mhz": 240,
+            "ram_kb": 520,
+            "flash_memory_kb": 4096,
+            "power_consumption_mw": 200,
+            "package_type": "QFP",
+            "description": "Wi-Fi and Bluetooth SoC.",
+            "price": "8",
+            "rating": 4.9,
+            "image": "arduino_nano.jpg",
+            "sku": "ESP3"
+        }
+    },
+    {
+        "model": "products.manufacturer",
+        "pk": 1,
+        "fields": {
+            "name": "Raspberry Pi",
+            "website": "https://www.raspberrypi.org"
+        }
+    },
+    {
+        "model": "products.manufacturer",
+        "pk": 2,
+        "fields": {
+            "name": "Atmel (AVR)",
+            "website": "https://www.microchip.com"
+        }
+    },
+    {
+        "model": "products.manufacturer",
+        "pk": 3,
+        "fields": {
+            "name": "STMicroelectronics",
+            "website": "https://www.st.com"
+        }
+    },
+    {
+        "model": "products.manufacturer",
+        "pk": 4,
+        "fields": {
+            "name": "Espressif Systems",
+            "website": "https://www.espressif.com"
+        }
+    },
+    {
+        "model": "products.microcontrollerfamily",
+        "pk": 1,
+        "fields": {
+            "name": "Raspberry Pi Family",
+            "manufacturer": 1
+        }
+    },
+    {
+        "model": "products.microcontrollerfamily",
+        "pk": 2,
+        "fields": {
+            "name": "AVR Family",
+            "manufacturer": 2
+        }
+    },
+    {
+        "model": "products.microcontrollerfamily",
+        "pk": 3,
+        "fields": {
+            "name": "STM32 Family",
+            "manufacturer": 3
+        }
+    },
+    {
+        "model": "products.microcontrollerfamily",
+        "pk": 4,
+        "fields": {
+            "name": "ESP Family",
+            "manufacturer": 4
+        }
+    },
+    {
+        "model": "products.microcontrollersubfamily",
+        "pk": 1,
+        "fields": {
+            "name": "Raspberry Pi 3",
+            "family": 1
+        }
+    },
+    {
+        "model": "products.microcontrollersubfamily",
+        "pk": 2,
+        "fields": {
+            "name": "AVR ATmega",
+            "family": 2
+        }
+    },
+    {
+        "model": "products.microcontrollersubfamily",
+        "pk": 3,
+        "fields": {
+            "name": "STM32 F4",
+            "family": 3
+        }
+    },
+    {
+        "model": "products.microcontrollersubfamily",
+        "pk": 4,
+        "fields": {
+            "name": "ESP32",
+            "family": 4
+        }
+    }
+]
