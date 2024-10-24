@@ -224,6 +224,7 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 
 if os.environ.get('DEBUG', 'False') == 'True':
+        STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
         EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Default to console
         if os.environ.get('USE_REAL_EMAILS', 'False') == 'True':
             EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
