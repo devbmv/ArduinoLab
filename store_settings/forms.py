@@ -21,6 +21,10 @@ class PaymentSettingsForm(forms.ModelForm):
     class Meta:
         model = PaymentSettings
         fields = ['stripe_public_key', 'stripe_secret_key', 'paypal_client_id', 'paypal_client_secret']
+        widgets = {
+            'stripe_secret_key': forms.PasswordInput(render_value=True),
+            'paypal_client_secret': forms.PasswordInput(render_value=True),
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

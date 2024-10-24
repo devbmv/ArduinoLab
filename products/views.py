@@ -1,30 +1,31 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Microcontroller, Manufacturer, Peripheral, Features
-from .forms import MicrocontrollerForm, ManufacturerForm, PeripheralForm, FeaturesForm
+from .models import Microcontroller, Family
+from .forms import MicrocontrollerForm
 from django.db.models.functions import Lower
 
 from django.db.models import Q
-
-# Display all microcontrollers
 
 
 def all_microcontrollers(request):
     """View to display all microcontrollers with optional sorting and search functionality."""
     microcontrollers = Microcontroller.objects.all()
+
     query = None
-    categories = None
+    selected_categories = None
     sort = None
     direction = None
 
     if request.GET:
+        # Handle sorting
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
             if sortkey == 'name':
                 sortkey = 'lower_name'
-                microcontrollers = microcontrollers.annotate(lower_name=Lower('name'))
+                microcontrollers = microcontrollers.annotate(
+                    lower_name=Lower('name'))
             if sortkey == 'category':
                 sortkey = 'category__name'
             if 'direction' in request.GET:
@@ -33,18 +34,23 @@ def all_microcontrollers(request):
                     sortkey = f'-{sortkey}'
             microcontrollers = microcontrollers.order_by(sortkey)
 
+        # Handle category filtering
         if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            microcontrollers = microcontrollers.filter(category__name__in=categories)
-            categories = Manufacturer.objects.filter(name__in=categories)
+            selected_categories = request.GET['category'].split(',')
+            print(selected_categories)
+            microcontrollers = microcontrollers.filter(name__icontains=selected_categories[0])
 
+
+        # Handle search functionality
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             microcontrollers = microcontrollers.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -52,7 +58,7 @@ def all_microcontrollers(request):
     context = {
         'microcontrollers': microcontrollers,
         'search_term': query,
-        'current_categories': categories,
+        'current_categories': selected_categories,  # Updated name for clarity
         'current_sorting': current_sorting,
     }
     return render(request, 'products/microcontrollers.html', context)
@@ -81,17 +87,9 @@ def add_microcontroller(request):
 
     if request.method == 'POST':
         microcontroller_form = MicrocontrollerForm(request.POST)
-        manufacturer_form = ManufacturerForm(request.POST)
-        peripheral_form = PeripheralForm(request.POST)
-        features_form = FeaturesForm(request.POST)
 
-        if microcontroller_form.is_valid() and manufacturer_form.is_valid() and peripheral_form.is_valid() and features_form.is_valid():
+        if microcontroller_form.is_valid():
             microcontroller = microcontroller_form.save()
-            manufacturer_form.save()
-            peripheral_form.save()
-            features = features_form.save(commit=False)
-            features.microcontroller = microcontroller
-            features.save()
             messages.success(request, 'Microcontroller successfully added!')
             return redirect(reverse('microcontroller_detail', args=[microcontroller.id]))
         else:
@@ -99,15 +97,9 @@ def add_microcontroller(request):
                 request, 'Failed to add the microcontroller. Please ensure the form is valid.')
     else:
         microcontroller_form = MicrocontrollerForm()
-        manufacturer_form = ManufacturerForm()
-        peripheral_form = PeripheralForm()
-        features_form = FeaturesForm()
 
     context = {
         'form': microcontroller_form,
-        'manufacturer_form': manufacturer_form,
-        'peripheral_form': peripheral_form,
-        'features_form': features_form
     }
     return render(request, 'products/add_product.html', context)
 

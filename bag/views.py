@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, HttpResponse, get_object
 from django.contrib import messages
 from bag.contexts import bag_contents
 
-from products.models import Category,Features,Microcontroller,Manufacturer,MicrocontrollerFamily
+from products.models import Microcontroller, Family
 
 # Create your views here.
 

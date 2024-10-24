@@ -1,7 +1,4 @@
 from django import forms
-from .models import Microcontroller, Peripheral, Manufacturer, Features
-
-from django import forms
 from .models import Microcontroller
 
 
@@ -26,59 +23,41 @@ class MicrocontrollerForm(forms.ModelForm):
             'image'
         ]
         widgets = {
-            # Corrected from 'skyu' to 'sku'
-            'sku': forms.TextInput(attrs={'class': 'form-control'}),
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'sku': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter SKU'}),
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Microcontroller Name'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
+
+            # Use Select for bit_width as it now has choices
             'bit_width': forms.Select(attrs={'class': 'form-control'}),
-            'cpu_architecture': forms.TextInput(attrs={'class': 'form-control'}),
-            'max_frequency_mhz': forms.NumberInput(attrs={'class': 'form-control'}),
-            'ram_kb': forms.NumberInput(attrs={'class': 'form-control'}),
-            'flash_memory_kb': forms.NumberInput(attrs={'class': 'form-control'}),
-            'power_consumption_mw': forms.NumberInput(attrs={'class': 'form-control'}),
+
+            # Use Select for cpu_architecture since it now has defined choices
+            'cpu_architecture': forms.Select(attrs={'class': 'form-control'}),
+
+            'max_frequency_mhz': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter Max Frequency (MHz)'}),
+
+            # Use Select for RAM size
+            'ram_kb': forms.Select(attrs={'class': 'form-control'}),
+
+            # Use Select for Flash memory size
+            'flash_memory_kb': forms.Select(attrs={'class': 'form-control'}),
+
+            'power_consumption_mw': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Power Consumption in mW'}),
             'package_type': forms.Select(attrs={'class': 'form-control'}),
-            'description': forms.Textarea(attrs={'class': 'form-control'}),
-            'price': forms.NumberInput(attrs={'class': 'form-control'}),
-            'rating': forms.NumberInput(attrs={'class': 'form-control'}),
-            # Corrected to URLInput
-            'image_url': forms.URLInput(attrs={'class': 'form-control'}),
-            # Corrected to FileInput
+            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter description', 'rows': 3}),
+            'price': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter Price'}),
+            'rating': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter Rating'}),
+            'image_url': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Enter Image URL'}),
             'image': forms.FileInput(attrs={'class': 'form-control'}),
         }
 
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if not name:
+            raise forms.ValidationError("Microcontroller name is required.")
+        return name
 
-# Form for Peripheral Model
-class PeripheralForm(forms.ModelForm):
-    class Meta:
-        model = Peripheral
-        fields = ['name', 'description']
-        widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'description': forms.Textarea(attrs={'class': 'form-control'}),
-        }
-
-# Form for Manufacturer Model
-
-
-class ManufacturerForm(forms.ModelForm):
-    class Meta:
-        model = Manufacturer
-        fields = ['name', 'website']
-        widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'website': forms.URLInput(attrs={'class': 'form-control'}),
-        }
-
-# Form for Features Model
-
-
-class FeaturesForm(forms.ModelForm):
-    class Meta:
-        model = Features
-        fields = ['has_eeprom', 'has_adc', 'has_dac', 'pwm_pins']
-        widgets = {
-            'has_eeprom': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
-            'has_adc': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
-            'has_dac': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
-            'pwm_pins': forms.NumberInput(attrs={'class': 'form-control'}),
-        }
+    def clean_price(self):
+        price = self.cleaned_data.get('price')
+        if price is not None and price < 0:
+            raise forms.ValidationError("Price cannot be negative.")
+        return price

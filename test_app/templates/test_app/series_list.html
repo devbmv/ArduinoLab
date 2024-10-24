@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Seriilor</title>
+</head>
+<body>
+    <h1>Lista Seriilor</h1>
+    <ul>
+        {% for serie in series %}
+        <li>{{ serie.title }} - {{ serie.description }}</li>
+        {% empty %}
+        <li>Nu există serii adăugate încă.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'main_page' %}">Înapoi la pagina principală</a>
+</body>
+</html>

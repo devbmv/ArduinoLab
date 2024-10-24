@@ -47,13 +47,16 @@ INSTALLED_APPS = [
     'products',
     'bag',
     'checkout',
-    'store_settings',
     'profiles',
+    'store_settings',
+    'test_app',
+    'django_extensions',
+
 
 
     # Other
+    'crispy_bootstrap4',
     'crispy_forms',
-    'crispy_bootstrap4',  # Make sure this is included
     'storages',
     'widget_tweaks',
 ]
@@ -92,6 +95,8 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
                 'store_settings.context_processors.global_store_settings',
+                'products.context_processors.global_microcontroller_context',
+
 
             ],
             'builtins': [
@@ -182,7 +187,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 if 'USE_AWS' in os.environ:
     # Cache control
@@ -200,7 +206,7 @@ if 'USE_AWS' in os.environ:
 
     # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'staticfiles'
+    STATICFILES_LOCATION = 'static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     MEDIAFILES_LOCATION = 'media'
 
@@ -209,18 +215,16 @@ if 'USE_AWS' in os.environ:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 
-# Stripe
-# FREE_DELIVERY_THRESHOLD = 50
-# STANDARD_DELIVERY_PERCENTAGE = 10
+
 STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Default to console
 
 
 if os.environ.get('DEBUG', 'False') == 'True':
+        EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Default to console
         if os.environ.get('USE_REAL_EMAILS', 'False') == 'True':
             EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
             EMAIL_USE_TLS = True
@@ -230,7 +234,7 @@ if os.environ.get('DEBUG', 'False') == 'True':
             EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
             DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
         else:
-            DEFAULT_FROM_EMAIL = 'maik_775@yahoo.com'
+            DEFAULT_FROM_EMAIL = 'arduino_lab@example.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True

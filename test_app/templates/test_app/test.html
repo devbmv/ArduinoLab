@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaugă Autor</title>
+</head>
+<body>
+    <h1>Adaugă un nou autor</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvează</button>
+    </form>
+
+    <a href="{% url 'authors_list' %}">Înapoi la lista de autori</a>
+</body>
+</html>

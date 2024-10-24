@@ -1,258 +1,353 @@
 [
+    
+    {
+        "model": "products.family",
+        "pk": 5,
+        "fields": {
+            "name": "MSP430"
+        }
+    },
+    {
+        "model": "products.family",
+        "pk": 6,
+        "fields": {
+            "name": "PIC"
+        }
+    },
+    {
+        "model": "products.family",
+        "pk": 7,
+        "fields": {
+            "name": "8051"
+        }
+    },
+    {
+        "model": "products.family",
+        "pk": 8,
+        "fields": {
+            "name": "RISC-V"
+        }
+    },
+    {
+        "model": "products.family",
+        "pk": 9,
+        "fields": {
+            "name": "LPC"
+        }
+    },
     {
         "model": "products.microcontroller",
         "pk": 1,
         "fields": {
-            "name": "Raspberry Pi 3 Model B+",
+            "sku": "MCU-001",
+            "name": "ATmega328P",
             "category": 1,
-            "bit_width": 32,
-            "cpu_architecture": "ARM Cortex-A53",
-            "max_frequency_mhz": 1400,
-            "ram_kb": 1024,
-            "flash_memory_kb": 0,
-            "power_consumption_mw": 500,
-            "package_type": "BGA",
-            "description": "A popular Raspberry Pi model.",
-            "price": "35",
+            "bit_width": 8,
+            "cpu_architecture": "AVR",
+            "max_frequency_mhz": 20.00,
+            "ram_kb": 2,
+            "flash_memory_kb": 32,
+            "power_consumption_mw": 100.50,
+            "package_type": "DIP",
+            "description": "Popular microcontroller used in Arduino Uno.",
+            "price": 2.50,
             "rating": 4.8,
-            "image": "arduino_nano.jpg",
-            "sku": "RPI1"
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/ATmega328P.jpg",
+            "image": null
         }
     },
     {
         "model": "products.microcontroller",
         "pk": 2,
         "fields": {
-            "name": "Raspberry Pi 4 Model B",
+            "sku": "MCU-002",
+            "name": "ATmega2560",
             "category": 1,
-            "bit_width": 64,
-            "cpu_architecture": "ARM Cortex-A72",
-            "max_frequency_mhz": 1500,
-            "ram_kb": 4096,
-            "flash_memory_kb": 0,
-            "power_consumption_mw": 600,
-            "package_type": "BGA",
-            "description": "Next generation Raspberry Pi.",
-            "price": "45",
-            "rating": 4.9,
-            "image": "arduino_nano.jpg",
-            "sku": "RPI2"
-        }
-    },
-    {
-        "model": "products.microcontroller",
-        "pk": 3,
-        "fields": {
-            "name": "STM32F407VG",
-            "category": 3,
-            "bit_width": 32,
-            "cpu_architecture": "ARM Cortex-M4",
-            "max_frequency_mhz": 168,
-            "ram_kb": 192,
-            "flash_memory_kb": 1024,
-            "power_consumption_mw": 100,
-            "package_type": "QFP",
-            "description": "High-performance STM32 MCU.",
-            "price": "15",
+            "bit_width": 8,
+            "cpu_architecture": "AVR",
+            "max_frequency_mhz": 16.00,
+            "ram_kb": 8,
+            "flash_memory_kb": 256,
+            "power_consumption_mw": 150.00,
+            "package_type": "TQFP",
+            "description": "Microcontroller used in Arduino Mega.",
+            "price": 3.50,
             "rating": 4.7,
-            "image": "arduino_nano.jpg",
-            "sku": "STM1"
-        }
-    },
-    {
-        "model": "products.microcontroller",
-        "pk": 4,
-        "fields": {
-            "name": "STM32F103C8T6",
-            "category": 3,
-            "bit_width": 32,
-            "cpu_architecture": "ARM Cortex-M3",
-            "max_frequency_mhz": 72,
-            "ram_kb": 20,
-            "flash_memory_kb": 64,
-            "power_consumption_mw": 50,
-            "package_type": "QFP",
-            "description": "Popular low-cost STM32 MCU.",
-            "price": "10",
-            "rating": 4.6,
-            "image": "arduino_nano.jpg",
-            "sku": "STM2"
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/ATmega2560.jpg",
+            "image": null
         }
     },
     {
         "model": "products.microcontroller",
         "pk": 5,
         "fields": {
-            "name": "ESP32-WROOM-32",
-            "category": 4,
+            "sku": "MCU-005",
+            "name": "STM32F103C8",
+            "category": 2,
             "bit_width": 32,
-            "cpu_architecture": "Xtensa LX6",
-            "max_frequency_mhz": 240,
-            "ram_kb": 520,
-            "flash_memory_kb": 4096,
-            "power_consumption_mw": 200,
-            "package_type": "QFP",
-            "description": "Wi-Fi and Bluetooth SoC.",
-            "price": "8",
-            "rating": 4.9,
-            "image": "arduino_nano.jpg",
-            "sku": "ESP1"
+            "cpu_architecture": "ARM Cortex-M3",
+            "max_frequency_mhz": 72.00,
+            "ram_kb": 20,
+            "flash_memory_kb": 64,
+            "power_consumption_mw": 200.00,
+            "package_type": "TSSOP",
+            "description": "General-purpose ARM microcontroller.",
+            "price": 3.00,
+            "rating": 4.7,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/STM32F103.jpg",
+            "image": null
         }
     },
     {
         "model": "products.microcontroller",
         "pk": 6,
         "fields": {
-            "name": "ESP8266",
-            "category": 4,
+            "sku": "MCU-006",
+            "name": "STM32H743ZI",
+            "category": 2,
             "bit_width": 32,
-            "cpu_architecture": "Xtensa L106",
-            "max_frequency_mhz": 160,
-            "ram_kb": 160,
+            "cpu_architecture": "ARM Cortex-M7",
+            "max_frequency_mhz": 480.00,
+            "ram_kb": 1024,
+            "flash_memory_kb": 2048,
+            "power_consumption_mw": 500.00,
+            "package_type": "BGA",
+            "description": "High-performance STM32 microcontroller.",
+            "price": 7.00,
+            "rating": 4.9,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/STM32H743ZI.jpg",
+            "image": null
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 3,
+        "fields": {
+            "sku": "MCU-003",
+            "name": "ESP32-WROOM",
+            "category": 3,
+            "bit_width": 32,
+            "cpu_architecture": "Xtensa",
+            "max_frequency_mhz": 240.00,
+            "ram_kb": 512,
             "flash_memory_kb": 4096,
-            "power_consumption_mw": 170,
+            "power_consumption_mw": 300.75,
             "package_type": "QFP",
-            "description": "Low-cost Wi-Fi module.",
-            "price": "5",
-            "rating": 4.7,
-            "image": "arduino_nano.jpg",
-            "sku": "ESP2"
+            "description": "WiFi and Bluetooth-capable microcontroller.",
+            "price": 5.00,
+            "rating": 4.9,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Espressif_ESP-WROOM-32.jpg",
+            "image": null
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 4,
+        "fields": {
+            "sku": "MCU-004",
+            "name": "ESP8266",
+            "category": 3,
+            "bit_width": 32,
+            "cpu_architecture": "Xtensa",
+            "max_frequency_mhz": 160.00,
+            "ram_kb": 160,
+            "flash_memory_kb": 1024,
+            "power_consumption_mw": 200.50,
+            "package_type": "QFP",
+            "description": "Low-cost WiFi microcontroller.",
+            "price": 3.00,
+            "rating": 4.6,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/ESP8266.jpg",
+            "image": null
         }
     },
     {
         "model": "products.microcontroller",
         "pk": 7,
         "fields": {
-            "name": "ATmega328P",
-            "category": 2,
-            "bit_width": 8,
-            "cpu_architecture": "AVR",
-            "max_frequency_mhz": 16,
-            "ram_kb": 2,
-            "flash_memory_kb": 32,
-            "power_consumption_mw": 50,
-            "package_type": "DIP",
-            "description": "Used in Arduino Uno.",
-            "price": "3",
-            "rating": 4.5,
-            "image": "arduino_nano.jpg",
-            "sku": "AVR1"
+            "sku": "MCU-007",
+            "name": "Raspberry Pi Pico",
+            "category": 4,
+            "bit_width": 32,
+            "cpu_architecture": "ARM Cortex-M0+",
+            "max_frequency_mhz": 133.00,
+            "ram_kb": 264,
+            "flash_memory_kb": 2048,
+            "power_consumption_mw": 600.00,
+            "package_type": "QFP",
+            "description": "Raspberry Pi's microcontroller board built with RP2040 chip.",
+            "price": 4.00,
+            "rating": 4.9,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Raspberry_Pi_Pico.jpg",
+            "image": null
         }
     },
     {
         "model": "products.microcontroller",
         "pk": 8,
         "fields": {
-            "name": "ATmega2560",
-            "category": 2,
+            "sku": "MCU-008",
+            "name": "Raspberry Pi Zero W",
+            "category": 4,
+            "bit_width": 32,
+            "cpu_architecture": "ARM11",
+            "max_frequency_mhz": 1000.00,
+            "ram_kb": 512000,
+            "flash_memory_kb": 16384,
+            "power_consumption_mw": 500.00,
+            "package_type": "BGA",
+            "description": "Compact Raspberry Pi board with wireless capability.",
+            "price": 10.00,
+            "rating": 4.8,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Raspberry_Pi_Zero_W.jpg",
+            "image": null
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 9,
+        "fields": {
+            "sku": "MCU-009",
+            "name": "MSP430G2553",
+            "category": 5,
+            "bit_width": 16,
+            "cpu_architecture": "MSP430",
+            "max_frequency_mhz": 16.00,
+            "ram_kb": 0.5,
+            "flash_memory_kb": 16,
+            "power_consumption_mw": 50.00,
+            "package_type": "DIP",
+            "description": "Low-power microcontroller from Texas Instruments.",
+            "price": 1.50,
+            "rating": 4.5,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/MSP430.jpg",
+            "image": null
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 10,
+        "fields": {
+            "sku": "MCU-010",
+            "name": "PIC16F877A",
+            "category": 6,
+            "bit_width": 8,
+            "cpu_architecture": "PIC",
+            "max_frequency_mhz": 20.00,
+            "ram_kb": 0.4,
+            "flash_memory_kb": 14,
+            "power_consumption_mw": 120.00,
+            "package_type": "DIP",
+            "description": "Popular 8-bit microcontroller from Microchip.",
+            "price": 2.00,
+            "rating": 4.6,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/PIC16F877A.jpg",
+            "image": null
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 11,
+        "fields": {
+            "sku": "MCU-011",
+            "name": "8051",
+            "category": 7,
+            "bit_width": 8,
+            "cpu_architecture": "8051",
+            "max_frequency_mhz": 12.00,
+            "ram_kb": 0.128,
+            "flash_memory_kb": 4,
+            "power_consumption_mw": 80.00,
+            "package_type": "QFP",
+            "description": "Classic microcontroller still used in some embedded systems.",
+            "price": 1.80,
+            "rating": 4.4,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/8051.jpg",
+            "image": null
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 12,
+        "fields": {
+            "sku": "MCU-012",
+            "name": "ESP32-S2",
+            "category": 3,
+            "bit_width": 32,
+            "cpu_architecture": "Xtensa",
+            "max_frequency_mhz": 240.00,
+            "ram_kb": 320,
+            "flash_memory_kb": 4096,
+            "power_consumption_mw": 250.00,
+            "package_type": "QFP",
+            "description": "Single-core variant of ESP32 for IoT applications.",
+            "price": 4.50,
+            "rating": 4.7,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/ESP32-S2.jpg",
+            "image": null
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 13,
+        "fields": {
+            "sku": "MCU-013",
+            "name": "RISC-V RV32I",
+            "category": 8,
+            "bit_width": 32,
+            "cpu_architecture": "RISC-V",
+            "max_frequency_mhz": 50.00,
+            "ram_kb": 16,
+            "flash_memory_kb": 64,
+            "power_consumption_mw": 120.00,
+            "package_type": "QFP",
+            "description": "RISC-V based microcontroller for low-power applications.",
+            "price": 2.80,
+            "rating": 4.5,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/RISC-V_Logo.jpg",
+            "image": null
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 14,
+        "fields": {
+            "sku": "MCU-014",
+            "name": "LPC1768",
+            "category": 9,
+            "bit_width": 32,
+            "cpu_architecture": "ARM Cortex-M3",
+            "max_frequency_mhz": 100.00,
+            "ram_kb": 64,
+            "flash_memory_kb": 512,
+            "power_consumption_mw": 220.00,
+            "package_type": "QFP",
+            "description": "ARM-based microcontroller by NXP, widely used in mbed platform.",
+            "price": 5.00,
+            "rating": 4.8,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/LPC1768.jpg",
+            "image": null
+        }
+    },
+    {
+        "model": "products.microcontroller",
+        "pk": 15,
+        "fields": {
+            "sku": "MCU-015",
+            "name": "ATtiny85",
+            "category": 1,
             "bit_width": 8,
             "cpu_architecture": "AVR",
-            "max_frequency_mhz": 16,
-            "ram_kb": 8,
-            "flash_memory_kb": 256,
-            "power_consumption_mw": 100,
-            "package_type": "TQFP",
-            "description": "Used in Arduino Mega.",
-            "price": "12",
-            "rating": 4.6,
-            "image": "arduino_nano.jpg",
-            "sku": "AVR2"
-        }
-    },
-    {
-        "model": "products.manufacturer",
-        "pk": 1,
-        "fields": {
-            "name": "Raspberry Pi",
-            "website": "https://www.raspberrypi.org"
-        }
-    },
-    {
-        "model": "products.manufacturer",
-        "pk": 2,
-        "fields": {
-            "name": "Atmel (AVR)",
-            "website": "https://www.microchip.com"
-        }
-    },
-    {
-        "model": "products.manufacturer",
-        "pk": 3,
-        "fields": {
-            "name": "STMicroelectronics",
-            "website": "https://www.st.com"
-        }
-    },
-    {
-        "model": "products.manufacturer",
-        "pk": 4,
-        "fields": {
-            "name": "Espressif Systems",
-            "website": "https://www.espressif.com"
-        }
-    },
-    {
-        "model": "products.microcontrollerfamily",
-        "pk": 1,
-        "fields": {
-            "name": "Raspberry Pi Family",
-            "manufacturer": 1
-        }
-    },
-    {
-        "model": "products.microcontrollerfamily",
-        "pk": 2,
-        "fields": {
-            "name": "AVR Family",
-            "manufacturer": 2
-        }
-    },
-    {
-        "model": "products.microcontrollerfamily",
-        "pk": 3,
-        "fields": {
-            "name": "STM32 Family",
-            "manufacturer": 3
-        }
-    },
-    {
-        "model": "products.microcontrollerfamily",
-        "pk": 4,
-        "fields": {
-            "name": "ESP Family",
-            "manufacturer": 4
-        }
-    },
-    {
-        "model": "products.microcontrollersubfamily",
-        "pk": 1,
-        "fields": {
-            "name": "Raspberry Pi 3",
-            "family": 1
-        }
-    },
-    {
-        "model": "products.microcontrollersubfamily",
-        "pk": 2,
-        "fields": {
-            "name": "AVR ATmega",
-            "family": 2
-        }
-    },
-    {
-        "model": "products.microcontrollersubfamily",
-        "pk": 3,
-        "fields": {
-            "name": "STM32 F4",
-            "family": 3
-        }
-    },
-    {
-        "model": "products.microcontrollersubfamily",
-        "pk": 4,
-        "fields": {
-            "name": "ESP32",
-            "family": 4
+            "max_frequency_mhz": 20.00,
+            "ram_kb": 0.512,
+            "flash_memory_kb": 8,
+            "power_consumption_mw": 50.00,
+            "package_type": "DIP",
+            "description": "Tiny 8-bit microcontroller used in small projects.",
+            "price": 1.20,
+            "rating": 4.5,
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/ATtiny85.jpg",
+            "image": null
         }
     }
 ]

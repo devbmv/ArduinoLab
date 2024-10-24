@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Cărților</title>
+</head>
+<body>
+    <h1>Lista Cărților</h1>
+    <ul>
+        {% for book in books %}
+        <li>{{ book.title }} (publicată la: {{ book.publication_date }})</li>
+        {% empty %}
+        <li>Nu există cărți adăugate încă.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'main_page' %}">Înapoi la pagina principală</a>
+</body>
+</html>
