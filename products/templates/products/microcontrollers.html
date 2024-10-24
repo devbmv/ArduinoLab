@@ -57,14 +57,22 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if mk.image %}
+                                <!-- Verifică dacă există imagine încărcată -->
                                 <a href="{% url 'microcontroller_detail' mk.id %}">
                                     <img class="card-img-top img-fluid" src="{{ mk.image.url }}" alt="{{ mk.name }}">
                                 </a>
-                                {% else %}
+                            {% elif mk.image_url %}
+                                <!-- Dacă nu există imagine încărcată, dar există un URL de imagine -->
+                                <a href="{% url 'microcontroller_detail' mk.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ mk.image_url }}" alt="{{ mk.name }}">
+                                </a>
+                            {% else %}
+                                <!-- Dacă nu există nici imagine încărcată, nici URL, folosește o imagine de rezervă -->
                                 <a href="{% url 'microcontroller_detail' mk.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ mk.name }}">
                                 </a>
-                                {% endif %}
+                            {% endif %}
+                            
                                 <div class="card-body pb-0">
                                     <p class="mb-0">{{ mk.name }}</p>
                                 </div>

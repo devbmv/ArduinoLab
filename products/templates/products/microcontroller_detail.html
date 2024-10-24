@@ -16,14 +16,19 @@
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="image-container my-5">
                     {% if microcontroller.image %}
-                        <a href="{{ microcontroller.image.url }}" target="_blank">
-                            <img class="card-img-top img-fluid" src="{{ microcontroller.image.url }}" alt="{{ microcontroller.name }}">
-                        </a>
-                        {% else %}
-                        <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ microcontroller.name }}">
-                        </a>
-                    {% endif %}
+                    <a href="{{ microcontroller.image.url }}" target="_blank">
+                        <img class="card-img-top img-fluid" src="{{ microcontroller.image.url }}" alt="{{ microcontroller.name }}">
+                    </a>
+                {% elif microcontroller.image_url %}
+                    <a href="{{ microcontroller.image_url }}" target="_blank">
+                        <img class="card-img-top img-fluid" src="{{ microcontroller.image_url }}" alt="{{ microcontroller.name }}">
+                    </a>
+                {% else %}
+                    <a href="">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ microcontroller.name }}">
+                    </a>
+                {% endif %}
+                
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
