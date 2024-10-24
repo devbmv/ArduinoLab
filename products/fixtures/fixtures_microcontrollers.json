@@ -1,40 +1,68 @@
 [
     
-    {
-        "model": "products.family",
-        "pk": 5,
-        "fields": {
-            "name": "MSP430"
-        }
-    },
-    {
-        "model": "products.family",
-        "pk": 6,
-        "fields": {
-            "name": "PIC"
-        }
-    },
-    {
-        "model": "products.family",
-        "pk": 7,
-        "fields": {
-            "name": "8051"
-        }
-    },
-    {
-        "model": "products.family",
-        "pk": 8,
-        "fields": {
-            "name": "RISC-V"
-        }
-    },
-    {
-        "model": "products.family",
-        "pk": 9,
-        "fields": {
-            "name": "LPC"
-        }
-    },
+        {
+            "model": "products.family",
+            "pk": 1,
+            "fields": {
+                "name": "AVR"
+            }
+        },
+        {
+            "model": "products.family",
+            "pk": 2,
+            "fields": {
+                "name": "ARM"
+            }
+        },
+        {
+            "model": "products.family",
+            "pk": 3,
+            "fields": {
+                "name": "ESP"
+            }
+        },
+        {
+            "model": "products.family",
+            "pk": 4,
+            "fields": {
+                "name": "Raspberry Pi"
+            }
+        },
+        {
+            "model": "products.family",
+            "pk": 5,
+            "fields": {
+                "name": "MSP430"
+            }
+        },
+        {
+            "model": "products.family",
+            "pk": 6,
+            "fields": {
+                "name": "PIC"
+            }
+        },
+        {
+            "model": "products.family",
+            "pk": 7,
+            "fields": {
+                "name": "8051"
+            }
+        },
+        {
+            "model": "products.family",
+            "pk": 8,
+            "fields": {
+                "name": "RISC-V"
+            }
+        },
+        {
+            "model": "products.family",
+            "pk": 9,
+            "fields": {
+                "name": "LPC"
+            }
+        },    
     {
         "model": "products.microcontroller",
         "pk": 1,
