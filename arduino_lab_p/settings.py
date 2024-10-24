@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'profiles',
     'store_settings',
     'test_app',
-    'django_extensions',
 
 
 
@@ -59,6 +58,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'storages',
     'widget_tweaks',
+    # 'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -183,7 +183,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -214,6 +216,7 @@ if 'USE_AWS' in os.environ:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 STRIPE_CURRENCY = 'eur'
@@ -224,7 +227,6 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 
 if os.environ.get('DEBUG', 'False') == 'True':
-        STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
         EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Default to console
         if os.environ.get('USE_REAL_EMAILS', 'False') == 'True':
             EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
