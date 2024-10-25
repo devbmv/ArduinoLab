@@ -107,7 +107,7 @@
     },
     {
         "model": "products.microcontroller",
-        "pk": 5,
+        "pk": 3,
         "fields": {
             "sku": "MCU-005",
             "name": "STM32F103C8",
@@ -128,7 +128,7 @@
     },
     {
         "model": "products.microcontroller",
-        "pk": 6,
+        "pk": 4,
         "fields": {
             "sku": "MCU-006",
             "name": "STM32H743ZI",
@@ -149,7 +149,7 @@
     },
     {
         "model": "products.microcontroller",
-        "pk": 3,
+        "pk": 5,
         "fields": {
             "sku": "MCU-003",
             "name": "ESP32-WROOM",
@@ -170,7 +170,7 @@
     },
     {
         "model": "products.microcontroller",
-        "pk": 4,
+        "pk": 6,
         "fields": {
             "sku": "MCU-004",
             "name": "ESP8266",
@@ -354,27 +354,6 @@
             "price": 5.00,
             "rating": 4.8,
             "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/LPC1768.jpg",
-            "image": null
-        }
-    },
-    {
-        "model": "products.microcontroller",
-        "pk": 15,
-        "fields": {
-            "sku": "MCU-015",
-            "name": "ATtiny85",
-            "category": 1,
-            "bit_width": 8,
-            "cpu_architecture": "AVR",
-            "max_frequency_mhz": 20.00,
-            "ram_kb": 0.512,
-            "flash_memory_kb": 8,
-            "power_consumption_mw": 50.00,
-            "package_type": "DIP",
-            "description": "Tiny 8-bit microcontroller used in small projects.",
-            "price": 1.20,
-            "rating": 4.5,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/ATtiny85.jpg",
             "image": null
         }
     }
