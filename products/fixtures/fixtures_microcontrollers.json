@@ -80,7 +80,7 @@
             "description": "Popular microcontroller used in Arduino Uno.",
             "price": 2.50,
             "rating": 4.8,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/ATmega328P.jpg",
+            "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/nano.jpg",
             "image": null
         }
     },
@@ -101,7 +101,7 @@
             "description": "Microcontroller used in Arduino Mega.",
             "price": 3.50,
             "rating": 4.7,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/ATmega2560.jpg",
+            "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/mega.webp",
             "image": null
         }
     },
@@ -122,7 +122,7 @@
             "description": "General-purpose ARM microcontroller.",
             "price": 3.00,
             "rating": 4.7,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/STM32F103.jpg",
+            "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/STM32.webp",
             "image": null
         }
     },
@@ -143,7 +143,7 @@
             "description": "High-performance STM32 microcontroller.",
             "price": 7.00,
             "rating": 4.9,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/STM32H743ZI.jpg",
+            "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/STM32.webp",
             "image": null
         }
     },
@@ -164,7 +164,7 @@
             "description": "WiFi and Bluetooth-capable microcontroller.",
             "price": 5.00,
             "rating": 4.9,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Espressif_ESP-WROOM-32.jpg",
+            "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/esp32.jpeg",
             "image": null
         }
     },
@@ -185,7 +185,7 @@
             "description": "Low-cost WiFi microcontroller.",
             "price": 3.00,
             "rating": 4.6,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/ESP8266.jpg",
+            "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/esp32.jpeg",
             "image": null
         }
     },
@@ -206,7 +206,7 @@
             "description": "Raspberry Pi's microcontroller board built with RP2040 chip.",
             "price": 4.00,
             "rating": 4.9,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Raspberry_Pi_Pico.jpg",
+            "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/rpi.png",
             "image": null
         }
     },
@@ -227,7 +227,7 @@
             "description": "Compact Raspberry Pi board with wireless capability.",
             "price": 10.00,
             "rating": 4.8,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Raspberry_Pi_Zero_W.jpg",
+            "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/rpi.png",
             "image": null
         }
     },
@@ -248,34 +248,13 @@
             "description": "Low-power microcontroller from Texas Instruments.",
             "price": 1.50,
             "rating": 4.5,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/MSP430.jpg",
+            "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/MSP430G2553.png",
             "image": null
         }
     },
     {
         "model": "products.microcontroller",
         "pk": 10,
-        "fields": {
-            "sku": "MCU-010",
-            "name": "PIC16F877A",
-            "category": 6,
-            "bit_width": 8,
-            "cpu_architecture": "PIC",
-            "max_frequency_mhz": 20.00,
-            "ram_kb": 0.4,
-            "flash_memory_kb": 14,
-            "power_consumption_mw": 120.00,
-            "package_type": "DIP",
-            "description": "Popular 8-bit microcontroller from Microchip.",
-            "price": 2.00,
-            "rating": 4.6,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/PIC16F877A.jpg",
-            "image": null
-        }
-    },
-    {
-        "model": "products.microcontroller",
-        "pk": 11,
         "fields": {
             "sku": "MCU-011",
             "name": "8051",
@@ -290,13 +269,13 @@
             "description": "Classic microcontroller still used in some embedded systems.",
             "price": 1.80,
             "rating": 4.4,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/8051.jpg",
+            "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/8051.png",
             "image": null
         }
     },
     {
         "model": "products.microcontroller",
-        "pk": 12,
+        "pk": 11,
         "fields": {
             "sku": "MCU-012",
             "name": "ESP32-S2",
@@ -311,49 +290,7 @@
             "description": "Single-core variant of ESP32 for IoT applications.",
             "price": 4.50,
             "rating": 4.7,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/ESP32-S2.jpg",
-            "image": null
-        }
-    },
-    {
-        "model": "products.microcontroller",
-        "pk": 13,
-        "fields": {
-            "sku": "MCU-013",
-            "name": "RISC-V RV32I",
-            "category": 8,
-            "bit_width": 32,
-            "cpu_architecture": "RISC-V",
-            "max_frequency_mhz": 50.00,
-            "ram_kb": 16,
-            "flash_memory_kb": 64,
-            "power_consumption_mw": 120.00,
-            "package_type": "QFP",
-            "description": "RISC-V based microcontroller for low-power applications.",
-            "price": 2.80,
-            "rating": 4.5,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/RISC-V_Logo.jpg",
-            "image": null
-        }
-    },
-    {
-        "model": "products.microcontroller",
-        "pk": 14,
-        "fields": {
-            "sku": "MCU-014",
-            "name": "LPC1768",
-            "category": 9,
-            "bit_width": 32,
-            "cpu_architecture": "ARM Cortex-M3",
-            "max_frequency_mhz": 100.00,
-            "ram_kb": 64,
-            "flash_memory_kb": 512,
-            "power_consumption_mw": 220.00,
-            "package_type": "QFP",
-            "description": "ARM-based microcontroller by NXP, widely used in mbed platform.",
-            "price": 5.00,
-            "rating": 4.8,
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/LPC1768.jpg",
+            "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/esp32.jpeg",
             "image": null
         }
     }
