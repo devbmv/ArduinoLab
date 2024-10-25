@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+from django.utils import timezone
 
 
 class Family(models.Model):
@@ -99,9 +101,12 @@ class Microcontroller(models.Model):
 
     # URL for an image representing the microcontroller (optional)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True)
     # Image file upload (optional)
     image = models.ImageField(null=True, blank=True)
-
+    def get_absolute_url(self):
+            # Uses the 'microcontroller_detail' URL pattern, which expects 'microcontroller_id' as an argument
+            return reverse('microcontroller_detail', args=[str(self.id)])
     def __str__(self):
         return self.name

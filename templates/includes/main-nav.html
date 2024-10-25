@@ -18,26 +18,23 @@
                 <a href="{% url 'all_microcontrollers' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'all_microcontrollers' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
                 <a href="{% url 'all_microcontrollers' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
-                <a href="{% url 'all_microcontrollers' %}" class="dropdown-item">All all_microcontrollers</a>
+                <a href="{% url 'all_microcontrollers' %}" class="dropdown-item">All Microcontrollers</a>
             </div>
         </li>
 
-        <ul class="navbar-nav w-auto mx-auto">
-            {% for family_name, microcontrollers in family_microcontrollers.items %}
-                <li class="nav-item dropdown">
-                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="{{ family_name }}-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ family_name }}
-                    </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="{{ family_name }}-link">
-                        {% for microcontroller in microcontrollers %}
-                            <a href="{% url 'all_microcontrollers' %}?category={{ microcontroller.name }}" class="dropdown-item">{{ microcontroller.name }}</a>
-                        {% endfor %}
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-
-
+        <!-- Dynamic Microcontroller Families Dropdown -->
+        {% for family_name, microcontrollers in family_microcontrollers.items %}
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="{{ family_name }}-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ family_name }}
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="{{ family_name }}-link">
+                    {% for microcontroller in microcontrollers %}
+                        <a href="{% url 'all_microcontrollers' %}?category={{ microcontroller.name }}" class="dropdown-item">{{ microcontroller.name }}</a>
+                    {% endfor %}
+                </div>
+            </li>
+        {% endfor %}
 
         <!-- Special Offers Dropdown -->
         <li class="nav-item dropdown">
@@ -51,5 +48,12 @@
                 <a href="{% url 'all_microcontrollers' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
             </div>
         </li>
+        
+        <!-- Arduino Docs Link -->
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="https://www.arduino.cc/" target="_blank" rel="noopener noreferrer">
+                Arduino Docs
+            </a>
+        </li>
     </ul>
-</div> 
+</div>

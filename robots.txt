@@ -1,0 +1,8 @@
+# Allow all bots to access the site
+User-agent: *
+Disallow: /admin/  # Prevent access to Django admin
+Disallow: /private/  # Example of a private directory, if any
+Allow: /
+
+# Specify the location of the sitemap
+Sitemap: https://arduino-lab-project-ab20ce1e1a15.herokuapp.com/sitemap.xml

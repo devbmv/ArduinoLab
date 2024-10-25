@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'profiles',
     'store_settings',
     'test_app',
+    'django.contrib.sitemaps',
 
 
 
@@ -58,7 +59,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'storages',
     'widget_tweaks',
-    # 'django_extensions',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

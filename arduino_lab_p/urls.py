@@ -14,10 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from products.sitemaps import MicrocontrollerSitemap, StaticViewSitemap
 
+sitemaps = {
+    'microcontrollers': MicrocontrollerSitemap,
+    'static': StaticViewSitemap,
+} 
 urlpatterns = [
     path('', include('home.urls')),
     path('admin/', admin.site.urls),
@@ -28,4 +34,6 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
     path('store_settings/', include('store_settings.urls')),  # Include the routes from store_settings
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

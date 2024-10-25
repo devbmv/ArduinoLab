@@ -3,6 +3,7 @@ from .models import Microcontroller
 
 
 class MicrocontrollerForm(forms.ModelForm):
+    delete_image = forms.BooleanField(required=False, label="Delete existing image")
     class Meta:
         model = Microcontroller
         fields = [
@@ -20,7 +21,9 @@ class MicrocontrollerForm(forms.ModelForm):
             'price',
             'rating',
             'image_url',
-            'image'
+            'image',
+            'delete_image'  # adaugă câmpul delete_image în fields
+
         ]
         widgets = {
             'sku': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter SKU'}),
@@ -49,7 +52,17 @@ class MicrocontrollerForm(forms.ModelForm):
             'image_url': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Enter Image URL'}),
             'image': forms.FileInput(attrs={'class': 'form-control'}),
         }
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        
+        # Șterge imaginea dacă delete_image este bifat
+        if self.cleaned_data.get('delete_image') and instance.image:
+            instance.image.delete()  # Șterge imaginea din stocare
+            instance.image = None  # Setează câmpul imaginii pe None
 
+        if commit:
+            instance.save()
+        return instance
     def clean_name(self):
         name = self.cleaned_data.get('name')
         if not name:
