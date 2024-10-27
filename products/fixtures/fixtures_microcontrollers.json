@@ -39,30 +39,9 @@
             "model": "products.family",
             "pk": 6,
             "fields": {
-                "name": "PIC"
-            }
-        },
-        {
-            "model": "products.family",
-            "pk": 7,
-            "fields": {
                 "name": "8051"
             }
-        },
-        {
-            "model": "products.family",
-            "pk": 8,
-            "fields": {
-                "name": "RISC-V"
-            }
-        },
-        {
-            "model": "products.family",
-            "pk": 9,
-            "fields": {
-                "name": "LPC"
-            }
-        },    
+        }, 
     {
         "model": "products.microcontroller",
         "pk": 1,
@@ -81,7 +60,7 @@
             "price": 2.50,
             "rating": 4.8,
             "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/nano.jpg",
-            "image": null
+            "image": "nano.jpg"
         }
     },
     {
@@ -249,7 +228,7 @@
             "price": 1.50,
             "rating": 4.5,
             "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/MSP430G2553.png",
-            "image": null
+            "image": "MSP430G2553.jpg"
         }
     },
     {
@@ -258,7 +237,7 @@
         "fields": {
             "sku": "MCU-011",
             "name": "8051",
-            "category": 7,
+            "category": 6,
             "bit_width": 8,
             "cpu_architecture": "8051",
             "max_frequency_mhz": 12.00,
@@ -270,7 +249,7 @@
             "price": 1.80,
             "rating": 4.4,
             "image_url": "https://arduino-lab.s3.eu-north-1.amazonaws.com/media/8051.png",
-            "image": null
+            "image": "8051.jpg"
         }
     },
     {

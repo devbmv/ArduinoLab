@@ -1,0 +1,15 @@
+<script>
+/* 
+* prevent_scroll_script.html - file to be implemented in several places
+* on the site.
+*/
+
+/*jshint esversion: 6 */
+/*globals $:false */
+
+// Script to prevent scrolling when modal-like pages are displayed,
+// and to scroll to the top if by any chance the window would not be.
+$('body').css({'overflow-y': 'hidden'});
+$('html, body').animate({ scrollTop: 0 }, 'slow');
+
+</script>

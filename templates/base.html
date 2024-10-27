@@ -8,6 +8,25 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- SEO Meta Tags -->
+        <title>{{ store_settings.store_name }} - Quality Microcontrollers and Electronics</title>
+        <meta name="description" content="Explore our range of quality microcontrollers, from Arduino to ESP32 and more. Perfect for hobbyists, engineers, and professionals seeking reliable electronics components for their prototypes.">
+        <meta name="keywords" content="microcontrollers, Arduino, ESP32, electronics, development boards, sensors, robotics">
+        <meta name="author" content="{{ store_settings.store_name }}">
+
+        <!-- Open Graph Meta Tags for Social Sharing -->
+        <meta property="og:title" content="{{ store_settings.store_name }} - Quality Microcontrollers and Electronics">
+        <meta property="og:description" content="Find the best microcontrollers and development boards for your projects. Fast shipping and excellent customer support.">
+        <meta property="og:image" content="{{ MEDIA_URL }}media/homepage_background_cropped.jpg">
+        <meta property="og:url" content="https://arduino-lab-project-ab20ce1e1a15.herokuapp.com">
+        <meta property="og:type" content="website">
+        
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ store_settings.store_name }} - Microcontrollers for Every Project">
+        <meta name="twitter:description" content="Shop a wide range of microcontrollers, perfect for IoT, robotics, and embedded systems projects.">
+        <meta name="twitter:image" content="{{ MEDIA_URL }}media/homepage_background_cropped.jpg">
     {% endblock %}
 
     {% block extra_meta %}
@@ -18,7 +37,6 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
         <link rel="icon" href="{{ MEDIA_URL }}favicon/logo.png" type="image/x-icon">
-
     {% endblock %}
 
     {% block extra_css %}
@@ -122,7 +140,7 @@
 
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-black text-white">
-                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
+                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold }}!</h4>                
             </div>            
         </div>
         
@@ -161,5 +179,6 @@
     {% endblock %}
 
     
-  </body>
+</body>
+
 </html>
