@@ -12,8 +12,8 @@
         <!-- SEO Meta Tags -->
         <title>{{ store_settings.store_name }} - Quality Microcontrollers and Electronics</title>
         <meta name="description" content="Explore our range of quality microcontrollers, from Arduino to ESP32 and more. Perfect for hobbyists, engineers, and professionals seeking reliable electronics components for their prototypes.">
-        <meta name="keywords" content="microcontrollers, Arduino, ESP32, electronics, development boards, sensors, robotics">
-        <meta name="author" content="{{ store_settings.store_name }}">
+        <meta name="keywords" content="microcontrollers, Arduino, ESP32 ..., electronics, development boards, robotics">
+        <meta name="author" content="devbmv">
 
         <!-- Open Graph Meta Tags for Social Sharing -->
         <meta property="og:title" content="{{ store_settings.store_name }} - Quality Microcontrollers and Electronics">
@@ -172,11 +172,63 @@
     {% block content %}
     {% endblock %}
 
-    {% block postloadjs %}
-    <script type="text/javascript">
-        $('.toast').toast('show');
-    </script>
-    {% endblock %}
+{% block postloadjs %}
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        // Selectăm toate toast-urile
+        const toasts = document.querySelectorAll('.toast');
+
+        // Inițializăm toast-urile cu un delay definit în atributul data-delay
+        toasts.forEach(function(toast) {
+            $(toast).toast({
+                autohide: true,  // Setăm autohide la true
+                delay: 2000      // Delay definit în data-delay sau setăm un delay de 5 secunde
+            }).toast('show');   // Afișăm toast-ul
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const subscribeBtn = document.getElementById('subscribe-btn');
+
+        if (subscribeBtn) {
+            subscribeBtn.addEventListener('click', function() {
+                // Trimitem cererea AJAX la server
+                fetch("{% url 'toggle_newsletter' %}", {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({}),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        // Actualizează textul butonului în funcție de răspunsul primit
+                        if (data.subscribed) {
+                            subscribeBtn.innerText = 'Unsubscribe from Newsletter';
+                        } else {
+                            subscribeBtn.innerText = 'Subscribe to Newsletter';
+                        }
+
+                        // Reîncarcăm pagina pentru a afișa mesajul în toast-uri
+                        location.reload(); // Reîncarcă pagina pentru a afișa mesajul din backend
+                    } else {
+                        // Dacă este eroare, afișăm un mesaj de eroare
+                        alert('There was an error processing your request.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Something went wrong.');
+                });
+            });
+        }
+    });
+</script>
+{% endblock %}
+
+    
+    
 
     
 </body>

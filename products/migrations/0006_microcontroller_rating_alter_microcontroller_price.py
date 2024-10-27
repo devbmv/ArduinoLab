@@ -6,18 +6,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0005_microcontroller_price'),
+        ("products", "0005_microcontroller_price"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='microcontroller',
-            name='rating',
-            field=models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True),
+            model_name="microcontroller",
+            name="rating",
+            field=models.DecimalField(
+                blank=True, decimal_places=2, max_digits=6, null=True
+            ),
         ),
         migrations.AlterField(
-            model_name='microcontroller',
-            name='price',
-            field=models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True),
+            model_name="microcontroller",
+            name="price",
+            field=models.DecimalField(
+                blank=True, decimal_places=2, max_digits=6, null=True
+            ),
         ),
     ]

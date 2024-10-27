@@ -1,5 +1,4 @@
-"""
-WSGI config for arduino_lab_p project.
+"""WSGI config for arduino_lab_p project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +10,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'arduino_lab_p.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "arduino_lab_p.settings")
 
 application = get_wsgi_application()

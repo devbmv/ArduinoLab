@@ -1,5 +1,6 @@
 from .models import StoreSettings, PaymentSettings, ShippingSettings
 
+
 class StoreSettingsMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response

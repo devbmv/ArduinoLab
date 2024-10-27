@@ -10,5 +10,5 @@ def global_microcontroller_context(request):
         microcontrollers = Microcontroller.objects.filter(category=family)
         family_microcontrollers[family.name] = microcontrollers
     return {
-        'family_microcontrollers': family_microcontrollers,
+        "family_microcontrollers": family_microcontrollers,
     }

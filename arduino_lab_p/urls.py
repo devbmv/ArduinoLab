@@ -1,4 +1,4 @@
-"""arduino_lab_p URL Configuration
+"""arduino_lab_p URL Configuration.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -19,34 +19,46 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.shortcuts import render
+from errors.errors_view import (
+    handler404,
+    handler403,
+    handler500,
+    handler400,
+)  # Import the error handlers
+
 from products.sitemaps import MicrocontrollerSitemap, StaticViewSitemap
 
+# Define the sitemaps dictionary
 sitemaps = {
-    'microcontrollers': MicrocontrollerSitemap,
-    'static': StaticViewSitemap,
+    "microcontrollers": MicrocontrollerSitemap,
+    "static": StaticViewSitemap,
 }
 
-
-def custom_404(request, exception):
-    return render(request, '404.html', status=404)
-
-
-# URL patterns
 urlpatterns = [
-    path('', include('home.urls')),
-    path('admin/', admin.site.urls),
-    path('test/', include('test_app.urls')),
-    path('accounts/', include('allauth.urls')),
-    path('products/', include('products.urls')),
-    path('bag/', include('bag.urls')),
-    path('checkout/', include('checkout.urls')),
-    path('profile/', include('profiles.urls')),
-    path('store_settings/', include('store_settings.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
-         name='django.contrib.sitemaps.views.sitemap'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path("", include("home.urls")),  # Include URLs from home app
+    path("admin/", admin.site.urls),  # Admin site
+    path("test/", include("test_app.urls")),  # Include URLs from test_app
+    path("accounts/", include("allauth.urls")),  # Authentication (allauth)
+    path("products/", include("products.urls")),  # Product app URLs
+    path("bag/", include("bag.urls")),  # Shopping bag app URLs
+    path("checkout/", include("checkout.urls")),  # Checkout process
+    path("profile/", include("profiles.urls")),  # User profile URLs
+    path("store_settings/", include("store_settings.urls")),  # Store settings URLs
+    path(
+        "sitemap.xml",
+        sitemap,
+        {"sitemaps": sitemaps},
+        name="django.contrib.sitemaps.views.sitemap",
+    ),  # Sitemap URL
+] + static(
+    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+)  # Serving media files
+urlpatterns += static(
+    settings.STATIC_URL, document_root=settings.STATIC_ROOT
+)  # Serving static files
 
-
-handler404 = 'arduino_lab_p.urls.custom_404'
+# Register the error handlers
+handler404 = "errors.errors_view.handler404"
+handler403 = "errors.errors_view.handler403"
+handler500 = "errors.errors_view.handler500"
+handler400 = "errors.errors_view.handler400"

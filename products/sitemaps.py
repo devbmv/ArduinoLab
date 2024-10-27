@@ -3,6 +3,7 @@ from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
 from .models import Microcontroller  # Replace with your actual model
 
+
 class MicrocontrollerSitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.8
@@ -13,12 +14,13 @@ class MicrocontrollerSitemap(Sitemap):
     def lastmod(self, obj):
         return obj.updated_at  # Use the last modified date field in your model
 
+
 class StaticViewSitemap(Sitemap):
     priority = 0.5
-    changefreq = 'monthly'
+    changefreq = "monthly"
 
     def items(self):
-        return ['home', 'all_microcontrollers', 'all_microcontrollers']  
+        return ["home", "all_microcontrollers", "all_microcontrollers"]
 
     def location(self, item):
         return reverse(item)

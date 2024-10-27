@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0009_rename_subfamily_microcontroller_category'),
+        ("products", "0009_rename_subfamily_microcontroller_category"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='microcontroller',
-            name='sku',
+            model_name="microcontroller",
+            name="sku",
             field=models.CharField(blank=True, max_length=254, null=True),
         ),
     ]

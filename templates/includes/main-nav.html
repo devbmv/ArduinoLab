@@ -35,20 +35,30 @@
                 </div>
             </li>
         {% endfor %}
-
-        <!-- Special Offers Dropdown -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'all_microcontrollers' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
-                <a href="{% url 'all_microcontrollers' %}?category=deals" class="dropdown-item">Deals</a>
-                <a href="{% url 'all_microcontrollers' %}?category=clearance" class="dropdown-item">Clearance</a>
-                <a href="{% url 'all_microcontrollers' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
-            </div>
-        </li>
+<!-- Special Offers Dropdown -->
+<li class="nav-item dropdown">
+    <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Special Offers
+    </a>
+    <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+        <a href="{% url 'all_microcontrollers' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
+        <a href="{% url 'all_microcontrollers' %}?category=deals" class="dropdown-item">Deals</a>
+        <a href="{% url 'all_microcontrollers' %}?category=clearance" class="dropdown-item">Clearance</a>
+        <a href="{% url 'all_microcontrollers' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
+        <div class="dropdown-divider"></div> <!-- separator line -->
+        <a href="javascript:void(0);" id="subscribe-btn" class="dropdown-item">
+            {% if request.user.usersettings.receive_newsletter %}
+                Unsubscribe from Newsletter
+            {% else %}
+                Subscribe to Newsletter
+            {% endif %}
+        </a>
         
+    </div>
+</li>
+
+
+
         <!-- Arduino Docs Link -->
         <li class="nav-item">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="https://www.arduino.cc/" target="_blank" rel="noopener noreferrer">

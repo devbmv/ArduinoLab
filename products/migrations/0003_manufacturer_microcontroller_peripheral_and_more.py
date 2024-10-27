@@ -7,146 +7,274 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0002_auto_20200211_1303'),
+        ("products", "0002_auto_20200211_1303"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Manufacturer',
+            name="Manufacturer",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('website', models.URLField(blank=True, null=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("website", models.URLField(blank=True, null=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Microcontroller',
+            name="Microcontroller",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('model_name', models.CharField(max_length=100)),
-                ('bit_width', models.PositiveIntegerField(choices=[(8, '8-bit'), (16, '16-bit'), (32, '32-bit')])),
-                ('cpu_architecture', models.CharField(max_length=100)),
-                ('max_frequency_mhz', models.DecimalField(decimal_places=2, max_digits=6)),
-                ('ram_kb', models.PositiveIntegerField(help_text='RAM capacity in KB')),
-                ('flash_memory_kb', models.PositiveIntegerField(help_text='Flash memory capacity in KB')),
-                ('power_consumption_mw', models.DecimalField(decimal_places=2, help_text='Power consumption in milliwatts', max_digits=10)),
-                ('package_type', models.CharField(choices=[('DIP', 'DIP'), ('QFP', 'QFP'), ('BGA', 'BGA'), ('TSSOP', 'TSSOP')], max_length=50)),
-                ('description', models.TextField(blank=True, null=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("model_name", models.CharField(max_length=100)),
+                (
+                    "bit_width",
+                    models.PositiveIntegerField(
+                        choices=[(8, "8-bit"), (16, "16-bit"), (32, "32-bit")]
+                    ),
+                ),
+                ("cpu_architecture", models.CharField(max_length=100)),
+                (
+                    "max_frequency_mhz",
+                    models.DecimalField(decimal_places=2, max_digits=6),
+                ),
+                ("ram_kb", models.PositiveIntegerField(help_text="RAM capacity in KB")),
+                (
+                    "flash_memory_kb",
+                    models.PositiveIntegerField(
+                        help_text="Flash memory capacity in KB"
+                    ),
+                ),
+                (
+                    "power_consumption_mw",
+                    models.DecimalField(
+                        decimal_places=2,
+                        help_text="Power consumption in milliwatts",
+                        max_digits=10,
+                    ),
+                ),
+                (
+                    "package_type",
+                    models.CharField(
+                        choices=[
+                            ("DIP", "DIP"),
+                            ("QFP", "QFP"),
+                            ("BGA", "BGA"),
+                            ("TSSOP", "TSSOP"),
+                        ],
+                        max_length=50,
+                    ),
+                ),
+                ("description", models.TextField(blank=True, null=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Peripheral',
+            name="Peripheral",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('description', models.TextField(blank=True, null=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("description", models.TextField(blank=True, null=True)),
             ],
         ),
         migrations.AlterModelOptions(
-            name='category',
+            name="category",
             options={},
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='category',
+            model_name="product",
+            name="category",
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='description',
+            model_name="product",
+            name="description",
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='has_sizes',
+            model_name="product",
+            name="has_sizes",
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='image',
+            model_name="product",
+            name="image",
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='image_url',
+            model_name="product",
+            name="image_url",
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='rating',
+            model_name="product",
+            name="rating",
         ),
         migrations.AlterField(
-            model_name='category',
-            name='friendly_name',
+            model_name="category",
+            name="friendly_name",
             field=models.CharField(blank=True, max_length=255, null=True),
         ),
         migrations.AlterField(
-            model_name='category',
-            name='id',
-            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="category",
+            name="id",
+            field=models.BigAutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
         migrations.AlterField(
-            model_name='category',
-            name='name',
+            model_name="category",
+            name="name",
             field=models.CharField(max_length=255, null=True),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='id',
-            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="product",
+            name="id",
+            field=models.BigAutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='name',
+            model_name="product",
+            name="name",
             field=models.CharField(max_length=255),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='price',
+            model_name="product",
+            name="price",
             field=models.DecimalField(decimal_places=2, max_digits=10),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='sku',
+            model_name="product",
+            name="sku",
             field=models.CharField(max_length=100, null=True, unique=True),
         ),
         migrations.CreateModel(
-            name='Features',
+            name="Features",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('has_eeprom', models.BooleanField(default=False)),
-                ('has_adc', models.BooleanField(default=False)),
-                ('has_dac', models.BooleanField(default=False)),
-                ('pwm_pins', models.PositiveIntegerField(default=0)),
-                ('microcontroller', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='features', to='products.microcontroller')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("has_eeprom", models.BooleanField(default=False)),
+                ("has_adc", models.BooleanField(default=False)),
+                ("has_dac", models.BooleanField(default=False)),
+                ("pwm_pins", models.PositiveIntegerField(default=0)),
+                (
+                    "microcontroller",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="features",
+                        to="products.microcontroller",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='MicrocontrollerFamily',
+            name="MicrocontrollerFamily",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('manufacturer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='families', to='products.manufacturer')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                (
+                    "manufacturer",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="families",
+                        to="products.manufacturer",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='MicrocontrollerSubfamily',
+            name="MicrocontrollerSubfamily",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('family', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='subfamilies', to='products.microcontrollerfamily')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                (
+                    "family",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="subfamilies",
+                        to="products.microcontrollerfamily",
+                    ),
+                ),
             ],
         ),
         migrations.AddField(
-            model_name='microcontroller',
-            name='subfamily',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='microcontrollers', to='products.microcontrollersubfamily'),
+            model_name="microcontroller",
+            name="subfamily",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="microcontrollers",
+                to="products.microcontrollersubfamily",
+            ),
         ),
         migrations.CreateModel(
-            name='MicrocontrollerPeripheral',
+            name="MicrocontrollerPeripheral",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('quantity', models.PositiveIntegerField(default=1)),
-                ('microcontroller', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.microcontroller')),
-                ('peripheral', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.peripheral')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("quantity", models.PositiveIntegerField(default=1)),
+                (
+                    "microcontroller",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="products.microcontroller",
+                    ),
+                ),
+                (
+                    "peripheral",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="products.peripheral",
+                    ),
+                ),
             ],
             options={
-                'unique_together': {('microcontroller', 'peripheral')},
+                "unique_together": {("microcontroller", "peripheral")},
             },
         ),
     ]

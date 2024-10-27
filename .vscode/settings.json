@@ -1,18 +1,88 @@
 {
-  "files.exclude": {
-      "**/.DS_Store": true,
-      "**/.git": true,
-      "**/.github": true,
-      "**/.gitp*": true,
-      "**/.hg": true,
-      "**/.svn": true,
-      "**/.vscode": true,
-      "**/core.Microsoft*": true,
-      "**/core.mongo*": true,
-      "**/core.python*": true,
-      "**/CVS": true
-   },
-   "files.autoSave": "afterDelay",
-   "workbench.colorTheme": "Visual Studio Dark",
-   "terminal.integrated.gpuAcceleration": "canvas",
+    "explorer.confirmDelete": false,
+    "files.autoSave": "afterDelay",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "cmake.additionalCompilerSearchDirs": [
+        "C:/msys64/mingw32/bin",
+        "C:/msys64/mingw64/bin",
+        "C:/msys64/clang32/bin",
+        "C:/msys64/clang64/bin",
+        "C:/msys64/clangarm64/bin",
+        "C:/msys64/ucrt64/bin"
+    ],
+    "cmake.showOptionsMovedNotification": false,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "remote.SSH.defaultExtensions": [
+        "gitpod.gitpod-remote-ssh"
+    ],
+    "remote.SSH.remotePlatform": {
+        "*.gitpod.io": "linux",
+        "devbmv-smarthomepp4-1jrxima1klx.vss.gitpod.io": "linux",
+        "devbmv-smarthomepp4-d85bhkwly39.vss.gitpod.io": "linux",
+        "devbmv-smarthomepp4-v0y8nldx6ah.vss.gitpod.io": "linux",
+        "devbmv-smarthomepp4-lr2wnibjusp.vss.gitpod.io": "linux",
+        "devbmv-smarthomepp4-4a15qpxe5gh.vss.gitpod.io": "linux",
+        "devbmv-smarthomepp4-r8ekyurwowb.vss.gitpod.io": "linux",
+        "devbmv-smarthomepp4-zxab36virzj.vss.gitpod.io": "linux",
+        "devbmv-homecontrol-o7q01lm9qtd.vss.gitpod.io": "linux",
+        "devbmv-atestpp5-7u46t74r7u6.vss.gitpod.io": "linux"
+    },
+    "redhat.telemetry.enabled": true,
+    "explorer.confirmDragAndDrop": false,
+    "git.openRepositoryInParentFolders": "always",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "tabnine.experimentalAutoImports": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "auto-close-tag.excludedTags": [
+        "area",
+        "base",
+        "br",
+        "col",
+        "command",
+        "embed",
+        "hr",
+        "img",
+        "input",
+        "keygen",
+        "link",
+        "meta",
+        "param",
+        "source",
+        "track",
+        "wbr"
+    ],
+    "django.snippets.exclude": [
+        "cms",
+        "wagtail"
+    ],
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Args": [
+        "--aggressive",
+        "--aggressive",
+        "--max-line-length=79"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.autopep8Enabled": true,
+    "python.linting.autopep8Path": "autopep8",
+    "editor.rulers": [
+        79
+    ],
+    "files.exclude": {
+        "**/.vscode": false
+    }
 }

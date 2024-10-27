@@ -7,58 +7,72 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0012_delete_category_delete_product'),
+        ("products", "0012_delete_category_delete_product"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Family',
+            name="Family",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
             ],
         ),
         migrations.RemoveField(
-            model_name='microcontrollerfamily',
-            name='manufacturer',
+            model_name="microcontrollerfamily",
+            name="manufacturer",
         ),
         migrations.RemoveField(
-            model_name='microcontrollersubfamily',
-            name='family',
+            model_name="microcontrollersubfamily",
+            name="family",
         ),
         migrations.AlterUniqueTogether(
-            name='microcontrollerperipheral',
+            name="microcontrollerperipheral",
             unique_together=None,
         ),
         migrations.RemoveField(
-            model_name='microcontrollerperipheral',
-            name='microcontroller',
+            model_name="microcontrollerperipheral",
+            name="microcontroller",
         ),
         migrations.RemoveField(
-            model_name='microcontrollerperipheral',
-            name='peripheral',
+            model_name="microcontrollerperipheral",
+            name="peripheral",
         ),
         migrations.AlterField(
-            model_name='microcontroller',
-            name='category',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='microcontrollers', to='products.family'),
+            model_name="microcontroller",
+            name="category",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="microcontrollers",
+                to="products.family",
+            ),
         ),
         migrations.DeleteModel(
-            name='Features',
+            name="Features",
         ),
         migrations.DeleteModel(
-            name='Manufacturer',
+            name="Manufacturer",
         ),
         migrations.DeleteModel(
-            name='MicrocontrollerFamily',
+            name="MicrocontrollerFamily",
         ),
         migrations.DeleteModel(
-            name='MicrocontrollerPeripheral',
+            name="MicrocontrollerPeripheral",
         ),
         migrations.DeleteModel(
-            name='Peripheral',
+            name="Peripheral",
         ),
         migrations.DeleteModel(
-            name='MicrocontrollerSubfamily',
+            name="MicrocontrollerSubfamily",
         ),
     ]
