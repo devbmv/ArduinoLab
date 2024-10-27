@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    'corsheaders',
     "crispy_forms",
     "crispy_bootstrap4",
     "storages",
@@ -78,6 +79,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = "arduino_lab_p.urls"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+CORS_ORIGIN_ALLOW_ALL = True  # Sau configurează domeniile permise corespunzător
 
 TEMPLATES = [
     {
