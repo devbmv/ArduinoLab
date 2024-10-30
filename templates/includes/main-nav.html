@@ -4,14 +4,14 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item d-block d-md-none">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+            <a class="logo-font font-weight-bold nav-link text-info mr-5" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
 
         <!-- All all_microcontrollers Dropdown -->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-all_microcontrollers-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-info mr-5" href="#" id="all-all_microcontrollers-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Items
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-all_microcontrollers-link">
@@ -25,7 +25,7 @@
         <!-- Dynamic Microcontroller Families Dropdown -->
         {% for family_name, microcontrollers in family_microcontrollers.items %}
             <li class="nav-item dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-4" href="#" id="{{ family_name }}-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="logo-font font-weight-bold nav-link text-info mr-4" href="#" id="{{ family_name }}-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ family_name }}
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="{{ family_name }}-link">
@@ -37,7 +37,7 @@
         {% endfor %}
 <!-- Special Offers Dropdown -->
 <li class="nav-item dropdown">
-    <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="logo-font font-weight-bold nav-link text-info" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Special Offers
     </a>
     <div class="dropdown-menu border-0" aria-labelledby="specials-link">
@@ -61,7 +61,7 @@
 
         <!-- Arduino Docs Link -->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="https://www.arduino.cc/" target="_blank" rel="noopener noreferrer">
+            <a class="logo-font font-weight-bold nav-link text-info mr-5" href="https://www.arduino.cc/" target="_blank" rel="noopener noreferrer">
                 Arduino Docs
             </a>
         </li>
