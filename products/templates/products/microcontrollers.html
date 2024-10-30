@@ -14,8 +14,8 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center mt-3">
-                <h2 class="logo-font">All microcontrollers</h2>
+            <div class="col text-center mt-5">
+                <h2 class="logo-font">All Items</h2>
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'all_microcontrollers' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
