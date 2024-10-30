@@ -57,12 +57,12 @@
     <title>{{ store_settings.store_name }} {% block extra_title %}{% endblock %}</title>
   </head>
   
-  <body >
+  <body class="d-flex flex-column min-vh-100">
     <header class="container-fluid fixed-top ">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-info my-0 "><strong>{{ store_settings.store_name }}</strong></h2>
+                    <h2 class="logo-font  font-italic text-info my-0 "><strong>{{ store_settings.store_name }}</strong></h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -169,8 +169,11 @@
     {% block page_header %}
     {% endblock %}
 
-    {% block content %}
-    {% endblock %}
+    <main class="flex-grow-1">
+        {% block content %}
+        <!-- Aici merge tot conținutul paginii -->
+        {% endblock %}
+    </main>
 
 {% block postloadjs %}
 <script type="text/javascript">
@@ -232,5 +235,37 @@
 
     
 </body>
+{% block footer %}
+
+<footer class="container-fluid bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Social Section -->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase font-weight-bold">Social</h5>
+          <p>Keep up to date with all our latest offers</p>
+          <a href="https://arduino-lab.s3.eu-north-1.amazonaws.com/media/facebook_main.PNG" class="text-info" target="_blank">
+            <i class="fab fa-facebook"></i> Follow us on Facebook!
+          </a>
+        </div>
+  
+        <!-- Newsletter Subscription Section -->
+        <div class="col-md-6">
+          <h5 class="text-uppercase font-weight-bold">Subscribe!</h5>
+          <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
+          <form id="newsletter-form" action="#" method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+              <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+              <div class="input-group-append">
+                <button class="btn btn-primary bg-info " type="submit">Subscribe</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</footer>
+{% endblock %}
 
 </html>
