@@ -63,14 +63,11 @@ You can explore the live project here: [Arduino Lab](https://arduino-lab-project
   - [Feature 4: The Products List](#feature-4-the-products-list)
   - [Feature 5: The Product Detail Page](#feature-5-the-product-detail-page)
   - [Feature 6: The Cart](#feature-6-the-cart)
-  - [Feature 7: The Checkout Page](#feature-7-the-checkout-page)
-  - [Feature 8: The Order Successful Page](#feature-8-the-order-successful-page)
-  - [Feature 9: The Sign Up/In/Out Pages](#feature-9-the-sign-up-in-out-pages)
-  - [Feature 10: My Arduino Lab](#feature-10-my-arduino-lab)
-  - [Feature 11: The Wishlist](#feature-11-the-wishlist)
-  - [Feature 12: The Contact Page](#feature-12-the-contact-page)
-  - [Feature 13: The Admin Features](#feature-13-the-admin-features)
-  - [Feature 14: The Django Admin](#feature-14-the-django-admin)
+  - [Feature 7: The  Sign Up/In/Out Pages](#feature-7-the-sign-up-in-out-pages)
+  - [Feature 8: The Product Management](#feature-8-the-product-management-page)
+  - [Feature 9: Store settings](#feature-9-store-settings-page)
+  - [Feature 10: Change Password](#feature-10-change-password)
+  - [Feature 11: My Profile](#feature-11-my-profile)
 - [Features Yet to Implement](#features-yet-to-implement)
 - [Technologies Used](#technologies-used)
   - [Languages](#languages)
@@ -556,3 +553,323 @@ This typography enhances the overall readability of the site, ensuring that info
 
   This is how Footer looks on mobile device: 
 - **Mobile Footer**  ![Mobile footer](media\documentations\mobile_footer.PNG)
+
+### Feature 4: The Products List
+- **Purpose**: Displays a comprehensive list of all available products for easy browsing and selection.
+- **Features**:
+  - **Product Categories**: Filters that allow users to select and browse specific types of microcontrollers, narrowing down their options.  ![All items](media\all_items.PNG)
+  - **Product Filtering and Sorting**: Users can sort products based on criteria like price(low to high or opposit),rating(low to high and apposit),category(A-Z and Z-A) and name(A-Z and Z-A). ![Sortering and filtering](media\documentations\sortering.PNG)
+
+    This is how the product list looks on mobile device: 
+- **Mobile Product List**  ![Mobile product list](media\documentations\mobile_product_list.PNG)
+
+### Feature 5: The Product Detail Page
+- **Purpose**: Provides in-depth information about each product, enabling users to make informed purchase decisions.
+- **Features**:
+  - **Product Image and Description**: High-quality images along with a detailed description that outlines the product's features, specifications, rating,price and quantity. 
+  - **Pricing and Quantity**: Clearly visible pricing information and quantity of product to inform users. ![]
+  - **Add to Cart Button**: Enables users to directly add the product to their cart with a single click, making the shopping process efficient. ![product details](media\product_detail.PNG)
+
+    This is how the product detail page looks on mobile device: 
+- **Mobile Product detail page**  ![Mobile product detail](media\documentations\mobilr_product_detail.PNG)
+
+### Feature 6: The Cart
+- **Purpose**: Allows users to review their selected items and make any adjustments before proceeding to checkout.
+- **Features**:
+  - **Cart Summary**: Shows all items added to the cart, including details like item name, quantity, and individual price. Users can also see the subtotal for each item and the total cost for all items in the cart.
+  - **Update and Remove Options**: Users can easily adjust quantities or remove items if they change their mind.
+  - **Proceed to Checkout**: A prominent button that directs users to the checkout page, where they can complete their purchase. ![Shoping bag](media\documentations\shoping_bag.PNG)
+
+    This is how Cart page looks on mobile device: 
+- **Mobile Cart**  ![Mobile cart](media\documentations\mobile_shoping_bag.PNG)
+
+### Feature 7: The Sign Up/In/Out Pages
+- **Purpose**: Allows users to create and manage their accounts, providing a more personalized shopping experience.
+- **Features**:
+  - **Sign Up Form**: New users can create an account by providing their name, email, and password, which enables them to save their information for future use. ![Register form](media\register.PNG)
+  - **Sign In**: Existing users can log in to their accounts to access their saved information and view their order history. ![Sign in form](media\sign_in.PNG)
+  - **Sign Out**: Securely logs users out of their accounts, ensuring privacy and data security.
+  ![Sign out form](media\sign_out.PNG)
+
+      This is how Sign Up/In/Out Pages looks on mobile device: 
+- **Sign Up/In/Out Pages**  ![Sign Up Pages](media\documentations\mobile_register.PNG), 
+   ![Sign In Pages](media\documentations\mobile_signin.PNG), ![Sign Out Pages](media\documentations\mobile_signout.PNG).
+
+ ### Feature 8: The Product management
+
+The **Product Management** feature in **Arduino Lab** enables administrators to effectively manage and organize the catalog of microcontrollers and related products. This feature allows for streamlined inventory management and provides a straightforward interface to input all relevant technical specifications for each product.
+
+#### Key Functionalities:
+
+- **Add a New Product**:
+  - Administrators can easily add new microcontrollers or other products using a comprehensive form.
+  - The form includes fields for detailed specifications, ensuring that customers have complete and accurate information about each product.
+
+- **Product Fields**:
+  - **SKU**: A unique identifier for each product.
+  - **Name**: The official name of the microcontroller or component.
+  - **Category**: Selection from various categories (e.g., AVR, ARM, ESP), helping to organize products into searchable groups.
+  - **Bit Width**: Specification of the bit width, such as 8-bit, 16-bit, or 32-bit.
+  - **CPU Architecture**: Options to specify the CPU architecture (e.g., ARM Cortex, RISC-V).
+  - **Max Frequency (MHz)**: The maximum operating frequency of the microcontroller, entered in MHz.
+  - **RAM Capacity (KB)**: The amount of RAM available in the microcontroller, measured in KB.
+  - **Flash Memory (KB)**: The storage capacity of the flash memory, also in KB.
+  - **Power Consumption (mW)**: Expected power consumption, listed in milliwatts.
+  - **Package Type**: Physical form factor of the microcontroller, allowing users to select from common types.
+  - **Description**: A text field for additional details about the product, such as features, use cases, and compatibility.
+
+- **Editing Existing Products**:
+  - Products can be modified with updated information, such as changes to specifications, new images, or revised prices. This is essential for keeping product data accurate and relevant.
+
+- **Removing Products**:
+  - Outdated or unavailable products can be removed from the catalog, ensuring the store remains current and customers don’t encounter products that cannot be purchased.
+
+#### Benefits:
+
+- **Enhanced User Experience**: Customers have access to detailed product information, making it easier to make informed purchase decisions.
+- **Efficient Inventory Management**: Administrators can efficiently update product data, ensuring the online store reflects real-time stock levels and accurate specifications.
+- **Better Organization**: With categories and detailed fields, customers can filter and search products based on technical specifications, streamlining the browsing experience.
+
+The **Product Management** feature is essential for maintaining an up-to-date and organized product catalog on the Arduino Lab platform, supporting both administrative efficiency and customer satisfaction.
+![Product management](media\product_management.PNG)
+
+ ### Feature 9: Store Settings
+
+The **Store Settings** feature in **Arduino Lab** provides administrators with a comprehensive panel to manage various configurations for the online shop. This feature allows for the customization of store information, payment options, shipping policies, and user preferences, enabling efficient and flexible control over the store’s operation.
+
+#### Key Functionalities:
+
+- **General Store Settings**:
+  - **Store Name**: Set the name of the store, displayed to users.
+  - **Store Description**: Add a brief description to inform customers about the store’s purpose or mission.
+  - **Contact Email**: Input a contact email address, allowing customers to reach out for support or inquiries.
+  - **Currency**: Define the currency (e.g., EUR, USD) used for product pricing, helping internationalize the store.
+
+- **Payment Settings**:
+  - **Stripe Public Key**: Enter the public API key for Stripe, enabling integration with Stripe for secure payment processing.
+  - **Stripe Secret Key**: Configure the secret API key for Stripe. This key is securely handled and can be shown/hidden for convenience.
+  - **PayPal Client ID**: Add the Client ID for PayPal, another widely-used payment gateway, allowing users to check out with PayPal.
+  - **PayPal Client Secret**: Input the secret key for PayPal transactions, with the option to show or hide for security purposes.
+
+- **Shipping Settings**:
+  - **Standard Shipping Cost**: Set a default shipping cost applied to orders under a certain amount, helping cover shipping expenses.
+  - **Free Shipping Threshold**: Define the minimum order amount required for free shipping, encouraging higher order values.
+
+- **User Settings**:
+  - **Preferred Language**: Specify the default language for the store’s interface, improving accessibility for users from different linguistic backgrounds.
+  - **Receive Newsletter**: A toggle for receiving newsletters, allowing administrators to control subscription preferences for promotional emails.
+
+- **Account Management**:
+  - **Change Password**: Provides a link to update the store admin’s password, ensuring security.
+  - **Save Settings**: A button to save all changes, ensuring that the latest settings are applied immediately.
+
+#### Benefits:
+
+- **Centralized Configuration**: Allows administrators to manage key store settings in one place, improving efficiency and reducing configuration errors.
+- **Customizable User Experience**: The ability to set language preferences and other user options enhances the shopping experience for a global audience.
+- **Flexible Payment and Shipping Options**: Enables a range of payment options and shipping policies, accommodating various user preferences and boosting customer satisfaction.
+- **Enhanced Security**: By securely handling sensitive information like API keys and passwords, this feature helps maintain data protection standards.
+
+The **Store Settings** feature is essential for administrators to configure and customize store operations in Arduino Lab, ensuring a tailored and streamlined shopping experience for users.
+![Store settings](media\store_settings.PNG)
+
+### Feature 10: Change Password
+
+The **Change Password** feature in **Arduino Lab** allows users to update their account password securely and efficiently. This feature enhances account security by enabling users to set a new password as needed, while also providing options to ensure visibility during the process for convenience.
+
+#### Key Functionalities:
+
+- **Old Password**: Users are required to enter their current password to confirm their identity before making any changes.
+- **New Password**: Allows users to input a new password, which must meet certain security criteria to be accepted.
+- **Confirm New Password**: Users are prompted to re-enter their new password to prevent errors and ensure accuracy.
+
+- **Show Password Toggle**: For each password field (Old Password, New Password, and Confirm New Password), there is a "Show Password" checkbox. This feature allows users to view the entered password to minimize typing errors.
+
+- **Save Settings**: Once the user has entered and confirmed the new password, clicking **Save Settings** will update the password securely.
+- **Cancel**: Users can cancel the password change process, returning to the previous page without saving any changes.
+
+#### Benefits:
+
+- **Enhanced Security**: This feature strengthens user account security by allowing password updates at any time.
+- **User-Friendly**: The **Show Password** option allows users to confirm their input visually, reducing mistakes.
+- **Error Prevention**: The "Confirm New Password" field ensures that users enter their desired password correctly without typos.
+
+The **Change Password** feature is essential for maintaining account security on Arduino Lab, empowering users to manage their passwords easily and confidently.
+
+![Change password](media\change_password.PNG)
+
+### Feature 11 : My Profile
+
+The **My Profile** section in **Arduino Lab** allows users to manage their personal information and view past orders in a streamlined and user-friendly interface. This feature provides users with control over their account settings and helps them track their purchase history.
+
+#### Key Functionalities:
+
+- **Default Delivery Information**: Users can update their default delivery details, including fields for address, city, state, and country. This ensures a smooth and personalized checkout experience by pre-filling the shipping information on future orders.
+
+- **Order History**: Users can view a list of their previous orders, with details including:
+  - **Order Number**: A unique identifier for each order, with clickable links to view the complete order details.
+  - **Date**: The date and time of the purchase, allowing users to keep track of their shopping history.
+  - **Items**: A summary of the purchased items, displaying the product name and quantity.
+  - **Order Total**: The total amount spent on each order, providing a quick reference for financial tracking.
+
+- **Update Information Button**: Once users have edited their delivery details, they can click the **Update Information** button to save the changes securely to their profile.
+
+#### Benefits:
+
+- **Convenient Account Management**: Users can quickly update their delivery information to ensure accurate shipping for future orders.
+- **Order Tracking**: The order history provides a clear and organized view of past purchases, allowing users to review previous transactions at a glance.
+- **Streamlined Checkout**: By storing default delivery information, the profile section simplifies the checkout process, making future purchases faster and more efficient.
+
+The **My Profile** feature is designed to enhance the user experience on Arduino Lab by giving users full control over their account settings and purchase records.
+![My profile ](media\my_profile.PNG)
+
+
+## Features Yet to Implement
+
+As an enthusiast and passionate developer in the world of Arduino and microcontrollers, I am excited to enhance this project continuously. My goal is to implement these additional features to make **Arduino Lab** a fully functional and robust e-commerce platform for microcontroller enthusiasts and, ultimately, to launch it as a real online shop. Here are some of the future enhancements I plan to add:
+
+- **Advanced Product Search and Filtering**  
+  Implement filters for specifications such as CPU architecture, RAM size, and power consumption to allow users to easily find microcontrollers that meet specific technical requirements.
+
+- **Customer Reviews and Ratings**  
+  Allow users to leave reviews and rate products. This feature will help other customers make informed purchasing decisions and improve overall engagement with the site.
+
+- **Wishlist Functionality**  
+  Enable users to save products they are interested in to a wishlist. This feature would let users easily access saved items later, enhancing the shopping experience.
+
+- **Inventory Management System**  
+  Integrate a backend inventory management system that tracks stock levels, alerts administrators when items are low in stock, and automatically adjusts availability on the front end.
+
+- **Product Comparison Tool**  
+  Allow customers to compare specifications across different microcontrollers side by side, helping them choose the best product for their project requirements.
+
+- **Discounts and Promo Codes**  
+  Implement a system for discount codes and promotions. Admins could create limited-time offers or bulk discounts, encouraging more purchases and allowing for seasonal campaigns.
+
+- **Enhanced User Profiles**  
+  Expand user profile options to include saved shipping addresses, order tracking, and notifications about new products or restocks on items they've previously viewed.
+
+- **Detailed Order Tracking**  
+  Provide users with a tracking feature that shows the status of their orders at each stage—from processing and shipping to delivery.
+
+- **Frequently Bought Together Suggestions**  
+  Add a feature to suggest additional items based on what other customers frequently purchase together, such as complementary modules or components.
+
+- **Automated Restock Notifications**  
+  Allow users to sign up for notifications on out-of-stock items. They would receive an email or in-app notification when a product is available again.
+
+- **Live Chat Support**  
+  Integrate a live chat feature to provide real-time support, helping users with product questions, purchase decisions, or any technical inquiries they may have.
+
+- **Product Video Tutorials**  
+  Add tutorial videos for each microcontroller, showcasing setup guides, usage examples, and project ideas to provide additional value to users and inspire creativity.
+
+These features represent my vision for **Arduino Lab** as a comprehensive platform that supports both hobbyists and professionals in the Arduino community. With these planned features, I am excited about the potential for **Arduino Lab** to become a go-to resource for anyone interested in microcontrollers.
+
+## Technologies Used
+
+### Languages
+
+- [Python 3.8](https://www.python.org/) - Used for backend programming and to build the main application logic.
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) - Used for structuring all web pages on the front end.
+- [CSS3](https://en.wikipedia.org/wiki/CSS) - Utilized for styling the website to create a clean and responsive user interface.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Used for front-end functionality and interactive elements.
+
+### Frameworks, Libraries, and Other Resources
+
+The **Arduino Lab** project is built on the powerful [Django](https://www.djangoproject.com/) framework, utilizing many of its features to streamline development and enhance functionality.
+
+- [Django](https://www.djangoproject.com/) - The core framework used to build the project, handling backend functionality, database management, and templating.
+- [Bootstrap 4](https://getbootstrap.com/) - Used as a CSS framework to ensure responsive design and ease of styling.
+- [jQuery](https://jquery.com/) - JavaScript library used to simplify client-side scripting and enhance interactivity.
+- [Font Awesome](https://fontawesome.com/) - Used for icons throughout the site to improve visual clarity and user navigation.
+- [Google Fonts](https://fonts.google.com/) - Used for custom fonts, giving the website a unique and professional look.
+
+### External Services
+
+- [Facebook Pages](https://www.facebook.com/pages/create/?ref_type=site_footer) - A Facebook Business Page was created for the project and linked in the footer to improve social media presence and connect with users.
+- [Stripe](https://stripe.com/) - Integrated to handle secure online payments, enabling users to purchase products seamlessly.
+- [AWS S3 Bucket](https://aws.amazon.com/s3/) - Used to host and serve static files (CSS, JavaScript) and media files (product images), ensuring fast and reliable file access.
+- [Heroku](https://www.heroku.com) - Used to deploy the Django application, providing a stable and scalable hosting solution.
+
+### Development and Collaboration Tools
+
+- [VS Code](https://code.visualstudio.com/) - Used as the primary local development environment. Its robust features and extensions made coding, debugging, and testing efficient and streamlined.
+- [Git](https://git-scm.com/) - A version control system used to track code changes, commit updates, and manage branches.
+- [GitHub](https://github.com/) - The project repository is hosted on GitHub, allowing for version control, issue tracking, and collaboration.
+-------------------------------------------------------------------------------------------------
+### Design and Planning Tools
+
+- [Balsamiq Wireframes](https://balsamiq.com/wireframes/) - Used to create wireframes for the initial design of the website, ensuring a well-planned user interface. View the wireframes [here](#).
+- [Lucidchart](https://lucid.co/product/lucidchart) - Used to design the visual [schema of models](#schema-of-models) for the database structure and relationships within the application.
+
+These technologies and tools were carefully chosen to ensure **Arduino Lab** provides a smooth and functional experience, catering to the specific needs of users looking for microcontroller products.
+
+## Testing
+
+Thorough testing of the StepUp site was performed and can be viewed [here](https://github.com/johnvenkiah/CI_PP5_John_Venkiah/blob/main/docs/testing/TESTING.md).
+
+## Other Services
+
+### Stripe
+
+Stripe was used as a payment service, allowing users to pay for products. The process:
+
+1. Create an account at https://stripe.com/
+2. Go to the developers pane and navigate to API keys
+3. Copy the publishable and secret keys and put them in your config vars in your development envirenment (and in Heroku config vars in production)
+
+Webhooks were created too to make sure payments did not fail due to web errors. This can be done by doing the following:
+
+1. Navigate to Webhooks on the page, and create an endpoint with the url you send your webhooks to, in this case, the url is https://stepup-shoes.herokuapp.com/checkout/wh/
+2. Add events to listen for, for example payment_intent_succeeded and payment_intent.payment_failed as in this case
+3. The webhooks should be sent when processing orders in all cases
+
+## Deployment
+
+### Forking the GitHub Repository
+
+To make a clone, or 'Fork' this repository, follow the steps below.
+
+1. Access your GitHub account and find the relevant repository.
+2. Click on 'Fork' on the top right of the page.
+3. You will find a copy of the repository in your own Github account.
+
+### Making a Local Clone
+
+1. Access your GitHub account and find the relevant repository.
+2. Click the 'Code' button next to 'Add file'.
+3. To clone the repository using HTTPS, under clone with HTTPS, copy the link.
+4. Open Git Bash.
+5. Access the directory you want the clone to be have.
+6. In your IDE's terminal type 'git clone' and the paste the URL you copied.
+7. Press Enter.
+8. You now have a local clone.
+
+### Heroku
+
+This application has been deployed from Github using Heroku. Here's how:
+
+1. Create an account at [heroku.com](https://www.heroku.com/)
+2. Create a new app, add app name and your region
+3. Click on create app
+4. Go to "Settings"
+5. Under Config Vars, add your sensitive data (creds.json for example)
+6. For this project, I set buildpacks to <Python> and <NodeJS> in that order.
+7. Go to "Deploy" and at "Deployment method", click on "Connect to Github"
+8. Enter your repository name and click on it when it shows below
+9. Choose the branch you want to buid your app from
+10. If desired, click on "Enable Automatic Deploys", which keeps the app up to date with your Github repository
+11. All done!
+
+### AWS S3
+
+The deployed version of this website has static(CSS and JavaScript) and media files hosted to it via a web based service called Amazon Web Services S3 Bucket.
+
+The steps to take are:
+
+1. Create an account at aws.amazon.com
+2. Navigate to the IAM application and create a user and group
+3. Set the AmazonS3FullAccess for the user and copy the AWS ACCESS and SECRET keys as config vars to your workspace and deployment environment
+4. Create a new Bucket within the S3 application with an appropriate name.
+5. Enable public access for your bucket so users can access and use the services on your website (upload, view, download, etc). More info can be read in the official documentation: https://aws.amazon.com/s3/
