@@ -117,42 +117,51 @@ def change_password(request):
 
 # store_settings/views.py
 
+
 @login_required
 def toggle_newsletter(request):
     """Permite utilizatorilor să se aboneze sau să se dezaboneze de la
     newsletter."""
     msg = render_to_string(
-            "store_settings/newsletter_subscribe_confirmation.txt",
-            {"user_email": request.user.email},
-        )
+        "store_settings/newsletter_subscribe_confirmation.txt",
+        {"user_email": request.user.email},
+    )
     if request.method == "POST":
         # Obține sau creează setările utilizatorului
         user_settings, created = UserSettings.objects.get_or_create(
             user=request.user)
 
         # Toggle pentru starea abonamentului
-        user_settings.receive_newsletter = not user_settings.receive_newsletter
+        user_settings.receive_newsletter = (
+            not user_settings.receive_newsletter)
         user_settings.save()
 
         # Mesaj în funcție de noua stare
         if user_settings.receive_newsletter:
-            messages.success(
-                request, msg
+            messages.success(request, msg)
+            send_mail(
+                "ArduinoLab Subscribe",
+                msg,
+                settings.DEFAULT_FROM_EMAIL,
+                [request.user.email],
             )
-            send_mail("ArduinoLab Subscribe", msg, settings.DEFAULT_FROM_EMAIL, [request.user.email])
 
         else:
-            msg=render_to_string("store_settings/newsletter_unsubscribe_confirmation.txt",
-            {"user_email": request.user.email},
-        )
-            messages.info(
-                request, msg
+            msg = render_to_string(
+                "store_settings/newsletter_unsubscribe_confirmation.txt",
+                {"user_email": request.user.email},
             )
-            send_mail("ArduinoLab Subscribe", msg, settings.DEFAULT_FROM_EMAIL, [request.user.email])
-
+            messages.info(request, msg)
+            send_mail(
+                "ArduinoLab Subscribe",
+                msg,
+                settings.DEFAULT_FROM_EMAIL,
+                [request.user.email],
+            )
 
         return JsonResponse(
-            {"status": "success", "subscribed": user_settings.receive_newsletter}
+            {"status": "success", "subscribed": (
+                user_settings.receive_newsletter)}
         )
 
     return JsonResponse({"status": "error"}, status=400)

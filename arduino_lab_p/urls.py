@@ -43,7 +43,7 @@ urlpatterns = [
     path("bag/", include("bag.urls")),  # Shopping bag app URLs
     path("checkout/", include("checkout.urls")),  # Checkout process
     path("profile/", include("profiles.urls")),  # User profile URLs
-    path("store_settings/", include("store_settings.urls")),  # Store settings URLs
+    path("store_settings/", include("store_settings.urls")),  # Store settings 
     path(
         "sitemap.xml",
         sitemap,

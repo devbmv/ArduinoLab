@@ -25,7 +25,8 @@ def all_microcontrollers(request):
             sort = sortkey
             if sortkey == "name":
                 sortkey = "lower_name"
-                microcontrollers = microcontrollers.annotate(lower_name=Lower("name"))
+                microcontrollers = microcontrollers.annotate(
+                    lower_name=Lower("name"))
             if sortkey == "category":
                 sortkey = "category__name"
             if "direction" in request.GET:
@@ -46,10 +47,12 @@ def all_microcontrollers(request):
         if "q" in request.GET:
             query = request.GET["q"]
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse("products"))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             microcontrollers = microcontrollers.filter(queries)
 
     current_sorting = f"{sort}_{direction}"
@@ -57,7 +60,7 @@ def all_microcontrollers(request):
     context = {
         "microcontrollers": microcontrollers,
         "search_term": query,
-        "current_categories": selected_categories,  # Updated name for clarity
+        "current_categories": selected_categories,  
         "current_sorting": current_sorting,
     }
     return render(request, "products/microcontrollers.html", context)
@@ -68,7 +71,8 @@ def all_microcontrollers(request):
 
 def microcontroller_detail(request, microcontroller_id):
     """View to display details of a specific microcontroller."""
-    microcontroller = get_object_or_404(Microcontroller, pk=microcontroller_id)
+    microcontroller = get_object_or_404(
+        Microcontroller, pk=microcontroller_id)
     context = {
         "microcontroller": microcontroller,
     }
@@ -97,7 +101,8 @@ def add_microcontroller(request):
         else:
             messages.error(
                 request,
-                "Failed to add the microcontroller. Please ensure the form is valid.",
+                "Failed to add the microcontroller."
+                 " Please ensure the form is valid.",
             )
     else:
         microcontroller_form = MicrocontrollerForm()
@@ -119,7 +124,8 @@ def edit_microcontroller(request, microcontroller_id):
         return redirect(reverse("home"))
 
     # Get the microcontroller object
-    microcontroller = get_object_or_404(Microcontroller, pk=microcontroller_id)
+    microcontroller = get_object_or_404(
+        Microcontroller, pk=microcontroller_id)
 
     if request.method == "POST":
         microcontroller_form = MicrocontrollerForm(
@@ -127,14 +133,16 @@ def edit_microcontroller(request, microcontroller_id):
         )  # Include request.FILES to handle image upload
         if microcontroller_form.is_valid():
             microcontroller_form.save()
-            messages.success(request, "Microcontroller successfully updated!")
+            messages.success(request,
+                              "Microcontroller successfully updated!")
             return redirect(
                 reverse("microcontroller_detail", args=[microcontroller.id])
             )
         else:
             messages.error(
                 request,
-                "Failed to update the microcontroller. Please ensure the form is valid.",
+                "Failed to update the microcontroller."
+                 " Please ensure the form is valid.",
             )
     else:
         microcontroller_form = MicrocontrollerForm(instance=microcontroller)
@@ -157,100 +165,11 @@ def delete_microcontroller(request, microcontroller_id):
         messages.error(request, "Sorry, only store owners can do that.")
         return redirect(reverse("home"))
 
-    microcontroller = get_object_or_404(Microcontroller, pk=microcontroller_id)
+    microcontroller = get_object_or_404(
+        Microcontroller, pk=microcontroller_id)
     microcontroller.delete()
     messages.success(request, "Microcontroller deleted successfully!")
     return redirect(reverse("all_microcontrollers"))
 
-
-# View to add a manufacturer
-
-
-@login_required
-def add_manufacturer(request):
-    """View to add a new manufacturer."""
-    if not request.user.is_superuser:
-        messages.error(request, "Sorry, only store owners can do that.")
-        return redirect(reverse("home"))
-
-    if request.method == "POST":
-        form = ManufacturerForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Manufacturer successfully added!")
-            return redirect(reverse("all_microcontrollers"))
-        else:
-            messages.error(
-                request, "Failed to add manufacturer. Please ensure the form is valid."
-            )
-    else:
-        form = ManufacturerForm()
-
-    context = {
-        "form": form,
-    }
-    return render(request, "products/add_manufacturer.html", context)
-
-
-# View to add a peripheral
-
-
-@login_required
-def add_peripheral(request):
-    """View to add a new peripheral."""
-    if not request.user.is_superuser:
-        messages.error(request, "Sorry, only store owners can do that.")
-        return redirect(reverse("home"))
-
-    if request.method == "POST":
-        form = PeripheralForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Peripheral successfully added!")
-            return redirect(reverse("all_microcontrollers"))
-        else:
-            messages.error(
-                request, "Failed to add peripheral. Please ensure the form is valid."
-            )
-    else:
-        form = PeripheralForm()
-
-    context = {
-        "form": form,
-    }
-    return render(request, "products/add_peripheral.html", context)
-
-
 # View to add features for a microcontroller
 
-
-@login_required
-def add_features(request, microcontroller_id):
-    """View to add features to a specific microcontroller."""
-    if not request.user.is_superuser:
-        messages.error(request, "Sorry, only store owners can do that.")
-        return redirect(reverse("home"))
-
-    microcontroller = get_object_or_404(Microcontroller, pk=microcontroller_id)
-    if request.method == "POST":
-        form = FeaturesForm(request.POST)
-        if form.is_valid():
-            features = form.save(commit=False)
-            features.microcontroller = microcontroller
-            features.save()
-            messages.success(request, "Features successfully added to microcontroller!")
-            return redirect(
-                reverse("microcontroller_detail", args=[microcontroller.id])
-            )
-        else:
-            messages.error(
-                request, "Failed to add features. Please ensure the form is valid."
-            )
-    else:
-        form = FeaturesForm()
-
-    context = {
-        "form": form,
-        "microcontroller": microcontroller,
-    }
-    return render(request, "products/add_features.html", context)

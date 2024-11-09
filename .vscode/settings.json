@@ -80,7 +80,7 @@
     "python.linting.autopep8Enabled": true,
     "python.linting.autopep8Path": "autopep8",
     "editor.rulers": [
-        79
+        78
     ],
     "files.exclude": {
         "**/.vscode": false

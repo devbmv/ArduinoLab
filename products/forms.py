@@ -3,7 +3,8 @@ from .models import Microcontroller
 
 
 class MicrocontrollerForm(forms.ModelForm):
-    delete_image = forms.BooleanField(required=False, label="Delete existing image")
+    delete_image = forms.BooleanField(required=False, 
+                                      label="Delete existing image")
 
     class Meta:
         model = Microcontroller
@@ -71,7 +72,8 @@ class MicrocontrollerForm(forms.ModelForm):
                 attrs={"class": "form-control", "placeholder": "Enter Rating"}
             ),
             "image_url": forms.URLInput(
-                attrs={"class": "form-control", "placeholder": "Enter Image URL"}
+                attrs={"class": "form-control",
+                        "placeholder": "Enter Image URL"}
             ),
             "image": forms.FileInput(attrs={"class": "form-control"}),
         }

@@ -12,7 +12,7 @@ class MicrocontrollerSitemap(Sitemap):
         return Microcontroller.objects.all()  # Replace with your model
 
     def lastmod(self, obj):
-        return obj.updated_at  # Use the last modified date field in your model
+        return obj.updated_at  # Use the last modified date field 
 
 
 class StaticViewSitemap(Sitemap):

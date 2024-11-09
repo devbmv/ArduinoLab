@@ -16,9 +16,11 @@ class PaymentSettingsAdmin(admin.ModelAdmin):
 
 
 class ShippingSettingsAdmin(admin.ModelAdmin):
-    list_display = ("store", "standard_shipping_cost", "free_shipping_threshold")
+    list_display = ("store", "standard_shipping_cost",
+                     "free_shipping_threshold")
     search_fields = ("store__store_name",)
-    list_editable = ("standard_shipping_cost", "free_shipping_threshold")
+    list_editable = ("standard_shipping_cost", 
+                     "free_shipping_threshold")
 
 
 class UserSettingsAdmin(admin.ModelAdmin):

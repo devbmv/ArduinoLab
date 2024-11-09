@@ -1,6 +1,7 @@
 from .models import UserSettings
 from django import forms
-from .models import StoreSettings, PaymentSettings, ShippingSettings, UserSettings
+from .models import (
+    StoreSettings, PaymentSettings, ShippingSettings, UserSettings)
 
 
 class StoreSettingsForm(forms.ModelForm):
@@ -9,7 +10,7 @@ class StoreSettingsForm(forms.ModelForm):
     class Meta:
         model = StoreSettings
         fields = ["store_name", "store_description",
-                         "contact_email", "currency"]
+                  "contact_email", "currency"]
         widgets = {
             # Controlează dimensiunea
             "store_description": forms.Textarea(attrs={"rows": 1, "cols": 40}),
@@ -70,10 +71,6 @@ class UserSettingsForm(forms.ModelForm):
 
 
 # store_settings/forms.py
-
-
-from django import forms
-from .models import UserSettings
 
 
 class NewsletterForm(forms.ModelForm):

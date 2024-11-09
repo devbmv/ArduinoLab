@@ -1,4 +1,9 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+import logging
+from django.shortcuts import (render,
+                              redirect,
+                              reverse,
+                              get_object_or_404,
+                              HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -17,6 +22,20 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Cache checkout data in the payment intent metadata.
+
+    This function is used to store additional information in the Stripe
+    PaymentIntent metadata before the payment is processed.
+
+    Parameters:
+    request (HttpRequest): The HTTP request object containing POST data
+                    with the client secret and other checkout information.
+
+    Returns:
+    HttpResponse: An HTTP response with status 200 if successful,
+      or 400 if an error occurs.
+    """
     try:
         pid = request.POST.get("client_secret").split("_secret")[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -32,17 +51,34 @@ def cache_checkout_data(request):
     except Exception as e:
         messages.error(
             request,
-            "Sorry, your payment cannot be processed right now. Please try again later.",
+            "Sorry, your payment cannot be processed right now. "
+            "Please try again later.",
         )
         return HttpResponse(content=e, status=400)
 
-
-import logging
 
 logger = logging.getLogger(__name__)
 
 
 def checkout(request):
+    """
+    Handle the checkout process for a user's order.
+
+    This function manages both the display of the checkout form and the 
+    processing of the order when the form is submitted. It interacts with the
+    Stripe API to create a payment intent and handles the creation of order
+    and order line items in the database.
+
+    Parameters:
+    request: The HTTP request object containing POST data for order
+    submission or GET data for displaying the checkout form.
+
+    Returns:
+    Renders the checkout page with the order form and Stripe client
+            secret if the request method is GET. Redirects to the checkout
+            success page if the order is successfully processed, or back to
+            the bag view if an error occurs.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -50,7 +86,8 @@ def checkout(request):
         bag = request.session.get("bag", {})
 
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment.")
+            messages.error(
+                request, "There's nothing in your bag at the moment.")
             return redirect(reverse("products"))
 
         form_data = {
@@ -88,7 +125,9 @@ def checkout(request):
                                 quantity=item_data,
                             )
                         else:
-                            for size, quantity in item_data["items_by_size"].items():
+                            for size, quantity in (
+                                item_data["items_by_size"].items()
+                            ):
                                 order_line_item = OrderLineItem(
                                     order=order,
                                     product=product,
@@ -96,22 +135,28 @@ def checkout(request):
                                     product_size=size,
                                 )
                         order_line_item.save()  # Save each line item
-                        logger.info(f"Order line item saved for product {product.name}")
+                        logger.info(
+                            f"Order line item saved for product"
+                            f" {product.name}")
                     except Microcontroller.DoesNotExist:
                         messages.error(
                             request,
-                            "One of the products in your bag wasn't found in our database. Please call us for assistance.",
+                            "One of the products in your bag wasn't found in"
+                            " our database. Please call us for assistance.",
                         )
-                        order.delete()  # Roll back order if any product is missing
+                        order.delete()
                         return redirect(reverse("view_bag"))
 
                 # Save user info if 'save-info' was checked
                 request.session["save_info"] = "save-info" in request.POST
-                return redirect(reverse("checkout_success", args=[order.order_number]))
+                return redirect(reverse("checkout_success",
+                                        args=[order.order_number])
+                                )
 
             except Exception as e:
                 logger.error(f"Error during checkout: {e}", exc_info=True)
-                messages.error(request, f"An error occurred during the checkout: {e}")
+                messages.error(
+                    request, f"An error occurred during the checkout: {e}")
                 if order.id:
                     order.delete()  # Roll back order if error occurs
                 return redirect(reverse("view_bag"))
@@ -119,13 +164,15 @@ def checkout(request):
         else:
             messages.error(
                 request,
-                "There was an error with your form. Please double-check your information.",
+                "There was an error with your form. Please double-check"
+                " your information.",
             )
 
     else:
         bag = request.session.get("bag", {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment.")
+            messages.error(
+                request, "There's nothing in your bag at the moment.")
             return redirect(reverse("products"))
 
         current_bag = bag_contents(request)
@@ -138,7 +185,8 @@ def checkout(request):
         )
 
         if request.user.is_authenticated:
-            profile, created = UserProfile.objects.get_or_create(user=request.user)
+            profile, created = UserProfile.objects.get_or_create(
+                user=request.user)
             order_form = OrderForm(
                 initial={
                     "full_name": profile.user.get_full_name(),
@@ -158,7 +206,8 @@ def checkout(request):
     if not stripe_public_key:
         messages.warning(
             request,
-            "Stripe public key is missing. Did you forget to set it in your environment?",
+            "Stripe public key is missing. Did you forget to set it"
+            " in your environment?",
         )
 
     template = "checkout/checkout.html"
@@ -200,7 +249,8 @@ def checkout_success(request, order_number):
 
     messages.success(
         request,
-        f"Order successfully processed! Your order number is {order_number}. A confirmation email will be sent to {order.email}.",
+        f"Order successfully processed! Your order number is {order_number}."
+        f" A confirmation email will be sent to {order.email}.",
     )
 
     if "bag" in request.session:

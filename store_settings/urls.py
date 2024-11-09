@@ -6,5 +6,6 @@ urlpatterns = [
         "settings/", views.settings_view, name="settings"
     ),  # URL for the settings page
     path("change_password/", views.change_password, name="change_password"),
-    path("toggle-newsletter/", views.toggle_newsletter, name="toggle_newsletter"),
+    path("toggle-newsletter/", views.toggle_newsletter, 
+         name="toggle_newsletter"),
 ]

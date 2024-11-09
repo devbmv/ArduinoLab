@@ -18,7 +18,8 @@ class PaymentSettings(models.Model):
     """Payment settings related to store."""
 
     store = models.ForeignKey(
-        StoreSettings, on_delete=models.CASCADE, related_name="payment_settings"
+        StoreSettings, on_delete=models.CASCADE,
+          related_name="payment_settings"
     )
     stripe_public_key = models.CharField(max_length=255, blank=True)
     stripe_secret_key = models.CharField(max_length=255, blank=True)
@@ -33,7 +34,8 @@ class ShippingSettings(models.Model):
     """Shipping settings related to store."""
 
     store = models.ForeignKey(
-        StoreSettings, on_delete=models.CASCADE, related_name="shipping_settings"
+        StoreSettings, on_delete=models.CASCADE,
+          related_name="shipping_settings"
     )
     standard_shipping_cost = models.DecimalField(
         max_digits=6, decimal_places=2, default=5.00

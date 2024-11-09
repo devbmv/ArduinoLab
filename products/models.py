@@ -119,10 +119,14 @@ class Microcontroller(models.Model):
     description = models.TextField(blank=True, null=True)
 
     # Price in USD (optional decimal field)
-    price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    price = models.DecimalField(max_digits=6,
+                                decimal_places=2,
+                                null=True,
+                                blank=True)
 
     # Rating (optional decimal field for user ratings)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True, blank=True)
 
     # URL for an image representing the microcontroller (optional)
     image_url = models.URLField(max_length=1024, null=True, blank=True)

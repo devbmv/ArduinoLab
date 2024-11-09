@@ -9,6 +9,7 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
+    """Model for Orders"""
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(
         UserProfile,
@@ -37,7 +38,12 @@ class Order(models.Model):
         max_digits=10, decimal_places=2, null=False, default=0
     )
     original_bag = models.TextField(null=False, blank=False, default="")
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default="")
+    stripe_pid = models.CharField(
+        max_length=254,
+        null=False,
+        blank=False,
+        default=""
+    )
 
     def _generate_order_number(self):
         """Generate a random, unique order number using UUID."""
@@ -47,7 +53,8 @@ class Order(models.Model):
         """Update grand total each time a line item is added, accounting for
         delivery costs."""
         self.order_total = (
-            self.lineitems.aggregate(Sum("lineitem_total"))["lineitem_total__sum"] or 0
+            self.lineitems.aggregate(Sum("lineitem_total"))
+            ["lineitem_total__sum"] or 0
         )
 
         # Get shipping settings or default to a value (for example, 50)
@@ -81,6 +88,7 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """Model to represent an order line item."""
     order = models.ForeignKey(
         Order,
         null=False,
@@ -104,7 +112,18 @@ class OrderLineItem(models.Model):
         update the order total."""
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
-        self.order.update_total()  # Update the order total after saving the line item
+        self.order.update_total()  # Update the order total after saving
 
     def __str__(self):
+        
+        return f"SKU {self.product.sku} on order {self.order.order_number}"
+    def __str__(self):
+        """
+        Returns a string representation of the OrderLineItem instance.
+
+        Returns:
+            str: A string in the format "SKU {product_sku} on order {order_number}",
+                 where {product_sku} is the SKU of the product and {order_number}
+                 is the order number associated with this line item.
+        """
         return f"SKU {self.product.sku} on order {self.order.order_number}"
