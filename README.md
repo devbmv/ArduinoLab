@@ -2,11 +2,11 @@
 
 ## Welcome to Arduino Lab
 
-Arduino Lab is an online shop concept dedicated to Arduino enthusiasts, hobbyists, and makers looking for a variety of Arduino-compatible microcontrollers and accessories. This project showcases a fully functional e-commerce platform built with Django, featuring product listings, cart functionality, user accounts, and secure checkout with simulated payment processing.
+Arduino Lab is an online shop concept dedicated to Arduino enthusiasts, hobbyists, and makers looking for a variety of Arduino-compatible microcontrollers and accessories. This project demonstrates a fully functional e-commerce platform built with Django, featuring product listings, cart functionality, user accounts, and secure checkout with simulated payment processing.
 
 This project is the final portfolio submission for the Code Institute Diploma in Fullstack Software Development and serves as a demonstration of full-stack development skills in e-commerce application design.
 
-> **Disclaimer**: This project is intended exclusively for educational purposes and should not be used for real commercial transactions or any unauthorized business or other purposes. The author assumes no responsibility for misuse or adaptation for commercial objectives.
+> **Disclaimer**: This project is intended exclusively for educational purposes and should not be used for real commercial transactions or any unauthorized business purposes or other uses. The author assumes no responsibility for misuse or adaptation for commercial objectives.
 
 You can explore the live project here: [Arduino Lab](https://arduino-lab-project-ab20ce1e1a15.herokuapp.com/)
 
@@ -80,7 +80,6 @@ You can explore the live project here: [Arduino Lab](https://arduino-lab-project
   - [Making a Local Clone](#making-a-local-clone)
   - [Heroku](#heroku)
   - [AWS S3](#aws-s3)
-- [Performance](#performance)
 - [Validation](#validation)
 - [Accessibility](#accessibility)
 - [Bugs](#bugs)
@@ -151,7 +150,7 @@ This board tracked the primary development tasks for the e-commerce functionalit
 
 ![Project Development Board](media/documentations/agile1.PNG)
 
-This agile structure facilitated organized development, allowed monitoring of project progress, and provided visibility into tasks yet to be completed or those in the pipeline. This approach enabled incremental development, delivering features in manageable portions, and adjusting priorities as needed.
+This agile structure facilitated organized development, enabled continuous monitoring of project progress, and provided visibility into tasks yet to be completed or those in the pipeline. This approach enabled incremental development, delivering features in manageable portions, and adjusting priorities as needed.
 
 ### User Experience
 
@@ -232,7 +231,8 @@ Arduino Lab is aimed at becoming a trusted source for Arduino and electronics su
 
 ### Pages Provided by Django
 
-1. **Login/Logout**: Allows users to sign in or out of their accounts.  ![Login page ](media\sign_in.PNG) ![Logout page ](media\sign_out.PNG) 
+1. **Login/Logout**: Allows users to sign in or out of their accounts.  
+![Login page ](media\sign_in.PNG) ![Logout page ](media\sign_out.PNG) 
 2. **User Registration**: Page for new users to create accounts. ![Registration page ](media\register.PNG)
 3. **Password Reset**: Helps users recover their accounts if they forget their passwords.
 4. **Admin Panel**: Django's default admin panel for managing products, orders, and users. ![Store setting page ](media\store_settings.PNG)
@@ -241,7 +241,7 @@ Arduino Lab is aimed at becoming a trusted source for Arduino and electronics su
 
 ### Code Structure
 
-The **Arduino Lab** project is organized following Django's standard MVC (Model-View-Controller) structure, allowing for a clear separation of responsibilities. This structure helps with scalability, maintainability, and collaboration across different parts of the project.
+The **Arduino Lab** project is organized following Django's standard Django follows an MTV (Model-Template-View)  structure, allowing for a clear separation of responsibilities. This structure helps with scalability, maintainability, and collaboration across different parts of the project.
 
 #### Code Structure
 
@@ -517,8 +517,8 @@ This typography enhances the overall readability of the site, ensuring that info
 ## Existing Features
 
 ### Feature 1: The Navbar
-- **Purpose**: Provides users with easy access to all parts of the website.
-- **Features**:
+  - **Purpose**: Provides users with easy access to all parts of the website.
+  - **Features**:
   - **Categories Links**: Includes quick links to product categories such as AVR, ARM, ESP, Raspberry Pi, MSP430, and more, making it easy for users to find the specific type of microcontroller they're looking for.
  ![Microcontrollers](media\microcontrollers.PNG)
   - **Search Bar**: Positioned at the top of the page, enabling users to quickly search for products by keywords.![Search bar](media\search_bar.PNG)
@@ -529,8 +529,8 @@ This typography enhances the overall readability of the site, ensuring that info
 - **Mobile navigation bar**  ![Mobile navigation bar](media\documentations\MOBILE_NAVBAR.PNG)
 
 ### Feature 2: The Home Page
-- **Purpose**: Acts as the main entry point for the site, showcasing featured content and promotions.
-- **Features**:
+  - **Purpose**: Acts as the main entry point for the site, showcasing featured content and promotions.
+  - **Features**:
   - **Hero Banner**: A visually engaging banner that welcomes users to Arduino Lab, with a message encouraging creativity with the latest microcontrollers.
   ![Hero banner](media\documentations\hero_banner.PNG)
   - **Shop Now Button**: A call-to-action button in the hero banner that directs users to the product listings, inviting them to start browsing immediately.
@@ -587,13 +587,16 @@ This typography enhances the overall readability of the site, ensuring that info
 - **Purpose**: Allows users to create and manage their accounts, providing a more personalized shopping experience.
 - **Features**:
   - **Sign Up Form**: New users can create an account by providing their name, email, and password, which enables them to save their information for future use. ![Register form](media\register.PNG)
-  - **Sign In**: Existing users can log in to their accounts to access their saved information and view their order history. ![Sign in form](media\sign_in.PNG)
+  - **Sign In**: Existing users can log in to their accounts to access their saved information and view their order history. 
+  - ![Sign in form](media\sign_in.PNG)
   - **Sign Out**: Securely logs users out of their accounts, ensuring privacy and data security.
-  ![Sign out form](media\sign_out.PNG)
+  - ![Sign out form](media\sign_out.PNG)
 
       This is how Sign Up/In/Out Pages looks on mobile device: 
-- **Sign Up/In/Out Pages**  ![Sign Up Pages](media\documentations\mobile_register.PNG), 
-   ![Sign In Pages](media\documentations\mobile_signin.PNG), ![Sign Out Pages](media\documentations\mobile_signout.PNG).
+- **Sign Up/In/Out Pages**  
+- ![Sign Up Pages](media\documentations\mobile_register.PNG), 
+- ![Sign In Pages](media\documentations\mobile_signin.PNG), 
+- ![Sign Out Pages](media\documentations\mobile_signout.PNG).
 
  ### Feature 8: The Product management
 
@@ -797,11 +800,6 @@ The **Arduino Lab** project is built on the powerful [Django](https://www.django
 - [VS Code](https://code.visualstudio.com/) - Used as the primary local development environment. Its robust features and extensions made coding, debugging, and testing efficient and streamlined.
 - [Git](https://git-scm.com/) - A version control system used to track code changes, commit updates, and manage branches.
 - [GitHub](https://github.com/) - The project repository is hosted on GitHub, allowing for version control, issue tracking, and collaboration.
--------------------------------------------------------------------------------------------------
-### Design and Planning Tools
-
-- [Balsamiq Wireframes](https://balsamiq.com/wireframes/) - Used to create wireframes for the initial design of the website, ensuring a well-planned user interface. View the wireframes [here](#).
-- [Lucidchart](https://lucid.co/product/lucidchart) - Used to design the visual [schema of models](#schema-of-models) for the database structure and relationships within the application.
 
 These technologies and tools were carefully chosen to ensure **Arduino Lab** provides a smooth and functional experience, catering to the specific needs of users looking for microcontroller products.
 
@@ -872,4 +870,4 @@ The steps to take are:
 2. Navigate to the IAM application and create a user and group
 3. Set the AmazonS3FullAccess for the user and copy the AWS ACCESS and SECRET keys as config vars to your workspace and deployment environment
 4. Create a new Bucket within the S3 application with an appropriate name.
-5. Enable public access for your bucket so users can access and use the services on your website (upload, view, download, etc). More info can be read in the official documentation: https://aws.amazon.com/s3/
+5. Enable public access to allow users to view and download content, as outlined in AWS S3 documentation.: https://aws.amazon.com/s3/

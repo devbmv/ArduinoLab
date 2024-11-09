@@ -59,7 +59,6 @@ INSTALLED_APPS = [
     "checkout",
     "profiles",
     "store_settings",
-    "test_app",
 ]
 
 
@@ -68,7 +67,7 @@ MIDDLEWARE = [
     "allauth.account.middleware.AccountMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
-    "store_settings.middleware.StoreSettingsMiddleware",  # Adaugă middleware-ul tău aici
+    "store_settings.middleware.StoreSettingsMiddleware", 
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -79,7 +78,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = "arduino_lab_p.urls"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-CORS_ORIGIN_ALLOW_ALL = True  # Sau configurează domeniile permise corespunzător
+CORS_ORIGIN_ALLOW_ALL = True 
 
 TEMPLATES = [
     {
@@ -200,16 +199,16 @@ if "USE_AWS" in os.environ:
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = os.environ.get(
         "AWS_STORAGE_BUCKET_NAME"
-    )  # Preia numele bucket-ului S3 din variabila de mediu
+    )  
     AWS_S3_REGION_NAME = os.environ.get(
         "AWS_S3_REGION_NAME"
-    )  # Preia regiunea S3 din variabila de mediu
+    )  
     AWS_ACCESS_KEY_ID = os.environ.get(
         "AWS_ACCESS_KEY_ID"
-    )  # Cheia de acces luată din env.py
+    )  
     AWS_SECRET_ACCESS_KEY = os.environ.get(
         "AWS_SECRET_ACCESS_KEY"
-    )  # Secretul luat din env.py
+    )  
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
 
     # Static and media files

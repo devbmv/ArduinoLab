@@ -37,7 +37,6 @@ sitemaps = {
 urlpatterns = [
     path("", include("home.urls")),  # Include URLs from home app
     path("admin/", admin.site.urls),  # Admin site
-    path("test/", include("test_app.urls")),  # Include URLs from test_app
     path("accounts/", include("allauth.urls")),  # Authentication (allauth)
     path("products/", include("products.urls")),  # Product app URLs
     path("bag/", include("bag.urls")),  # Shopping bag app URLs
