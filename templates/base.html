@@ -174,67 +174,7 @@
         <!-- Aici merge tot conținutul paginii -->
         {% endblock %}
     </main>
-
-{% block postloadjs %}
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() {
-        // Selectăm toate toast-urile
-        const toasts = document.querySelectorAll('.toast');
-
-        // Inițializăm toast-urile cu un delay definit în atributul data-delay
-        toasts.forEach(function(toast) {
-            $(toast).toast({
-                autohide: true,  // Setăm autohide la true
-                delay: 2000      // Delay definit în data-delay sau setăm un delay de 5 secunde
-            }).toast('show');   // Afișăm toast-ul
-        });
-    });
-    document.addEventListener("DOMContentLoaded", function() {
-        const subscribeBtn = document.getElementById('subscribe-btn');
-
-        if (subscribeBtn) {
-            subscribeBtn.addEventListener('click', function() {
-                // Trimitem cererea AJAX la server
-                fetch("{% url 'toggle_newsletter' %}", {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRFToken': '{{ csrf_token }}',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({}),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        // Actualizează textul butonului în funcție de răspunsul primit
-                        if (data.subscribed) {
-                            subscribeBtn.innerText = 'Unsubscribe from Newsletter';
-                        } else {
-                            subscribeBtn.innerText = 'Subscribe to Newsletter';
-                        }
-
-                        // Reîncarcăm pagina pentru a afișa mesajul în toast-uri
-                        location.reload(); // Reîncarcă pagina pentru a afișa mesajul din backend
-                    } else {
-                        // Dacă este eroare, afișăm un mesaj de eroare
-                        alert('There was an error processing your request.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Something went wrong.');
-                });
-            });
-        }
-    });
-</script>
-{% endblock %}
-
     
-    
-
-    
-</body>
 {% block footer %}
 
 <footer class="container-fluid bg-light py-5">
@@ -251,14 +191,27 @@
   
         <!-- Newsletter Subscription Section -->
         <div class="col-md-6">
-          <h5 class="text-uppercase font-weight-bold">Subscribe!</h5>
-          <p>Get exclusive offers and be in touch with new arrivals and special offers by subscribing to our monthly newsletter</p>
+          <h5 class="text-uppercase font-weight-bold">         
+        {% if request.user.usersettings.receive_newsletter %}
+            <h4> You are subscribed to news letter! </h4>
+            <p>For unsubscribing to our monthly newsletter just fill out the form bellow</p>
+
+        {% else %}
+        <h> Subscribe to Newsletter!</h>
+            <p>Get exclusive offers and be in touch with new arrivals and special offers by subscribing to our monthly newsletter</p>
+        {% endif %}</h5>
           <form id="newsletter-form" action="#" method="POST">
             {% csrf_token %}
             <div class="input-group">
               <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
               <div class="input-group-append">
-                <button class="btn btn-primary bg-info " type="submit">Subscribe</button>
+                <button class="btn btn-primary bg-info " href="javascript:void(0);" id="subscribe-btn" type="submit">
+                    {% if request.user.usersettings.receive_newsletter %}
+                        Unsubscribe from Newsletter
+                    {% else %}
+                        Subscribe to Newsletter
+                    {% endif %}
+                </button>
               </div>
             </div>
           </form>
@@ -266,6 +219,64 @@
       </div>
     </div>
 </footer>
+
 {% endblock %}
+
+
+{% block postloadjs %}
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        const toasts = document.querySelectorAll('.toast');
+
+        toasts.forEach(function(toast) {
+            $(toast).toast({
+                autohide: true,  
+                delay: 2000      
+            }).toast('show');   //
+        });
+
+        const subscribeButtons = document.querySelectorAll('#subscribe-btn');
+
+        subscribeButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault(); 
+                fetch("{% url 'toggle_newsletter' %}", {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({}),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        // Actualizează textul fiecărui buton în funcție de răspunsul primit
+                        subscribeButtons.forEach(btn => {
+                            if (data.subscribed) {
+                                btn.innerText = 'Unsubscribe from Newsletter';
+                            } else {
+                                btn.innerText = 'Subscribe to Newsletter';
+                            }
+                        });
+
+                        // Reîncarcăm pagina pentru a afișa mesajul în toast-uri
+                        location.reload(); // Reîncarcă pagina pentru a afișa mesajul din backend
+                    } else {
+                        // Dacă este eroare, afișăm un mesaj de eroare
+                        alert('There was an error processing your request.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Something went wrong.');
+                });
+            });
+        });
+    });
+</script>
+{% endblock %}
+</body>
+
 
 </html>

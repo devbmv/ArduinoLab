@@ -1,0 +1,6 @@
+Hello {{ email }},
+
+You have successfully unsubscribed from our newsletter. If you wish to subscribe again, you can do so anytime by visiting our website.
+
+Best regards,
+ArduinoLab Team

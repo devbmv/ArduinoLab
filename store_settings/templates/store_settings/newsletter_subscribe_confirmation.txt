@@ -1,0 +1,6 @@
+Hello {{ user_email }},
+
+Thank you for subscribing to our newsletter! We are excited to keep you updated with our latest news and special offers.
+
+Best regards,
+ArduinoLab Team

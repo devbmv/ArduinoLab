@@ -4,10 +4,12 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 from .models import UserSettings
+from django.conf import settings
 from .forms import NewsletterForm
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
+from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import StoreSettings, PaymentSettings, ShippingSettings, UserSettings
@@ -29,8 +31,10 @@ def settings_view(request):
     )  # Assuming there's always a single StoreSettings
 
     # Ensure payment and shipping settings are linked to store settings
-    payment_settings, _ = PaymentSettings.objects.get_or_create(store=store_settings)
-    shipping_settings, _ = ShippingSettings.objects.get_or_create(store=store_settings)
+    payment_settings, _ = PaymentSettings.objects.get_or_create(
+        store=store_settings)
+    shipping_settings, _ = ShippingSettings.objects.get_or_create(
+        store=store_settings)
 
     # Get the user's settings, or create them if they don't exist
     user_settings, _ = UserSettings.objects.get_or_create(user=request.user)
@@ -38,9 +42,12 @@ def settings_view(request):
     if request.method == "POST":
         # Bind POST data to the forms
         store_form = StoreSettingsForm(request.POST, instance=store_settings)
-        payment_form = PaymentSettingsForm(request.POST, instance=payment_settings)
-        shipping_form = ShippingSettingsForm(request.POST, instance=shipping_settings)
-        user_settings_form = UserSettingsForm(request.POST, instance=user_settings)
+        payment_form = PaymentSettingsForm(
+            request.POST, instance=payment_settings)
+        shipping_form = ShippingSettingsForm(
+            request.POST, instance=shipping_settings)
+        user_settings_form = UserSettingsForm(
+            request.POST, instance=user_settings)
 
         # Validate all forms
         if (
@@ -110,14 +117,18 @@ def change_password(request):
 
 # store_settings/views.py
 
-
 @login_required
 def toggle_newsletter(request):
     """Permite utilizatorilor să se aboneze sau să se dezaboneze de la
     newsletter."""
+    msg = render_to_string(
+            "store_settings/newsletter_subscribe_confirmation.txt",
+            {"user_email": request.user.email},
+        )
     if request.method == "POST":
         # Obține sau creează setările utilizatorului
-        user_settings, created = UserSettings.objects.get_or_create(user=request.user)
+        user_settings, created = UserSettings.objects.get_or_create(
+            user=request.user)
 
         # Toggle pentru starea abonamentului
         user_settings.receive_newsletter = not user_settings.receive_newsletter
@@ -126,12 +137,19 @@ def toggle_newsletter(request):
         # Mesaj în funcție de noua stare
         if user_settings.receive_newsletter:
             messages.success(
-                request, "You have successfully subscribed to the newsletter."
+                request, msg
             )
+            send_mail("ArduinoLab Subscribe", msg, settings.DEFAULT_FROM_EMAIL, [request.user.email])
+
         else:
+            msg=render_to_string("store_settings/newsletter_unsubscribe_confirmation.txt",
+            {"user_email": request.user.email},
+        )
             messages.info(
-                request, "You have successfully unsubscribed from the newsletter."
+                request, msg
             )
+            send_mail("ArduinoLab Subscribe", msg, settings.DEFAULT_FROM_EMAIL, [request.user.email])
+
 
         return JsonResponse(
             {"status": "success", "subscribed": user_settings.receive_newsletter}
