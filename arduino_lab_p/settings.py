@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     "storages",
     "widget_tweaks",
     "django_extensions",
-    "erdiagram",
     "home",
     "products",
     "bag",
