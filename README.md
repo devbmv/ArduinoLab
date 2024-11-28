@@ -207,6 +207,7 @@ Arduino Lab is an e-commerce platform focused on selling microcontrollers, devel
    - Build a subscriber list by offering valuable content like project tutorials and special discounts.
    - Run regular email campaigns with promotions, new product launches, and exclusive offers to engage our customer base and encourage repeat purchases.
      ![Subscription option ](media/documentations/subscription1.PNG)
+     
 7. **Collaborations & Partnerships**
    - Partner with educational institutions, makerspaces, and electronics hobbyist communities to promote our products as tools for learning and innovation.
    - Collaborate with influencers in the electronics and maker communities to review our products and create project videos.
