@@ -181,7 +181,7 @@ Arduino Lab is an e-commerce platform focused on selling microcontrollers, devel
    - Publish articles, project ideas, and tutorials to inspire customers and position Arduino Lab as a resourceful learning hub.
 3. **Email Marketing**:
    - Use email campaigns to inform customers of new arrivals, special offers, and educational content.
-     ![Subscription option ](media\documentations\subscription.PNG)
+     ![Subscription option ](media/documentations/subscription.PNG)
 
 ### Search Engine Optimization
 
@@ -194,46 +194,46 @@ Arduino Lab is an e-commerce platform focused on selling microcontrollers, devel
    - Optimize page titles, meta descriptions, and headings for better visibility in search engine results.
 3. **Product Descriptions**:
    - Include detailed, keyword-rich descriptions of products to improve ranking and inform potential buyers.
-     ![SEO ](media\documentations\meta_tags.PNG)
+     ![SEO ](media/documentations/meta_tags.PNG)
 4. **Content SEO**:
    - Regularly publish informative articles, tutorials, and guides to drive organic traffic.
 5. **Social Media Marketing**
 
    - **Facebook Page**: I have been created a facebook page(it is a fake facebook page and it is just for educational purpose ,because my online shop is not a real) to promote my online store ArduinoLab.
-     ![Footer with social media ](media\documentations\social_account.PNG)
-     ![Facebook page ](media\documentations\facebook_page.PNG)
+     ![Footer with social media ](media/documentations/social_account.PNG)
+     ![Facebook page ](media/documentations/facebook_page.PNG)
 
 6. **Email Marketing**
    - Build a subscriber list by offering valuable content like project tutorials and special discounts.
    - Run regular email campaigns with promotions, new product launches, and exclusive offers to engage our customer base and encourage repeat purchases.
-     ![Subscription option ](media\documentations\subscription1.PNG)
+     ![Subscription option ](media/documentations/subscription1.PNG)
 7. **Collaborations & Partnerships**
    - Partner with educational institutions, makerspaces, and electronics hobbyist communities to promote our products as tools for learning and innovation.
    - Collaborate with influencers in the electronics and maker communities to review our products and create project videos.
-     ![Colaboration and Partnerships ](media\documentations\colaboration.PNG)
+     ![Colaboration and Partnerships ](media/documentations/colaboration.PNG)
 
 ## Structure
 
 ### Pages
 
 1. **Home Page**: Welcomes users to Arduino Lab, showcases the latest microcontroller collection, and includes a prominent call-to-action button ("Shop Now") for easy navigation.
-   ![Main page](media\mainPage.PNG)
+   ![Main page](media/mainPage.PNG)
 2. **Product Categories**:
-   - **All Items**: Lists all products available in the store. ![All items](media\all_items.PNG)
-   - **AVR, ARM, ESP, Raspberry Pi, MSP430, 8051**: Individual pages dedicated to each microcontroller type. ![Microcontrollers](media\microcontrollers.PNG)
+   - **All Items**: Lists all products available in the store. ![All items](media/all_items.PNG)
+   - **AVR, ARM, ESP, Raspberry Pi, MSP430, 8051**: Individual pages dedicated to each microcontroller type. ![Microcontrollers](media/microcontrollers.PNG)
    - **Special Offers**: Highlights any active promotions or discounts.
-3. **Search**: A search bar at the top allows users to find specific products quickly. ![Search bar](media\search_bar.PNG)
-4. **Cart & Checkout**: Provides a seamless shopping and payment process. ![Cart and Checkout](media\shop_bag.PNG)
+3. **Search**: A search bar at the top allows users to find specific products quickly. ![Search bar](media/search_bar.PNG)
+4. **Cart & Checkout**: Provides a seamless shopping and payment process. ![Cart and Checkout](media/shop_bag.PNG)
 5. **Account Management**:
    - **My Account**: User login, profile management, and order history.
 
 ### Pages Provided by Django
 
 1. **Login/Logout**: Allows users to sign in or out of their accounts.  
-   ![Login page ](media\sign_in.PNG) ![Logout page ](media\sign_out.PNG)
-2. **User Registration**: Page for new users to create accounts. ![Registration page ](media\register.PNG)
+   ![Login page ](media/sign_in.PNG) ![Logout page ](media/sign_out.PNG)
+2. **User Registration**: Page for new users to create accounts. ![Registration page ](media/register.PNG)
 3. **Password Reset**: Helps users recover their accounts if they forget their passwords.
-4. **Admin Panel**: Django's default admin panel for managing products, orders, and users. ![Store setting page ](media\store_settings.PNG)
+4. **Admin Panel**: Django's default admin panel for managing products, orders, and users. ![Store setting page ](media/store_settings.PNG)
 
 ## Technical Design
 
@@ -479,31 +479,31 @@ This typography enhances the overall readability of the site, ensuring that info
 - **Purpose**: Provides users with easy access to all parts of the website.
 - **Features**:
 - **Categories Links**: Includes quick links to product categories such as AVR, ARM, ESP, Raspberry Pi, MSP430, and more, making it easy for users to find the specific type of microcontroller they're looking for.
-  ![Microcontrollers](media\microcontrollers.PNG)
-- **Search Bar**: Positioned at the top of the page, enabling users to quickly search for products by keywords.![Search bar](media\search_bar.PNG)
+  ![Microcontrollers](media/microcontrollers.PNG)
+- **Search Bar**: Positioned at the top of the page, enabling users to quickly search for products by keywords.![Search bar](media/search_bar.PNG)
 - **Account and Cart Icons**: Accessible icons for user account management and shopping cart overview. The cart icon displays the current item count, helping users keep track of their purchases as they browse.
-  ![Account and Cart Icons](media\my_account.PNG)
+  ![Account and Cart Icons](media/my_account.PNG)
 
 This is how Navigation bar looks on mobile device:
 
-- **Mobile navigation bar** ![Mobile navigation bar](media\documentations\mobile_navbar.PNG)
+- **Mobile navigation bar** ![Mobile navigation bar](media/documentations/mobile_navbar.PNG)
 
 ### Feature 2: The Home Page
 
 - **Purpose**: Acts as the main entry point for the site, showcasing featured content and promotions.
 - **Features**:
 - **Hero Banner**: A visually engaging banner that welcomes users to Arduino Lab, with a message encouraging creativity with the latest microcontrollers.
-  ![Hero banner](media\documentations\hero_banner.PNG)
+  ![Hero banner](media/documentations/hero_banner.PNG)
 - **Shop Now Button**: A call-to-action button in the hero banner that directs users to the product listings, inviting them to start browsing immediately.
-  ![Shop now button](media\documentations\shopnow_button.PNG)
+  ![Shop now button](media/documentations/shopnow_button.PNG)
 - **Promotional Banner**: Highlights promotions such as "Free delivery on orders over $50," to encourage larger purchases.
-  ![Promotional banner](media\documentations\promotional_banner.PNG)
+  ![Promotional banner](media/documentations/promotional_banner.PNG)
 - **Social Media and Newsletter Section**: A section at the top that allows users to subscribe to the newsletter for exclusive deals.
-  ![Social Media and Newsletter Section](media\documentations\media_and_newsletter.PNG)
+  ![Social Media and Newsletter Section](media/documentations/media_and_newsletter.PNG)
 
 This is how Home Page looks on mobile device:
 
-- **Mobile Home Page** ![Mobile Home Page](media\documentations\mobile_homepage.PNG)
+- **Mobile Home Page** ![Mobile Home Page](media/documentations/mobile_homepage.PNG)
 
 ### Feature 3: The Footer
 
@@ -511,25 +511,25 @@ This is how Home Page looks on mobile device:
 - **Features**:
 
   - **Social Media Link**: Links to Arduino Lab’s Facebook page, offering users a way to stay connected and informed about updates.
-    ![Social Media and Newsletter Section](media\footer.PNG)
+    ![Social Media and Newsletter Section](media/footer.PNG)
   - **Newsletter Signup**: An email signup form where users can subscribe to monthly updates, receiving exclusive offers and product news.
-    ![ Newsletter Section](media\documentations\subscribe.PNG)
+    ![ Newsletter Section](media/documentations/subscribe.PNG)
 
   This is how Footer looks on mobile device:
 
-- **Mobile Footer** ![Mobile footer](media\documentations\mobile_footer.PNG)
+- **Mobile Footer** ![Mobile footer](media/documentations/mobile_footer.PNG)
 
 ### Feature 4: The Products List
 
 - **Purpose**: Displays a comprehensive list of all available products for easy browsing and selection.
 - **Features**:
 
-  - **Product Categories**: Filters that allow users to select and browse specific types of microcontrollers, narrowing down their options. ![All items](media\all_items.PNG)
-  - **Product Filtering and Sorting**: Users can sort products based on criteria like price(low to high or opposit),rating(low to high and apposit),category(A-Z and Z-A) and name(A-Z and Z-A). ![Sortering and filtering](media\documentations\sortering.PNG)
+  - **Product Categories**: Filters that allow users to select and browse specific types of microcontrollers, narrowing down their options. ![All items](media/all_items.PNG)
+  - **Product Filtering and Sorting**: Users can sort products based on criteria like price(low to high or opposit),rating(low to high and apposit),category(A-Z and Z-A) and name(A-Z and Z-A). ![Sortering and filtering](media/documentations/sortering.PNG)
 
     This is how the product list looks on mobile device:
 
-- **Mobile Product List** ![Mobile product list](media\documentations\mobile_product_list.PNG)
+- **Mobile Product List** ![Mobile product list](media/documentations/mobile_product_list.PNG)
 
 ### Feature 5: The Product Detail Page
 
@@ -538,11 +538,11 @@ This is how Home Page looks on mobile device:
 
   - **Product Image and Description**: High-quality images along with a detailed description that outlines the product's features, specifications, rating,price and quantity.
   - **Pricing and Quantity**: Clearly visible pricing information and quantity of product to inform users. ![]
-  - **Add to Cart Button**: Enables users to directly add the product to their cart with a single click, making the shopping process efficient. ![product details](media\product_detail.PNG)
+  - **Add to Cart Button**: Enables users to directly add the product to their cart with a single click, making the shopping process efficient. ![product details](media/product_detail.PNG)
 
     This is how the product detail page looks on mobile device:
 
-- **Mobile Product detail page** ![Mobile product detail](media\documentations\mobilr_product_detail.PNG)
+- **Mobile Product detail page** ![Mobile product detail](media/documentations/mobilr_product_detail.PNG)
 
 ### Feature 6: The Cart
 
@@ -551,29 +551,29 @@ This is how Home Page looks on mobile device:
 
   - **Cart Summary**: Shows all items added to the cart, including details like item name, quantity, and individual price. Users can also see the subtotal for each item and the total cost for all items in the cart.
   - **Update and Remove Options**: Users can easily adjust quantities or remove items if they change their mind.
-  - **Proceed to Checkout**: A prominent button that directs users to the checkout page, where they can complete their purchase. ![Shoping bag](media\documentations\shoping_bag.PNG)
+  - **Proceed to Checkout**: A prominent button that directs users to the checkout page, where they can complete their purchase. ![Shoping bag](media/documentations/shoping_bag.PNG)
 
     This is how Cart page looks on mobile device:
 
-- **Mobile Cart** ![Mobile cart](media\documentations\mobile_shoping_bag.PNG)
+- **Mobile Cart** ![Mobile cart](media/documentations/mobile_shoping_bag.PNG)
 
 ### Feature 7: The Sign Up/In/Out Pages
 
 - **Purpose**: Allows users to create and manage their accounts, providing a more personalized shopping experience.
 - **Features**:
 
-  - **Sign Up Form**: New users can create an account by providing their name, email, and password, which enables them to save their information for future use. ![Register form](media\register.PNG)
+  - **Sign Up Form**: New users can create an account by providing their name, email, and password, which enables them to save their information for future use. ![Register form](media/register.PNG)
   - **Sign In**: Existing users can log in to their accounts to access their saved information and view their order history.
-  - ![Sign in form](media\sign_in.PNG)
+  - ![Sign in form](media/sign_in.PNG)
   - **Sign Out**: Securely logs users out of their accounts, ensuring privacy and data security.
-  - ![Sign out form](media\sign_out.PNG)
+  - ![Sign out form](media/sign_out.PNG)
 
     This is how Sign Up/In/Out Pages looks on mobile device:
 
 - **Sign Up/In/Out Pages**
-- ![Sign Up Pages](media\documentations\mobile_register.PNG),
-- ![Sign In Pages](media\documentations\mobile_signin.PNG),
-- ![Sign Out Pages](media\documentations\mobile_signout.PNG).
+- ![Sign Up Pages](media/documentations/mobile_register.PNG),
+- ![Sign In Pages](media/documentations/mobile_signin.PNG),
+- ![Sign Out Pages](media/documentations/mobile_signout.PNG).
 
 ### Feature 8: The Product management
 
@@ -614,7 +614,7 @@ The **Product Management** feature in **Arduino Lab** enables administrators to 
 - **Better Organization**: With categories and detailed fields, customers can filter and search products based on technical specifications, streamlining the browsing experience.
 
 The **Product Management** feature is essential for maintaining an up-to-date and organized product catalog on the Arduino Lab platform, supporting both administrative efficiency and customer satisfaction.
-![Product management](media\product_management.PNG)
+![Product management](media/product_management.PNG)
 
 ### Feature 9: Store Settings
 
@@ -658,7 +658,7 @@ The **Store Settings** feature in **Arduino Lab** provides administrators with a
 - **Enhanced Security**: By securely handling sensitive information like API keys and passwords, this feature helps maintain data protection standards.
 
 The **Store Settings** feature is essential for administrators to configure and customize store operations in Arduino Lab, ensuring a tailored and streamlined shopping experience for users.
-![Store settings](media\store_settings.PNG)
+![Store settings](media/store_settings.PNG)
 
 ### Feature 10: Change Password
 
@@ -683,7 +683,7 @@ The **Change Password** feature in **Arduino Lab** allows users to update their 
 
 The **Change Password** feature is essential for maintaining account security on Arduino Lab, empowering users to manage their passwords easily and confidently.
 
-![Change password](media\change_password.PNG)
+![Change password](media/change_password.PNG)
 
 ### Feature 11 : My Profile
 
@@ -709,7 +709,7 @@ The **My Profile** section in **Arduino Lab** allows users to manage their perso
 - **Streamlined Checkout**: By storing default delivery information, the profile section simplifies the checkout process, making future purchases faster and more efficient.
 
 The **My Profile** feature is designed to enhance the user experience on Arduino Lab by giving users full control over their account settings and purchase records.
-![My profile ](media\my_profile.PNG)
+![My profile ](media/my_profile.PNG)
 
 ## Features Yet to Implement
 
@@ -870,8 +870,8 @@ Lighthouse was used to test the performance, accessibility, best practices, and 
 
 ### **PEP8 Compliance Testing**
 
-![PEP 8 Testing](media\documentations\PEP_8_2.PNG)
-![PEP 8 Testing](media\documentations\PEP_8.PNG)
+![PEP 8 Testing](media/documentations/PEP_8_2.PNG)
+![PEP 8 Testing](media/documentations/PEP_8.PNG)
 
 #### Overview
 
