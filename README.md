@@ -53,7 +53,7 @@ You can explore the live project here: [Arduino Lab](https://arduino-lab-project
     - [Epic 9:Create a Comprehensive README File](#create-a-comprehensive-readme-file)
     - [Epic 10:Deployment to Heroku](#deployment-to-heroku)
 
-  - [Entity Relationship Diagram](#Entity-Relationship-Diagram-(ERD))
+  - [Entity Relationship Diagram](<#Entity-Relationship-Diagram-(ERD)>)
     - [Colors](#colors)
     - [Design Choices](#design-choices)
     - [Typography](#typography)
@@ -201,7 +201,7 @@ Arduino Lab is an e-commerce platform focused on selling microcontrollers, devel
 
    - **Facebook Page**: I have been created a facebook page(it is a fake facebook page and it is just for educational purpose ,because my online shop is not a real) to promote my online store ArduinoLab.
      ![Footer with social media ](media/documentations/social_account.PNG)
-     ![Facebook page ](media/documentations/facebook_page.PNG)
+     ![Facebook page ](media/facebook_main.PNG)
 
 6. **Email Marketing**
    - Build a subscriber list by offering valuable content like project tutorials and special discounts.
@@ -997,7 +997,6 @@ The steps to take are:
 4. Create a new Bucket within the S3 application with an appropriate name.
 5. Enable public access to allow users to view and download content, as outlined in AWS S3 documentation.: https://aws.amazon.com/s3/
 
-
 ## Credits
 
 ### Copyrights
@@ -1005,29 +1004,35 @@ The steps to take are:
 #### Media
 
 - Product images and site background images are sourced from publicly available platforms like:
+
   - [Google](https://google.com)
   - [Pixabay](https://pixabay.com)
-  - These platforms provide royalty-free images under their respective licenses. For Pixabay, all images are released under the Pixabay License, allowing both personal and commercial use without attribution. 
+  - These platforms provide royalty-free images under their respective licenses. For Pixabay, all images are released under the Pixabay License, allowing both personal and commercial use without attribution.
 
 - Icons used across the site are from [Font Awesome](https://fontawesome.com), which permits free use under their license for personal and open-source projects.
 
 #### Legal Disclaimers
 
 1. **Educational Purpose**:
+
    - This project is built exclusively for educational purposes as part of the **Code Institute Full-Stack Development Course**. It is not intended for commercial use or profit generation.
    - The site does not sell actual products, and all transactions are simulated for demonstration purposes.
 
 2. **Attribution**:
+
    - All third-party resources, including images, fonts, and libraries, are credited to their respective creators.
    - No claim of ownership is made over any third-party assets used in this project.
 
 3. **Licensing**:
+
    - Media and assets sourced under open licenses (such as the Pixabay License) are used in accordance with their terms. No copyrighted material is used without permission or proper licensing.
 
 4. **Trademarks**:
+
    - Any references to Arduino, ESP32, Raspberry Pi, or other trademarks are for educational purposes only. This project is not affiliated with or endorsed by these companies.
 
 5. **Liability**:
+
    - The author of this project assumes no liability for the misuse of the content or adaptation of the code for unauthorized purposes.
    - Users of this project are responsible for ensuring compliance with all applicable laws and regulations when adapting the code for their own use.
 
@@ -1041,35 +1046,38 @@ The steps to take are:
 
 ---
 
-
 ### Coding Tips and Tricks
 
 These are some tips and resources that have helped me throughout this project:
 
 #### **Code Institute Boutique Ado Project**
+
 The **Code Institute Boutique Ado project** served as a significant source of inspiration and guidance for this project. Many of the concepts, techniques, and best practices applied in the development of **Arduino Lab** were learned and adapted from this comprehensive e-commerce project tutorial provided by Code Institute.
 
 #### Key Lessons Learned:
+
 - **Django Framework**:
+
   - Understanding the Django MVC (Model-View-Controller) structure and applying it to build scalable, maintainable applications.
   - Utilizing Django’s built-in features like authentication, forms, and admin panel for rapid development.
 
 - **Database Management**:
+
   - Learning to structure models for e-commerce, including categories, products, orders, and user profiles.
   - Implementing foreign key relationships and optimizing database queries.
 
 - **Payment Integration**:
+
   - Adapting the payment workflow demonstrated in Boutique Ado to integrate **Stripe** into this project for secure and seamless checkout experiences.
 
 - **Responsive Design**:
   - Leveraging Bootstrap and CSS techniques taught in Boutique Ado to ensure the site is user-friendly across devices.
 
-
 ---
 
 #### Acknowledgment
 
-I would like to express my sincere gratitude to the entire team at **Code Institute**, whose comprehensive curriculum, guidance, and unwavering support have been instrumental in my learning journey. 
+I would like to express my sincere gratitude to the entire team at **Code Institute**, whose comprehensive curriculum, guidance, and unwavering support have been instrumental in my learning journey.
 
 A special thank you goes to all the instructors, mentors, and contributors who have dedicated their time and effort to create such an exceptional learning environment. Your expertise and dedication have not only equipped me with the technical skills to complete this project but have also elevated my understanding and confidence in full-stack development to a level I never thought possible.
 
