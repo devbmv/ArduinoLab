@@ -53,7 +53,7 @@ You can explore the live project here: [Arduino Lab](https://arduino-lab-project
     - [Epic 9:Create a Comprehensive README File](#create-a-comprehensive-readme-file)
     - [Epic 10:Deployment to Heroku](#deployment-to-heroku)
 
-  - [Entity-Relationship-Diagram-(ERD)](#Entity-Relationship Diagram (ERD))
+  - [Entity Relationship Diagram](#Entity-Relationship-Diagram-(ERD))
     - [Colors](#colors)
     - [Design Choices](#design-choices)
     - [Typography](#typography)
