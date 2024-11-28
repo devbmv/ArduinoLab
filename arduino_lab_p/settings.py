@@ -18,7 +18,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Check if the .env file exists in the root directory of the project
 if os.path.exists("env.py"):
     print(".env file found")
-    import env  # Import only if .env exists# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+    # Import only if .env exists# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+    import env
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -52,7 +53,8 @@ INSTALLED_APPS = [
     "crispy_bootstrap4",
     "storages",
     "widget_tweaks",
-    # 'django_extensions',  # Uncomment if needed
+    "django_extensions",
+    "erdiagram",
     "home",
     "products",
     "bag",
@@ -67,7 +69,7 @@ MIDDLEWARE = [
     "allauth.account.middleware.AccountMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
-    "store_settings.middleware.StoreSettingsMiddleware", 
+    "store_settings.middleware.StoreSettingsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -78,7 +80,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = "arduino_lab_p.urls"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-CORS_ORIGIN_ALLOW_ALL = True 
+CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {
@@ -133,7 +135,8 @@ WSGI_APPLICATION = "arduino_lab_p.wsgi.application"
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 if "DATABASE_URL" in os.environ and "USE_AWS" in os.environ:
-    DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+    DATABASES = {"default": dj_database_url.parse(
+        os.environ.get("DATABASE_URL"))}
 else:
     DATABASES = {
         "default": {
@@ -199,16 +202,16 @@ if "USE_AWS" in os.environ:
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = os.environ.get(
         "AWS_STORAGE_BUCKET_NAME"
-    )  
+    )
     AWS_S3_REGION_NAME = os.environ.get(
         "AWS_S3_REGION_NAME"
-    )  
+    )
     AWS_ACCESS_KEY_ID = os.environ.get(
         "AWS_ACCESS_KEY_ID"
-    )  
+    )
     AWS_SECRET_ACCESS_KEY = os.environ.get(
         "AWS_SECRET_ACCESS_KEY"
-    )  
+    )
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
 
     # Static and media files

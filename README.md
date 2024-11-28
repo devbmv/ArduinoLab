@@ -15,6 +15,7 @@ You can explore the live project here: [Arduino Lab](https://arduino-lab-project
 - [Project Overview](#project-overview)
   - [Agile Workflow](#agile-workflow)
 - [User Experience](#user-experience)
+
   - [Strategy](#strategy)
     - [Primary Goals](#primary-goals)
     - [Business Model](#business-model)
@@ -30,6 +31,7 @@ You can explore the live project here: [Arduino Lab](https://arduino-lab-project
       - [Schema of models](#schema-of-models)
   - [Scope - Epics and User Stories](#scope-epics-and-user-stories)
   - [Project Setup](#project-setup)
+
     - [Epic 1: Django Project Initialization](#django-project-initialization)
     - [Epic 2:Install Required Packages](#install-required-packages)
     - [Epic 3:Setup Admin Panel for Store Management](#setup-admin-panel-for-store-management)
@@ -39,6 +41,7 @@ You can explore the live project here: [Arduino Lab](https://arduino-lab-project
     - [Epic 7:Static and Media Files Configuration](#static-and-media-files-configuration)
 
   - [Project Implementation](#project-implementation)
+
     - [Epic 1:Product Search and Browsing](#product-search-and-browsing)
     - [Epic 2:Detailed Product Information](#detailed-product-information)
     - [Epic 3:Shopping Cart](#shopping-cart)
@@ -50,12 +53,11 @@ You can explore the live project here: [Arduino Lab](https://arduino-lab-project
     - [Epic 9:Create a Comprehensive README File](#create-a-comprehensive-readme-file)
     - [Epic 10:Deployment to Heroku](#deployment-to-heroku)
 
-  - [Skeleton](#skeleton)
-    - [Wireframes](#wireframes)
-  - [Surface](#surface)
+  - [Entity-Relationship-Diagram-(ERD)](#Entity-Relationship Diagram (ERD))
     - [Colors](#colors)
     - [Design Choices](#design-choices)
     - [Typography](#typography)
+
 - [Existing Features](#existing-features)
   - [Feature 1: The Navbar](#feature-1-the-navbar)
   - [Feature 2: The Home Page](#feature-2-the-home-page)
@@ -63,7 +65,7 @@ You can explore the live project here: [Arduino Lab](https://arduino-lab-project
   - [Feature 4: The Products List](#feature-4-the-products-list)
   - [Feature 5: The Product Detail Page](#feature-5-the-product-detail-page)
   - [Feature 6: The Cart](#feature-6-the-cart)
-  - [Feature 7: The  Sign Up/In/Out Pages](#feature-7-the-sign-up-in-out-pages)
+  - [Feature 7: The Sign Up/In/Out Pages](#feature-7-the-sign-up-in-out-pages)
   - [Feature 8: The Product Management](#feature-8-the-product-management-page)
   - [Feature 9: Store settings](#feature-9-store-settings-page)
   - [Feature 10: Change Password](#feature-10-change-password)
@@ -80,9 +82,6 @@ You can explore the live project here: [Arduino Lab](https://arduino-lab-project
   - [Making a Local Clone](#making-a-local-clone)
   - [Heroku](#heroku)
   - [AWS S3](#aws-s3)
-- [Validation](#validation)
-- [Accessibility](#accessibility)
-- [Bugs](#bugs)
 - [Credits](#credits)
   - [Copyrights](#copyrights)
     - [Media](#media)
@@ -94,7 +93,7 @@ You can explore the live project here: [Arduino Lab](https://arduino-lab-project
 
 ## Project Overview
 
-**Arduino Lab** is an online store designed to meet the needs of hobbyists, students, and professionals working with Arduino and other electronics projects. The platform provides a wide range of microcontrollers like: Arduino , ESP32, RPi,STM32 and other, making it a one-stop shop for DIY electronics enthusiasts. 
+**Arduino Lab** is an online store designed to meet the needs of hobbyists, students, and professionals working with Arduino and other electronics projects. The platform provides a wide range of microcontrollers like: Arduino , ESP32, RPi,STM32 and other, making it a one-stop shop for DIY electronics enthusiasts.
 
 The project is built with the **Django** web framework, combining a robust backend with dynamic and user-friendly frontend features. This online shop is structured to be highly modular and scalable, supporting future enhancements like additional product categories, user accounts, and more extensive e-commerce functionalities.
 
@@ -112,8 +111,6 @@ The project is built with the **Django** web framework, combining a robust backe
 - **PostgreSQL**: A robust relational database for storing user, product, and order information.
 - **Stripe API**: Integrated for secure payment processing, supporting a smooth checkout process.
 - **AWS S3**: For storing and serving media files efficiently.
-
-### Agile Development
 
 ## Agile Workflow
 
@@ -154,23 +151,22 @@ This agile structure facilitated organized development, enabled continuous monit
 
 ### User Experience
 
-#### Strategy
-
-##### Primary Goals
 - **Arduino Lab**
-Welcome to Arduino Lab – Unleash Your Creativity with Our Latest Microcontroller Collection! Dive into the world of innovation and discover powerful microcontrollers designed for your next project.
-Arduino Lab  aims to be a specialized online store dedicated to selling microcontrollers, specifically tailored for electronics enthusiasts and professional developers. The platform focuses exclusively on offering a wide range of microcontrollers, including popular models such as ESP, STM, AVR, and more.
+  Welcome to Arduino Lab – Unleash Your Creativity with Our Latest Microcontroller Collection! Dive into the world of innovation and discover powerful microcontrollers designed for your next project.
+  Arduino Lab aims to be a specialized online store dedicated to selling microcontrollers, specifically tailored for electronics enthusiasts and professional developers. The platform focuses exclusively on offering a wide range of microcontrollers, including popular models such as ESP, STM, AVR, and more.
 - The primary goal is to provide users with a seamless shopping experience for microcontrollers, offering advanced search and filtering options based on specifications and categories, along with secure payment processing.
 
 ## Strategy
 
 ### Primary Goals
+
 1. **Product Availability**: Offer a wide range of microcontrollers and related components, catering to both beginner and advanced makers.
 2. **User Engagement**: Encourage customers to explore, learn, and experiment with various microcontroller platforms.
 3. **Customer Satisfaction**: Provide a seamless shopping experience, quick support, and informative resources to assist users with their projects.
 4. **Sales Growth**: Increase sales through effective marketing, special offers, and loyalty programs.
 
 ### Business Model
+
 Arduino Lab is an e-commerce platform focused on selling microcontrollers, development boards, and accessories. The primary products include items from categories such as **AVR**, **ARM**, **ESP**, **Raspberry Pi**, **MSP430**, and **8051**. Key elements of the business model include:
 
 - **Revenue Model**: Product sales with a focus on bundle offers, cross-selling, and upselling.
@@ -178,48 +174,50 @@ Arduino Lab is an e-commerce platform focused on selling microcontrollers, devel
 - **Educational Resources**: Provide learning materials and tutorials to support customers' projects and drive engagement.
 
 ### Marketing
+
 1. **Target Audience**:
    - Electronics hobbyists, students, and professionals working on embedded systems and IoT projects.
-2. **Promotional Offers**:
-   - Highlight special deals and seasonal discounts to attract and retain customers.
-3. **Content Marketing**:
+2. **Content Marketing**:
    - Publish articles, project ideas, and tutorials to inspire customers and position Arduino Lab as a resourceful learning hub.
-4. **Email Marketing**:
+3. **Email Marketing**:
    - Use email campaigns to inform customers of new arrivals, special offers, and educational content.
-    ![Subscription option ](media\documentations\subscribe.PNG) 
+     ![Subscription option ](media\documentations\subscription.PNG)
 
 ### Search Engine Optimization
-- **SEO Strategy**: To increase visibility, Arduino Lab will implement SEO practices, including keyword optimization for terms related to microcontrollers, technical specifications, and DIY electronics. The website will be structured with descriptive meta tags, optimized product descriptions, and relevant keywords to improve search rankings and reach a broader audience in the electronics and developer communities.
-Arduino Lab is aimed at becoming a trusted source for Arduino and electronics supplies, combining a clean design with efficient backend operations to deliver an enjoyable shopping experience.
+
+- **SEO Strategy**: To increase visibility, Arduino Lab will implement SEO practices, including keyword optimization for terms related to microcontrollers, technical specifications, and DIY electronics. The website will be structured with descriptive meta tags, optimized product descriptions, and relevant keywords to improve search rankings and reach a broader audience in the electronics and developer communities. The same I have generated a sitemap.xml and robots.txt file for my project.
+  Arduino Lab is aimed at becoming a trusted source for Arduino and electronics supplies, combining a clean design with efficient backend operations to deliver an enjoyable shopping experience.
+
 1. **Keyword Strategy**:
    - Use keywords relevant to microcontroller brands, electronics projects, tutorials, and related accessories.
 2. **On-Page SEO**:
    - Optimize page titles, meta descriptions, and headings for better visibility in search engine results.
 3. **Product Descriptions**:
-   - Include detailed, keyword-rich descriptions of products to improve ranking and inform potential buyers. 
-    ![SEO ](media\documentations\meta_tags.PNG) 
+   - Include detailed, keyword-rich descriptions of products to improve ranking and inform potential buyers.
+     ![SEO ](media\documentations\meta_tags.PNG)
 4. **Content SEO**:
    - Regularly publish informative articles, tutorials, and guides to drive organic traffic.
-   
 5. **Social Media Marketing**
-   - **Facebook Page**: Engage with our audience by sharing educational content, project ideas, and promotions. We will also create interactive posts such as polls, live Q&A sessions, and giveaways to increase engagement.
-         ![Footer with social media ](media\documentations\social_account.PNG) 
-            ![Facebook page ](media\documentations\FACEBOOK_PAGE.PNG) 
+
+   - **Facebook Page**: I have been created a facebook page(it is a fake facebook page and it is just for educational purpose ,because my online shop is not a real) to promote my online store ArduinoLab.
+     ![Footer with social media ](media\documentations\social_account.PNG)
+     ![Facebook page ](media\documentations\facebook_page.PNG)
 
 6. **Email Marketing**
    - Build a subscriber list by offering valuable content like project tutorials and special discounts.
    - Run regular email campaigns with promotions, new product launches, and exclusive offers to engage our customer base and encourage repeat purchases.
-   ![Subscription option ](media\documentations\subscription1.PNG) 
+     ![Subscription option ](media\documentations\subscription1.PNG)
 7. **Collaborations & Partnerships**
    - Partner with educational institutions, makerspaces, and electronics hobbyist communities to promote our products as tools for learning and innovation.
    - Collaborate with influencers in the electronics and maker communities to review our products and create project videos.
-      ![Colaboration and Partnerships ](media\documentations\Colaboration.PNG) 
+     ![Colaboration and Partnerships ](media\documentations\colaboration.PNG)
+
 ## Structure
 
 ### Pages
 
 1. **Home Page**: Welcomes users to Arduino Lab, showcases the latest microcontroller collection, and includes a prominent call-to-action button ("Shop Now") for easy navigation.
-![Main page](media\mainPage.PNG)
+   ![Main page](media\mainPage.PNG)
 2. **Product Categories**:
    - **All Items**: Lists all products available in the store. ![All items](media\all_items.PNG)
    - **AVR, ARM, ESP, Raspberry Pi, MSP430, 8051**: Individual pages dedicated to each microcontroller type. ![Microcontrollers](media\microcontrollers.PNG)
@@ -232,7 +230,7 @@ Arduino Lab is aimed at becoming a trusted source for Arduino and electronics su
 ### Pages Provided by Django
 
 1. **Login/Logout**: Allows users to sign in or out of their accounts.  
-![Login page ](media\sign_in.PNG) ![Logout page ](media\sign_out.PNG) 
+   ![Login page ](media\sign_in.PNG) ![Logout page ](media\sign_out.PNG)
 2. **User Registration**: Page for new users to create accounts. ![Registration page ](media\register.PNG)
 3. **Password Reset**: Helps users recover their accounts if they forget their passwords.
 4. **Admin Panel**: Django's default admin panel for managing products, orders, and users. ![Store setting page ](media\store_settings.PNG)
@@ -241,14 +239,13 @@ Arduino Lab is aimed at becoming a trusted source for Arduino and electronics su
 
 ### Code Structure
 
-The **Arduino Lab** project is organized following Django's standard Django follows an MTV (Model-Template-View)  structure, allowing for a clear separation of responsibilities. This structure helps with scalability, maintainability, and collaboration across different parts of the project.
+The **Arduino Lab** project is organized following Django's standard Django follows an MTV (Model-Template-View) structure, allowing for a clear separation of responsibilities. This structure helps with scalability, maintainability, and collaboration across different parts of the project.
 
 #### Code Structure
 
 The codebase for **Arduino Lab** is divided into modular Django apps, following Django’s best practices to separate functionality across the different areas of the project.
 
 - **Home** - Provides the basic functionality for the homepage, displaying the welcome message, featured products, and navigation options.
-  
 - **Products** - Manages all functionality related to the products, including listing, filtering by category, and product details. This app supports various microcontrollers like ESP, STM, AVR, ARM, and Raspberry Pi.
 
 - **Cart** - Implements shopping cart functionality, allowing users to add products, update quantities, and view their cart before proceeding to checkout.
@@ -262,7 +259,6 @@ The codebase for **Arduino Lab** is divided into modular Django apps, following 
 **Other Directories and Files**
 
 - **static/** - Contains CSS, JavaScript, and other static assets used across the project.
-  
 - **media/** - Stores images for the development environment. In production, images are hosted separately on a cloud storage provider.
 
 - **arduino_lab/** - Main Django project folder containing project settings, URLs, and configuration files for the entire project.
@@ -283,16 +279,14 @@ The codebase for **Arduino Lab** is divided into modular Django apps, following 
 
 Environment variables such as API keys and database credentials are securely managed in the backend for both the development environment and the Heroku App settings. This ensures that sensitive information is protected and only accessible by authorized systems.
 
-
 ### Database
 
 This project uses a PostgreSQL database hosted by Code Institute, designed to support full-featured e-commerce functionality. The database configuration provided by Code Institute simplifies the setup, allowing me to focus on developing and implementing features rather than database infrastructure.
 
-
-
 #### Data Models
 
 1. **Category**
+
    - Represents different categories of microcontrollers (e.g., AVR, ESP, ARM).
    - **Fields**:
      - `name`: The name of the category.
@@ -300,6 +294,7 @@ This project uses a PostgreSQL database hosted by Code Institute, designed to su
      - `slug`: A URL-friendly identifier for the category.
 
 2. **Product**
+
    - Represents an individual microcontroller or accessory available in the shop.
    - **Fields**:
      - `name`: The name of the product.
@@ -312,6 +307,7 @@ This project uses a PostgreSQL database hosted by Code Institute, designed to su
      - `updated_at`: Date when the product details were last updated.
 
 3. **User Profile**
+
    - Stores additional user information linked to Django’s default `User` model.
    - **Fields**:
      - `user`: One-to-one relationship with Django’s `User` model.
@@ -321,6 +317,7 @@ This project uses a PostgreSQL database hosted by Code Institute, designed to su
      - `phone_number`: Contact number for the user.
 
 4. **Cart**
+
    - Represents a shopping cart for a user session, storing items before checkout.
    - **Fields**:
      - `user`: A foreign key linking to the `User` model (optional, can also support guest checkout).
@@ -328,6 +325,7 @@ This project uses a PostgreSQL database hosted by Code Institute, designed to su
      - `updated_at`: Date and time when the cart was last updated.
 
 5. **CartItem**
+
    - Represents individual items within a cart, linked to both `Cart` and `Product`.
    - **Fields**:
      - `cart`: A foreign key linking to the `Cart` model.
@@ -336,6 +334,7 @@ This project uses a PostgreSQL database hosted by Code Institute, designed to su
      - `price`: Price of the item at the time of adding to the cart (for snapshotting).
 
 6. **Order**
+
    - Represents a finalized purchase made by the user.
    - **Fields**:
      - `user`: A foreign key linking to the `User` model.
@@ -345,6 +344,7 @@ This project uses a PostgreSQL database hosted by Code Institute, designed to su
      - `updated_at`: Date and time when the order status was last updated.
 
 7. **OrderItem**
+
    - Represents individual items in an order, linked to both `Order` and `Product`.
    - **Fields**:
      - `order`: A foreign key linking to the `Order` model.
@@ -374,42 +374,9 @@ The schema for the **Arduino Lab** project is designed to follow best practices 
 
 This relational setup allows flexible operations for managing products, tracking user carts, processing orders, and handling payments. It is tailored to suit the functionality required for a microcontroller-focused e-commerce platform.
 
+## Scope - Epics and User Stories
 
-!!!!!!!!!!!!!!!!### Schema of Models
-
-
-User
-├── id (Primary Key)
-├── username
-├── email
-├── password
-└── date_joined
-
-Category
-├── id (Primary Key)
-├── name
-└── description
-
-Product
-├── id (Primary Key)
-├── name
-├── description
-├── price
-├── stock
-├── category (Foreign Key to Category)
-└── created_at
-
-Order
-├── id (Primary Key)
-├── user (Foreign Key to User)
-├── order_date
-├── status
-└── total_price
-
-
-
-##  Scope - Epics and User Stories 
-  ### Agile Workflow
+### Agile Workflow
 
 To organize and manage the development process of the **Arduino Lab** project, I created two Agile boards, each representing a set of user stories that focus on distinct aspects of the project. This method enabled an efficient workflow, allowing me to structure the project setup and feature implementation in a systematic and visual manner.
 
@@ -417,9 +384,8 @@ To organize and manage the development process of the **Arduino Lab** project, I
 
 The first board is dedicated to the setup phase of the project, covering foundational configurations and initial setup tasks. This board is a collection of tasks that establish the project environment, necessary installations, and settings, forming the groundwork for further development.
 
-**Completed Tasks:**
+- #### Epic 1: Django Project Initialization:
 
-- #### Epic 1:  Django Project Initialization:
   As a developer, I want to initialize a new Django project so that I can build the e-commerce platform.
 
 - #### Epic 2: Install Required Packages:
@@ -437,48 +403,40 @@ The first board is dedicated to the setup phase of the project, covering foundat
 
 Each task in this board represents a key step in preparing the environment, ensuring the project is ready for feature implementation and deployment.
 
-#### Feature Implementation Board
+#### Project Implementation Board
 
-The second board focuses on the core features and functionalities required for **Arduino Lab**. This board represents the essential components that enhance the user experience and meet the requirements of a functional e-commerce platform for microcontrollers. It encompasses various user stories, from basic shopping cart functionality to product reviews, enabling a streamlined development process. 
+The second board focuses on the core features and functionalities required for **Arduino Lab**. This board represents the essential components that enhance the user experience and meet the requirements of a functional e-commerce platform for microcontrollers. It encompasses various user stories, from basic shopping cart functionality to product reviews, enabling a streamlined development process.
 
-**Task Statuses:**
-  
-- **Completed**:
-  -  #### Epic 1:Product Search and Browsing:
-    As a user, I want to browse and search for products like microcontrollers (ESP, AVR, STM32, Raspberry Pi) so I can find what I need easily.
-  -  #### Epic 2:Detailed Product Information:
-    As a user, I want to see detailed product information for each electronic component so that I can make informed purchasing decisions.
-  -  #### Epic 3:Shopping Cart:
-    As a user, I want to add multiple products to my shopping cart so that I can purchase them in a single transaction.
-  -  #### Epic 4:Account Creation:
-    As a user, I want to be able to create an account so that I can save my shipping details and access my order history.
-  -  #### Epic 5:Secure Payment:
-    As a user, I want to securely pay for my order using common payment methods like credit card or PayPal.
-  -  #### Epic 6:Order Confirmation:
-    As a user, I want to receive a confirmation of my order after purchase so I can be sure the transaction was successful.
-  -  #### Epic 7:Product Filtering:
-    As a user, I want to filter products by category (e.g., microcontrollers, sensors, hobby kits) so that I can narrow down my search results.
-  -  #### Epic 8:Product Reviews:
-    As a user, I want to be able to leave a review on the products I’ve purchased to share my feedback with other users.
-  -  #### Epic 9:Create a Comprehensive README File:
-    As a developer, I want to create a detailed README file so that other developers can understand how to set up and contribute to the project.
-  -  #### Epic 10:Deployment to Heroku:
-    As a developer, I want to deploy the Django project to Heroku so that the e-commerce site is accessible online.
+- #### Epic 1:Product Search and Browsing:
+  As a user, I want to browse and search for products like microcontrollers (ESP, AVR, STM32, Raspberry Pi) so I can find what I need easily.
+- #### Epic 2:Detailed Product Information:
+  As a user, I want to see detailed product information for each electronic component so that I can make informed purchasing decisions.
+- #### Epic 3:Shopping Cart:
+  As a user, I want to add multiple products to my shopping cart so that I can purchase them in a single transaction.
+- #### Epic 4:Account Creation:
+  As a user, I want to be able to create an account so that I can save my shipping details and access my order history.
+- #### Epic 5:Secure Payment:
+  As a user, I want to securely pay for my order using common payment methods like credit card or PayPal.
+- #### Epic 6:Order Confirmation:
+  As a user, I want to receive a confirmation of my order after purchase so I can be sure the transaction was successful.
+- #### Epic 7:Product Filtering:
+  As a user, I want to filter products by category (e.g., microcontrollers, sensors, hobby kits) so that I can narrow down my search results.
+- #### Epic 8:Product Reviews:
+  As a user, I want to be able to leave a review on the products I’ve purchased to share my feedback with other users.
+- #### Epic 9:Create a Comprehensive README File:
+  As a developer, I want to create a detailed README file so that other developers can understand how to set up and contribute to the project.
+- #### Epic 10:Deployment to Heroku:
+  As a developer, I want to deploy the Django project to Heroku so that the e-commerce site is accessible online.
 
 This board represents a progressive approach to adding value to the project by implementing features that improve usability and support a comprehensive shopping experience for users. Using labels like **Must Be**, **Should Be**, and **Could Be** in the Agile workflow allowed me to maintain focus on core project requirements while also planning for additional functionalities that improve the user experience. By organizing tasks in this way, I ensured that critical setup and feature tasks were completed systematically and prioritized appropriately, supporting a clear and effective development path for **Arduino Lab**.
 
 This Agile workflow allowed me to manage tasks efficiently, keeping track of progress and completing each step in an organized manner. Each user story reflects a specific component or functionality critical to the overall success of the **Arduino Lab** project. By dividing the work into these two boards, I maintained clarity between the setup tasks and feature development, ensuring that the project goals were achieved systematically.
 
-### Skeleton
+# Entity-Relationship Diagram (ERD)
 
-#### Wireframes
+![Entity-Relationship Diagram](erd.png)
 
-![Wireframe of Product Detail on Desktop](https://github.com/johnvenkiah/CI_PP5_John_Venkiah/blob/main/docs/wireframes/images/product_detail_desktop.png)
-
-Wireframe images were made for all pages except for the ones rarely used by the site, for example password change and email confirmation.
-
-All wireframes can be viewed [here](https://github.com/johnvenkiah/CI_PP5_John_Venkiah/blob/main/docs/wireframes/WIREFRAMES.md)
-
+This diagram visually represents the relationships between entities in the database schema. Use it as a reference to understand the structure of your Django application.
 
 #### Colors
 
@@ -506,7 +464,7 @@ These design choices aim to balance aesthetics with functionality, creating a si
 
 The typography chosen for **Arduino Lab** is straightforward and professional, aligning with the clean and tech-focused brand image.
 
-- **Primary Font**: A sans-serif font like *Roboto* or *Open Sans* has been used for its clarity and readability, particularly on digital screens. This typeface contributes to a modern and tech-savvy look.
+- **Primary Font**: A sans-serif font like _Roboto_ or _Open Sans_ has been used for its clarity and readability, particularly on digital screens. This typeface contributes to a modern and tech-savvy look.
 - **Font Sizes**:
   - **Headers**: Larger font sizes are used for headers, such as the main welcome text, to draw attention and create a visual hierarchy.
   - **Body Text**: Regular-sized fonts are used for descriptions, product details, and other information-heavy sections to ensure easy readability.
@@ -517,98 +475,119 @@ This typography enhances the overall readability of the site, ensuring that info
 ## Existing Features
 
 ### Feature 1: The Navbar
-  - **Purpose**: Provides users with easy access to all parts of the website.
-  - **Features**:
-  - **Categories Links**: Includes quick links to product categories such as AVR, ARM, ESP, Raspberry Pi, MSP430, and more, making it easy for users to find the specific type of microcontroller they're looking for.
- ![Microcontrollers](media\microcontrollers.PNG)
-  - **Search Bar**: Positioned at the top of the page, enabling users to quickly search for products by keywords.![Search bar](media\search_bar.PNG)
-  - **Account and Cart Icons**: Accessible icons for user account management and shopping cart overview. The cart icon displays the current item count, helping users keep track of their purchases as they browse.
+
+- **Purpose**: Provides users with easy access to all parts of the website.
+- **Features**:
+- **Categories Links**: Includes quick links to product categories such as AVR, ARM, ESP, Raspberry Pi, MSP430, and more, making it easy for users to find the specific type of microcontroller they're looking for.
+  ![Microcontrollers](media\microcontrollers.PNG)
+- **Search Bar**: Positioned at the top of the page, enabling users to quickly search for products by keywords.![Search bar](media\search_bar.PNG)
+- **Account and Cart Icons**: Accessible icons for user account management and shopping cart overview. The cart icon displays the current item count, helping users keep track of their purchases as they browse.
   ![Account and Cart Icons](media\my_account.PNG)
 
- This is how Navigation bar looks on mobile device: 
-- **Mobile navigation bar**  ![Mobile navigation bar](media\documentations\MOBILE_NAVBAR.PNG)
+This is how Navigation bar looks on mobile device:
+
+- **Mobile navigation bar** ![Mobile navigation bar](media\documentations\mobile_navbar.PNG)
 
 ### Feature 2: The Home Page
-  - **Purpose**: Acts as the main entry point for the site, showcasing featured content and promotions.
-  - **Features**:
-  - **Hero Banner**: A visually engaging banner that welcomes users to Arduino Lab, with a message encouraging creativity with the latest microcontrollers.
+
+- **Purpose**: Acts as the main entry point for the site, showcasing featured content and promotions.
+- **Features**:
+- **Hero Banner**: A visually engaging banner that welcomes users to Arduino Lab, with a message encouraging creativity with the latest microcontrollers.
   ![Hero banner](media\documentations\hero_banner.PNG)
-  - **Shop Now Button**: A call-to-action button in the hero banner that directs users to the product listings, inviting them to start browsing immediately.
-  ![Shop now button](media\documentations\Shopnow_button.PNG)
-  - **Promotional Banner**: Highlights promotions such as "Free delivery on orders over $50," to encourage larger purchases.
+- **Shop Now Button**: A call-to-action button in the hero banner that directs users to the product listings, inviting them to start browsing immediately.
+  ![Shop now button](media\documentations\shopnow_button.PNG)
+- **Promotional Banner**: Highlights promotions such as "Free delivery on orders over $50," to encourage larger purchases.
   ![Promotional banner](media\documentations\promotional_banner.PNG)
-  - **Social Media and Newsletter Section**: A section at the top that allows users to subscribe to the newsletter for exclusive deals.
+- **Social Media and Newsletter Section**: A section at the top that allows users to subscribe to the newsletter for exclusive deals.
   ![Social Media and Newsletter Section](media\documentations\media_and_newsletter.PNG)
-  
-   This is how Home Page looks on mobile device: 
-- **Mobile Home Page**  ![Mobile Home Page](media\documentations\mobile_homepage.PNG)
+
+This is how Home Page looks on mobile device:
+
+- **Mobile Home Page** ![Mobile Home Page](media\documentations\mobile_homepage.PNG)
 
 ### Feature 3: The Footer
+
 - **Purpose**: Provides additional navigational links and engagement options at the bottom of page.
 - **Features**:
-  - **Social Media Link**: Links to Arduino Lab’s Facebook page, offering users a way to stay connected and informed about updates.
-   ![Social Media and Newsletter Section](media\footer.PNG)
-  - **Newsletter Signup**: An email signup form where users can subscribe to monthly updates, receiving exclusive offers and product news.
-  ![ Newsletter Section](media\documentations\subscribe.PNG)
 
-  This is how Footer looks on mobile device: 
-- **Mobile Footer**  ![Mobile footer](media\documentations\mobile_footer.PNG)
+  - **Social Media Link**: Links to Arduino Lab’s Facebook page, offering users a way to stay connected and informed about updates.
+    ![Social Media and Newsletter Section](media\footer.PNG)
+  - **Newsletter Signup**: An email signup form where users can subscribe to monthly updates, receiving exclusive offers and product news.
+    ![ Newsletter Section](media\documentations\subscribe.PNG)
+
+  This is how Footer looks on mobile device:
+
+- **Mobile Footer** ![Mobile footer](media\documentations\mobile_footer.PNG)
 
 ### Feature 4: The Products List
+
 - **Purpose**: Displays a comprehensive list of all available products for easy browsing and selection.
 - **Features**:
-  - **Product Categories**: Filters that allow users to select and browse specific types of microcontrollers, narrowing down their options.  ![All items](media\all_items.PNG)
+
+  - **Product Categories**: Filters that allow users to select and browse specific types of microcontrollers, narrowing down their options. ![All items](media\all_items.PNG)
   - **Product Filtering and Sorting**: Users can sort products based on criteria like price(low to high or opposit),rating(low to high and apposit),category(A-Z and Z-A) and name(A-Z and Z-A). ![Sortering and filtering](media\documentations\sortering.PNG)
 
-    This is how the product list looks on mobile device: 
-- **Mobile Product List**  ![Mobile product list](media\documentations\mobile_product_list.PNG)
+    This is how the product list looks on mobile device:
+
+- **Mobile Product List** ![Mobile product list](media\documentations\mobile_product_list.PNG)
 
 ### Feature 5: The Product Detail Page
+
 - **Purpose**: Provides in-depth information about each product, enabling users to make informed purchase decisions.
 - **Features**:
-  - **Product Image and Description**: High-quality images along with a detailed description that outlines the product's features, specifications, rating,price and quantity. 
+
+  - **Product Image and Description**: High-quality images along with a detailed description that outlines the product's features, specifications, rating,price and quantity.
   - **Pricing and Quantity**: Clearly visible pricing information and quantity of product to inform users. ![]
   - **Add to Cart Button**: Enables users to directly add the product to their cart with a single click, making the shopping process efficient. ![product details](media\product_detail.PNG)
 
-    This is how the product detail page looks on mobile device: 
-- **Mobile Product detail page**  ![Mobile product detail](media\documentations\mobilr_product_detail.PNG)
+    This is how the product detail page looks on mobile device:
+
+- **Mobile Product detail page** ![Mobile product detail](media\documentations\mobilr_product_detail.PNG)
 
 ### Feature 6: The Cart
+
 - **Purpose**: Allows users to review their selected items and make any adjustments before proceeding to checkout.
 - **Features**:
+
   - **Cart Summary**: Shows all items added to the cart, including details like item name, quantity, and individual price. Users can also see the subtotal for each item and the total cost for all items in the cart.
   - **Update and Remove Options**: Users can easily adjust quantities or remove items if they change their mind.
   - **Proceed to Checkout**: A prominent button that directs users to the checkout page, where they can complete their purchase. ![Shoping bag](media\documentations\shoping_bag.PNG)
 
-    This is how Cart page looks on mobile device: 
-- **Mobile Cart**  ![Mobile cart](media\documentations\mobile_shoping_bag.PNG)
+    This is how Cart page looks on mobile device:
+
+- **Mobile Cart** ![Mobile cart](media\documentations\mobile_shoping_bag.PNG)
 
 ### Feature 7: The Sign Up/In/Out Pages
+
 - **Purpose**: Allows users to create and manage their accounts, providing a more personalized shopping experience.
 - **Features**:
+
   - **Sign Up Form**: New users can create an account by providing their name, email, and password, which enables them to save their information for future use. ![Register form](media\register.PNG)
-  - **Sign In**: Existing users can log in to their accounts to access their saved information and view their order history. 
+  - **Sign In**: Existing users can log in to their accounts to access their saved information and view their order history.
   - ![Sign in form](media\sign_in.PNG)
   - **Sign Out**: Securely logs users out of their accounts, ensuring privacy and data security.
   - ![Sign out form](media\sign_out.PNG)
 
-      This is how Sign Up/In/Out Pages looks on mobile device: 
-- **Sign Up/In/Out Pages**  
-- ![Sign Up Pages](media\documentations\mobile_register.PNG), 
-- ![Sign In Pages](media\documentations\mobile_signin.PNG), 
+    This is how Sign Up/In/Out Pages looks on mobile device:
+
+- **Sign Up/In/Out Pages**
+- ![Sign Up Pages](media\documentations\mobile_register.PNG),
+- ![Sign In Pages](media\documentations\mobile_signin.PNG),
 - ![Sign Out Pages](media\documentations\mobile_signout.PNG).
 
- ### Feature 8: The Product management
+### Feature 8: The Product management
 
 The **Product Management** feature in **Arduino Lab** enables administrators to effectively manage and organize the catalog of microcontrollers and related products. This feature allows for streamlined inventory management and provides a straightforward interface to input all relevant technical specifications for each product.
 
 #### Key Functionalities:
 
 - **Add a New Product**:
+
   - Administrators can easily add new microcontrollers or other products using a comprehensive form.
   - The form includes fields for detailed specifications, ensuring that customers have complete and accurate information about each product.
 
 - **Product Fields**:
+
   - **SKU**: A unique identifier for each product.
   - **Name**: The official name of the microcontroller or component.
   - **Category**: Selection from various categories (e.g., AVR, ARM, ESP), helping to organize products into searchable groups.
@@ -622,6 +601,7 @@ The **Product Management** feature in **Arduino Lab** enables administrators to 
   - **Description**: A text field for additional details about the product, such as features, use cases, and compatibility.
 
 - **Editing Existing Products**:
+
   - Products can be modified with updated information, such as changes to specifications, new images, or revised prices. This is essential for keeping product data accurate and relevant.
 
 - **Removing Products**:
@@ -636,29 +616,33 @@ The **Product Management** feature in **Arduino Lab** enables administrators to 
 The **Product Management** feature is essential for maintaining an up-to-date and organized product catalog on the Arduino Lab platform, supporting both administrative efficiency and customer satisfaction.
 ![Product management](media\product_management.PNG)
 
- ### Feature 9: Store Settings
+### Feature 9: Store Settings
 
 The **Store Settings** feature in **Arduino Lab** provides administrators with a comprehensive panel to manage various configurations for the online shop. This feature allows for the customization of store information, payment options, shipping policies, and user preferences, enabling efficient and flexible control over the store’s operation.
 
 #### Key Functionalities:
 
 - **General Store Settings**:
+
   - **Store Name**: Set the name of the store, displayed to users.
   - **Store Description**: Add a brief description to inform customers about the store’s purpose or mission.
   - **Contact Email**: Input a contact email address, allowing customers to reach out for support or inquiries.
   - **Currency**: Define the currency (e.g., EUR, USD) used for product pricing, helping internationalize the store.
 
 - **Payment Settings**:
+
   - **Stripe Public Key**: Enter the public API key for Stripe, enabling integration with Stripe for secure payment processing.
   - **Stripe Secret Key**: Configure the secret API key for Stripe. This key is securely handled and can be shown/hidden for convenience.
   - **PayPal Client ID**: Add the Client ID for PayPal, another widely-used payment gateway, allowing users to check out with PayPal.
   - **PayPal Client Secret**: Input the secret key for PayPal transactions, with the option to show or hide for security purposes.
 
 - **Shipping Settings**:
+
   - **Standard Shipping Cost**: Set a default shipping cost applied to orders under a certain amount, helping cover shipping expenses.
   - **Free Shipping Threshold**: Define the minimum order amount required for free shipping, encouraging higher order values.
 
 - **User Settings**:
+
   - **Preferred Language**: Specify the default language for the store’s interface, improving accessibility for users from different linguistic backgrounds.
   - **Receive Newsletter**: A toggle for receiving newsletters, allowing administrators to control subscription preferences for promotional emails.
 
@@ -710,6 +694,7 @@ The **My Profile** section in **Arduino Lab** allows users to manage their perso
 - **Default Delivery Information**: Users can update their default delivery details, including fields for address, city, state, and country. This ensures a smooth and personalized checkout experience by pre-filling the shipping information on future orders.
 
 - **Order History**: Users can view a list of their previous orders, with details including:
+
   - **Order Number**: A unique identifier for each order, with clickable links to view the complete order details.
   - **Date**: The date and time of the purchase, allowing users to keep track of their shopping history.
   - **Items**: A summary of the purchased items, displaying the product name and quantity.
@@ -725,7 +710,6 @@ The **My Profile** section in **Arduino Lab** allows users to manage their perso
 
 The **My Profile** feature is designed to enhance the user experience on Arduino Lab by giving users full control over their account settings and purchase records.
 ![My profile ](media\my_profile.PNG)
-
 
 ## Features Yet to Implement
 
@@ -773,7 +757,7 @@ These features represent my vision for **Arduino Lab** as a comprehensive platfo
 
 ### Languages
 
-- [Python 3.8](https://www.python.org/) - Used for backend programming and to build the main application logic.
+- [Python 3.10.3](https://www.python.org/) - Used for backend programming and to build the main application logic.
 - [HTML5](https://en.wikipedia.org/wiki/HTML5) - Used for structuring all web pages on the front end.
 - [CSS3](https://en.wikipedia.org/wiki/CSS) - Utilized for styling the website to create a clean and responsive user interface.
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Used for front-end functionality and interactive elements.
@@ -803,9 +787,150 @@ The **Arduino Lab** project is built on the powerful [Django](https://www.django
 
 These technologies and tools were carefully chosen to ensure **Arduino Lab** provides a smooth and functional experience, catering to the specific needs of users looking for microcontroller products.
 
-## Testing
+### Testing
 
-Thorough testing of the StepUp site was performed and can be viewed [here](https://github.com/johnvenkiah/CI_PP5_John_Venkiah/blob/main/docs/testing/TESTING.md).
+#### Overview
+
+Testing is a critical part of the **Arduino Lab** project to ensure the functionality, reliability, and user experience of the e-commerce platform.
+
+---
+
+#### **Manual Testing**
+
+1. **Navigation Testing**
+
+   - Verified that all links in the navbar and footer navigate to the correct pages.
+   - Ensured that the "Shop Now" button on the homepage redirects to the product listing page.
+   - Tested the responsiveness of the navbar and footer on mobile devices.
+     ![Mobile Navbar](media/documentations/mobile_navbar.PNG)
+     ![Mobile Footer](media/documentations/mobile_footer.PNG)
+
+2. **Product Search and Filtering**
+
+   - Tested the functionality of the search bar by entering various keywords.
+   - Verified that filtering options (e.g., price, rating, category) work correctly and return accurate results.
+     ![Search Bar](media/search_bar.PNG)
+     ![Product Filtering](media/documentations/sortering.PNG)
+
+3. **Product Details**
+
+   - Ensured that clicking on a product displays its details, including name, price, description, and stock availability.
+   - Tested that the "Add to Cart" button adds the correct item to the cart.
+     ![Product Details](media/product_detail.PNG)
+
+4. **Shopping Cart**
+
+   - Verified that the cart accurately reflects added items, with correct quantities and pricing.
+   - Tested the "Update" and "Remove" options for items in the cart.
+     ![Cart Summary](media/documentations/shoping_bag.PNG)
+
+5. **Account Management**
+
+   - Confirmed that users can register, log in, and log out without errors.
+   - Tested the password reset functionality to ensure it works as expected.
+     ![Sign In Page](media/sign_in.PNG)
+     ![Sign Up Page](media/register.PNG)
+
+6. **Checkout and Payment**
+   - Simulated a checkout process and verified that the payment page handles valid and invalid inputs correctly.
+   - Ensured that orders are created and stored in the database after successful payment.
+
+### 1. **Lighthouse Testing**
+
+#### Overview
+
+Lighthouse was used to test the performance, accessibility, best practices, and SEO of the **Arduino Lab** application. The testing included verifying link functionality, button redirects, and mobile responsiveness.
+
+#### Testing Steps
+
+1. **Navbar and Footer Links**
+
+   - Verified that all links in the navbar and footer navigate to the correct pages.
+   - Ensured that the "Shop Now" button on the homepage redirects to the product listing page.
+     ![Mobile Navbar](media/documentations/mobile_navbar.PNG)
+     ![Mobile Footer](media/documentations/mobile_footer.PNG)
+
+2. **Mobile Responsiveness**
+
+   - Confirmed that the navbar and footer adapt seamlessly to various screen sizes.
+   - Ensured clickable elements are accessible and visually aligned on mobile devices.
+
+3. **Accessibility**
+
+   - Verified that all pages have appropriate alt attributes for images, semantic HTML structure, and sufficient contrast for readability.
+
+4. **Performance**
+   - Lighthouse testing results showed:
+     - **Performance**: High performance for page load times and interactivity.
+     - **Accessibility**: Excellent ratings for accessibility across all pages.
+     - **Best Practices**: Fully compliant with web development best practices.
+     - **SEO**: Proper meta tags and structured data resulted in strong SEO scores.
+
+---
+
+### **PEP8 Compliance Testing**
+
+![PEP 8 Testing](media\documentations\PEP_8_2.PNG)
+![PEP 8 Testing](media\documentations\PEP_8.PNG)
+
+#### Overview
+
+PEP8 compliance ensures that the Python code in **Arduino Lab** is clean, readable, and adheres to Python's style guidelines. This was verified using automated tools.
+
+#### Testing Steps
+
+1. **Setup**
+
+   - Used `flake8` as the primary tool to check for PEP8 compliance.
+   - Configured `.flake8` file with the following:
+     ```plaintext
+     [flake8]
+     max-line-length = 79
+     ignore = E501,W503
+     ```
+
+2. **Running Tests**
+
+   - Executed the following command to scan the codebase for PEP8 violations:
+     ```bash
+     flake8 --exclude=migrations,static,media
+     ```
+
+3. **Results**
+   - **Models**: No violations found. Code adheres to best practices, with properly structured classes and relationships.
+   - **Views**: Minimal issues fixed (e.g., line length, spacing).
+   - **Forms**: Fully compliant with no adjustments required.
+   - **Settings**: Clean and modular settings files passed compliance checks.
+
+#### Fixes Applied
+
+- Shortened lines exceeding 79 characters.
+- Removed unnecessary whitespace and added consistent indentation.
+- Renamed variables for clarity and compliance with naming conventions.
+
+#### Tools Used
+
+- `flake8`
+- `autopep8` for automatic fixes:
+  ```bash
+  autopep8 --in-place --aggressive --recursive .
+  ```
+
+---
+
+#### **Bug Fixes**
+
+- Fixed an issue where the cart would not shows the image of the added product .
+
+#### **Screenshots of Testing**
+
+Below are some screenshots showcasing the testing process:
+
+- ![Mobile Navbar](media/documentations/mobile_navbar.PNG)
+- ![Search Bar](media/search_bar.PNG)
+- ![Cart Summary](media/documentations/shoping_bag.PNG)
+- ![Product Details](media/product_detail.PNG)
+- ![Sign In Page](media/sign_in.PNG)
 
 ## Other Services
 
@@ -853,7 +978,7 @@ This application has been deployed from Github using Heroku. Here's how:
 3. Click on create app
 4. Go to "Settings"
 5. Under Config Vars, add your sensitive data (creds.json for example)
-6. For this project, I set buildpacks to <Python> and <NodeJS> in that order.
+6. For this project, I set buildpacks to <Python> in that order.
 7. Go to "Deploy" and at "Deployment method", click on "Connect to Github"
 8. Enter your repository name and click on it when it shows below
 9. Choose the branch you want to buid your app from
@@ -871,3 +996,83 @@ The steps to take are:
 3. Set the AmazonS3FullAccess for the user and copy the AWS ACCESS and SECRET keys as config vars to your workspace and deployment environment
 4. Create a new Bucket within the S3 application with an appropriate name.
 5. Enable public access to allow users to view and download content, as outlined in AWS S3 documentation.: https://aws.amazon.com/s3/
+
+
+## Credits
+
+### Copyrights
+
+#### Media
+
+- Product images and site background images are sourced from publicly available platforms like:
+  - [Google](https://google.com)
+  - [Pixabay](https://pixabay.com)
+  - These platforms provide royalty-free images under their respective licenses. For Pixabay, all images are released under the Pixabay License, allowing both personal and commercial use without attribution. 
+
+- Icons used across the site are from [Font Awesome](https://fontawesome.com), which permits free use under their license for personal and open-source projects.
+
+#### Legal Disclaimers
+
+1. **Educational Purpose**:
+   - This project is built exclusively for educational purposes as part of the **Code Institute Full-Stack Development Course**. It is not intended for commercial use or profit generation.
+   - The site does not sell actual products, and all transactions are simulated for demonstration purposes.
+
+2. **Attribution**:
+   - All third-party resources, including images, fonts, and libraries, are credited to their respective creators.
+   - No claim of ownership is made over any third-party assets used in this project.
+
+3. **Licensing**:
+   - Media and assets sourced under open licenses (such as the Pixabay License) are used in accordance with their terms. No copyrighted material is used without permission or proper licensing.
+
+4. **Trademarks**:
+   - Any references to Arduino, ESP32, Raspberry Pi, or other trademarks are for educational purposes only. This project is not affiliated with or endorsed by these companies.
+
+5. **Liability**:
+   - The author of this project assumes no liability for the misuse of the content or adaptation of the code for unauthorized purposes.
+   - Users of this project are responsible for ensuring compliance with all applicable laws and regulations when adapting the code for their own use.
+
+6. **No Warranty**:
+   - This project is provided "as is" without any warranty, either express or implied, including but not limited to warranties of merchantability or fitness for a particular purpose.
+
+#### Content
+
+- The text and descriptions used in this project, including product information, are fictional and created solely for the purpose of demonstrating functionality.
+- Any resemblance to real products or services is purely coincidental.
+
+---
+
+
+### Coding Tips and Tricks
+
+These are some tips and resources that have helped me throughout this project:
+
+#### **Code Institute Boutique Ado Project**
+The **Code Institute Boutique Ado project** served as a significant source of inspiration and guidance for this project. Many of the concepts, techniques, and best practices applied in the development of **Arduino Lab** were learned and adapted from this comprehensive e-commerce project tutorial provided by Code Institute.
+
+#### Key Lessons Learned:
+- **Django Framework**:
+  - Understanding the Django MVC (Model-View-Controller) structure and applying it to build scalable, maintainable applications.
+  - Utilizing Django’s built-in features like authentication, forms, and admin panel for rapid development.
+
+- **Database Management**:
+  - Learning to structure models for e-commerce, including categories, products, orders, and user profiles.
+  - Implementing foreign key relationships and optimizing database queries.
+
+- **Payment Integration**:
+  - Adapting the payment workflow demonstrated in Boutique Ado to integrate **Stripe** into this project for secure and seamless checkout experiences.
+
+- **Responsive Design**:
+  - Leveraging Bootstrap and CSS techniques taught in Boutique Ado to ensure the site is user-friendly across devices.
+
+
+---
+
+#### Acknowledgment
+
+I would like to express my sincere gratitude to the entire team at **Code Institute**, whose comprehensive curriculum, guidance, and unwavering support have been instrumental in my learning journey. 
+
+A special thank you goes to all the instructors, mentors, and contributors who have dedicated their time and effort to create such an exceptional learning environment. Your expertise and dedication have not only equipped me with the technical skills to complete this project but have also elevated my understanding and confidence in full-stack development to a level I never thought possible.
+
+As this is my final project in the program, I am profoundly grateful for the countless opportunities provided by Code Institute to grow and succeed. Your encouragement and teaching have been a cornerstone of my development, and I am leaving this program with skills, knowledge, and a passion for software development that I will carry forward in my career.
+
+Thank you for everything.
