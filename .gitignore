@@ -12,4 +12,3 @@ cloudinary_python.txt
 *.pyc
 venv/
 venv
-settings2.py
