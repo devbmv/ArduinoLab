@@ -513,7 +513,7 @@ This is how Home Page looks on mobile device:
   - **Social Media Link**: Links to Arduino Lab’s Facebook page, offering users a way to stay connected and informed about updates.
     ![Social Media and Newsletter Section](media/footer.PNG)
   - **Newsletter Signup**: An email signup form where users can subscribe to monthly updates, receiving exclusive offers and product news.
-    ![ Newsletter Section](media/documentations/subscribe.PNG)
+    ![ Newsletter Section](media/documentations/subscription.PNG)
 
   This is how Footer looks on mobile device:
 
@@ -802,8 +802,8 @@ Testing is a critical part of the **Arduino Lab** project to ensure the function
    - Verified that all links in the navbar and footer navigate to the correct pages.
    - Ensured that the "Shop Now" button on the homepage redirects to the product listing page.
    - Tested the responsiveness of the navbar and footer on mobile devices.
-     ![Mobile Navbar](media/documentations/mobile_navbar.PNG)
-     ![Mobile Footer](media/documentations/mobile_footer.PNG)
+     ![Navbar](media/documentations/mobile_navbar.PNG)
+     ![Footer](media/documentations/mobile_footer.PNG)
 
 2. **Product Search and Filtering**
 
@@ -847,8 +847,8 @@ Lighthouse was used to test the performance, accessibility, best practices, and 
 
    - Verified that all links in the navbar and footer navigate to the correct pages.
    - Ensured that the "Shop Now" button on the homepage redirects to the product listing page.
-     ![Mobile Navbar](media/documentations/mobile_navbar.PNG)
-     ![Mobile Footer](media/documentations/mobile_footer.PNG)
+     ![Navbar](media/documentations/mobile_navbar.PNG)
+     ![Footer](media/documentations/mobile_footer.PNG)
 
 2. **Mobile Responsiveness**
 
